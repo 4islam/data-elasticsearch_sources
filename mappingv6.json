@@ -3,8 +3,8 @@
          "verse": {
             "properties": {
                "Arabic": {
-                  "type": "string",
-                  "norms": { "enabled": false },
+                  "type": "text",
+                  "norms": false,
                   "fielddata": true,
                   "fields": {
                       "trigram": {
@@ -17,194 +17,194 @@
                         "analyzer": "reverse"
                       },
                       "ar_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "ar_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_original_normalized",
                         "fielddata": true
                       },
                       "ar_root": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_root"
                       },
                       "ar_root_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_root_normalized",
                         "fielddata": true
                       },
                       "ar_stems": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_stems",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "ar_stems_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_stems_normalized",
                         "search_analyzer": "standard"
                       },
                       "ar_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "fielddata": true,
                         "analyzer": "ar_ngram_normalized",
                         "search_analyzer": "ar_original_normalized",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_stems": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_stems",
                         "search_analyzer": "ar_stems",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_stems_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "fielddata": true,
                         "analyzer": "ar_ngram_stems_normalized",
                         "search_analyzer": "ar_stems_normalized",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_root": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_root",
                         "search_analyzer": "ar_root",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_root_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_root_normalized",
                         "search_analyzer": "ar_root_normalized",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_root_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_root_normalized_phonetic",
                         "search_analyzer": "ar_root_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_stems_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_stems_normalized_phonetic"
                       },
                       "ar_root_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_root_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_normalized_ngram_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
                         "search_analyzer": "ar_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_stems_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_stems_normalized_phonetic",
                         "search_analyzer": "ar_stems_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_query_suggest_ngram_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
                         "search_analyzer": "query_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_query_suggest_ngram_stems_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_stems_normalized_phonetic",
                         "search_analyzer": "query_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_query_suggest_ngram_root_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_root_normalized_phonetic",
                         "search_analyzer": "query_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       }
                     }
                },
                "Surah": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "ar_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_original_normalized"
                       },
                       "ar_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_root": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_root"
                       },
                       "ar_ngram_root": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_root",
                         "search_analyzer": "ar_root",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_stems": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_stems"
                       },
                       "ar_stems_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_stems_normalized"
                       },
                       "ar_ngram_stems": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_ngram_stems",
                         "search_analyzer": "ar_surah_stems_normalized",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_stems_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_ngram_stems_normalized",
                         "search_analyzer": "ar_surah_stems",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_ngram_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_ngram_normalized",
                         "search_analyzer": "ar_original_normalized",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_normalized_ngram_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
                         "search_analyzer": "ar_normalized_phonetic",
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ar_stems_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_stems_normalized_phonetic"
                       },
                       "ar_ngram_stems_normalized_phonetic": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ar_surah_ngram_stems_normalized_phonetic",
                         "search_analyzer": "ar_surah_stems_normalized_phonetic"
                       },
@@ -214,15 +214,15 @@
                   }
                },
                "ayah" : {
-                  "type": "string",
+                  "type": "text",
                   "fields": {
                       "ayah_normalized_ar": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ayah_normalized_ar",
                         "search_analyzer": "standard"
                       },
                       "ayah_normalized_ur": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ayah_normalized_ur",
                         "search_analyzer": "standard"
                       }
@@ -235,28 +235,28 @@
                   "type": "integer"
                },
                "Urdu": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "ur_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "ur_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ur_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "ur_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
@@ -264,28 +264,28 @@
                   }
                },
                "UrduTS": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "ur_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "ur_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "ur_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "ur_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "ur_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
@@ -293,28 +293,28 @@
                   }
                },
                "English": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "en_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "en_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "en_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "en_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "en_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "en_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "en_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
@@ -322,28 +322,28 @@
                   }
                },
                "German": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "de_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "de_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "de_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "de_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "de_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "de_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "de_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
@@ -351,28 +351,28 @@
                   }
                },
                "Spanish": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "es_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "es_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "es_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "es_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "es_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "es_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "es_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
@@ -381,28 +381,28 @@
                }
                ,
                "French": {
-                  "type": "string",
+                  "type": "text",
                   "fielddata": true,
                   "fields": {
                       "fr_original": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "text",
+                        "index": false
                       },
                       "fr_ngram_original": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "fr_ngram_original",
                         "search_analyzer": "standard",
                         "fielddata": true,
-                        "norms": {"enabled": false}
+                        "norms": false
                       },
                       "fr_normalized": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "fr_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
                       "fr_normalized_ngram": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "fr_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
