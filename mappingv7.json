@@ -1,0 +1,968 @@
+put hq
+{
+  "mappings": {
+         "verse": {
+            "properties": {
+               "Arabic": {
+                  "type": "text",
+                  "norms": false,
+                  "fielddata": true,
+                  "fields": {
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram",
+                        "fielddata": true
+                      },
+                      "reverse": {
+                        "type": "text",
+                        "analyzer": "reverse"
+                      },
+                      "ar_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "ar_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_original_normalized",
+                        "fielddata": true
+                      },
+                      "ar_root": {
+                        "type": "text",
+                        "analyzer": "ar_root"
+                      },
+                      "ar_root_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_root_normalized",
+                        "fielddata": true
+                      },
+                      "ar_stems": {
+                        "type": "text",
+                        "analyzer": "ar_stems",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ar_stems_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_stems_normalized",
+                        "search_analyzer": "standard"
+                      },
+                      "ar_ngram_original": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "ar_ngram_normalized": {
+                        "type": "text",
+                        "fielddata": true,
+                        "analyzer": "ar_ngram_normalized",
+                        "search_analyzer": "ar_original_normalized",
+                        "norms": false
+                      },
+                      "ar_ngram_stems": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_stems",
+                        "search_analyzer": "ar_stems",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "ar_ngram_stems_normalized": {
+                        "type": "text",
+                        "fielddata": true,
+                        "analyzer": "ar_ngram_stems_normalized",
+                        "search_analyzer": "ar_stems_normalized",
+                        "norms": false
+                      },
+                      "ar_ngram_root": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_root",
+                        "search_analyzer": "ar_root",
+                        "norms": false
+                      },
+                      "ar_ngram_root_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_root_normalized",
+                        "search_analyzer": "ar_root_normalized",
+                        "norms": false
+                      },
+                      "ar_ngram_root_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_root_normalized_phonetic",
+                        "search_analyzer": "ar_root_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_stems_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_stems_normalized_phonetic"
+                      },
+                      "ar_root_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_root_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_normalized_ngram_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_normalized_ngram_phonetic",
+                        "search_analyzer": "ar_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_ngram_stems_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_stems_normalized_phonetic",
+                        "search_analyzer": "ar_stems_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_query_suggest_ngram_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_normalized_ngram_phonetic",
+                        "search_analyzer": "query_phonetic",
+                        "norms": false
+                      },
+                      "ar_query_suggest_ngram_stems_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_stems_normalized_phonetic",
+                        "search_analyzer": "query_phonetic",
+                        "norms": false
+                      },
+                      "ar_query_suggest_ngram_root_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_root_normalized_phonetic",
+                        "search_analyzer": "query_phonetic",
+                        "norms": false
+                      }
+                    }
+               },
+               "Surah": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "ar_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_original_normalized"
+                      },
+                      "ar_ngram_original": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "ar_root": {
+                        "type": "text",
+                        "analyzer": "ar_root"
+                      },
+                      "ar_ngram_root": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_root",
+                        "search_analyzer": "ar_root",
+                        "norms": false
+                      },
+                      "ar_stems": {
+                        "type": "text",
+                        "analyzer": "ar_surah_stems"
+                      },
+                      "ar_stems_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_surah_stems_normalized"
+                      },
+                      "ar_ngram_stems": {
+                        "type": "text",
+                        "analyzer": "ar_surah_ngram_stems",
+                        "search_analyzer": "ar_surah_stems_normalized",
+                        "norms": false
+                      },
+                      "ar_ngram_stems_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_surah_ngram_stems_normalized",
+                        "search_analyzer": "ar_surah_stems",
+                        "norms": false
+                      },
+                      "ar_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_ngram_normalized": {
+                        "type": "text",
+                        "analyzer": "ar_ngram_normalized",
+                        "search_analyzer": "ar_original_normalized",
+                        "norms": false
+                      },
+                      "ar_normalized_ngram_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_normalized_ngram_phonetic",
+                        "search_analyzer": "ar_normalized_phonetic",
+                        "norms": false
+                      },
+                      "ar_stems_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_surah_stems_normalized_phonetic"
+                      },
+                      "ar_ngram_stems_normalized_phonetic": {
+                        "type": "text",
+                        "analyzer": "ar_surah_ngram_stems_normalized_phonetic",
+                        "search_analyzer": "ar_surah_stems_normalized_phonetic"
+                      },
+                      "suggest" : {
+                            "type" : "completion"
+                      }
+                  }
+               },
+               "ayah" : {
+                  "type": "text",
+                  "fields": {
+                      "ayah_normalized_ar": {
+                        "type": "text",
+                        "analyzer": "ayah_normalized_ar",
+                        "search_analyzer": "standard"
+                      },
+                      "ayah_normalized_ur": {
+                        "type": "text",
+                        "analyzer": "ayah_normalized_ur",
+                        "search_analyzer": "standard"
+                      }
+                  }
+               },
+               "a" : {
+                  "type": "integer"
+               },
+               "s" : {
+                  "type": "integer"
+               },
+
+               "Surah_EN_transliteration": {"type": "text"},
+               "Surah_EN_translation":{"type": "text"},
+               "Surah_Revelation":{"type": "text"},
+               "Juz":{"type": "integer"},
+               "Manzil":{"type": "integer"},
+               "Ruku":{"type": "integer"},
+               "Hisb":{"type": "integer"},
+               "Sajda_id":{"type": "integer"},
+               "Sajda_Obligation":{"type": "boolean"},
+
+               "Urdu": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "ur_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "ur_ngram_original": {
+                        "type": "text",
+                        "analyzer": "ur_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "ur_normalized": {
+                        "type": "text",
+                        "analyzer": "ur_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ur_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "ur_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "UrduTS": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "ur_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "ur_ngram_original": {
+                        "type": "text",
+                        "analyzer": "ur_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "ur_normalized": {
+                        "type": "text",
+                        "analyzer": "ur_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ur_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "ur_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "English": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "en_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "en_ngram_original": {
+                        "type": "text",
+                        "analyzer": "en_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "en_normalized": {
+                        "type": "text",
+                        "analyzer": "en_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "en_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "en_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "German": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "de_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "de_ngram_original": {
+                        "type": "text",
+                        "analyzer": "de_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "de_normalized": {
+                        "type": "text",
+                        "analyzer": "de_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "de_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "de_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "Spanish": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "es_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "es_ngram_original": {
+                        "type": "text",
+                        "analyzer": "es_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "es_normalized": {
+                        "type": "text",
+                        "analyzer": "es_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "es_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "es_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               }
+               ,
+               "French": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "fr_original": {
+                        "type": "text",
+                        "index": false
+                      },
+                      "fr_ngram_original": {
+                        "type": "text",
+                        "analyzer": "fr_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "fr_normalized": {
+                        "type": "text",
+                        "analyzer": "fr_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "fr_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "fr_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "suggest" : {
+                    "type" : "completion"
+                },
+                "title" : {
+                    "type": "keyword"
+                }
+            },
+            "_all": {
+              "store": true
+            }
+         }
+      },
+
+   "settings": {
+    "analysis": {
+      "char_filter": {
+        "html_strip": {
+          "type": "html_strip"
+        },
+        "ar_numerals": {
+          "type": "mapping",
+          "mappings": [
+            "0 => ٠",
+            "1 => ١",
+            "2 => ٢",
+            "3 => ٣",
+            "4 => ٤",
+            "5 => ٥",
+            "6 => ٦",
+            "7 => ٧",
+            "8 => ٨",
+            "9 => ٩"
+          ]
+        },
+        "ur_numerals": {
+          "type": "mapping",
+          "mappings": [
+            "0 => ۰",
+            "1 => ۱",
+            "2 => ۲",
+            "3 => ۳",
+            "4 => ۴",
+            "5 => ۵",
+            "6 => ۶",
+            "7 => ۷",
+            "8 => ۸",
+            "9 => ۹"
+          ]
+        },
+        "en_strip_special": {
+          "type": "pattern_replace",
+          "pattern": "‘|’|-"
+        }
+      },
+      "filter": {
+        "english_stop": {
+          "type":       "stop",
+          "stopwords":  "_english_"
+        },
+        "english_stemmer": {
+          "type":       "stemmer",
+          "language":   "english"
+        },
+        "english_word_delimiter": {
+          "type":       "word_delimiter",
+          "language":   "english"
+        },
+        "english_possessive_stemmer": {
+          "type":       "stemmer",
+          "language":   "possessive_english"
+        },
+        "german_stop": {
+          "type":       "stop",
+          "stopwords":  "_german_"
+        },
+        "german_stemmer": {
+          "type":       "stemmer",
+          "language":   "light_german"
+        },
+        "spanish_stop": {
+          "type":       "stop",
+          "stopwords":  "_spanish_"
+        },
+        "spanish_stemmer": {
+          "type":       "stemmer",
+          "language":   "light_spanish"
+        },
+        "french_stop": {
+          "type":       "stop",
+          "stopwords":  "_french_"
+        },
+        "french_stemmer": {
+          "type":       "stemmer",
+          "language":   "light_french"
+        },
+        "shingle": {
+            "type": "shingle",
+            "min_shingle_size": 2,
+            "max_shingle_size": 3
+        },
+        "punctuation_filter": {
+          "type": "pattern_replace",
+          "pattern": "\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0653|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB"
+        },
+        "normalize_alef": {
+          "type": "pattern_replace",
+          "pattern": "\\u0623|\\u0671|\\u0625",
+          "replacement": "\u0627"
+        },
+        "normalize_yeh_with_hamza": {
+          "type": "pattern_replace",
+          "pattern": "\\u0626",
+          "replacement": "\u064A"
+        },
+        "normalize_farsi_yeh": {
+          "type": "pattern_replace",
+          "pattern": "\\u06CC",
+          "replacement": "\u064A"
+        },
+        "normalize_waw_with_hamza": {
+          "type": "pattern_replace",
+          "pattern": "\\u0624",
+          "replacement": "\u0648"
+        },
+        "normalize_teh_marbuta": {
+          "type": "pattern_replace",
+          "pattern": "\\u0629|\\u06BE|\\u06C1",
+          "replacement": "\u0647"
+        },
+        "normalize_alef_maksura": {
+          "type": "pattern_replace",
+          "pattern": "\\u0649",
+          "replacement": "\u064A"
+        },
+        "normalize_superscript_alef":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0670",
+        	"replacement":"\u0627"
+        },
+        "normalize_small_waw":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u06E5",
+        	"replacement":"\u0648"
+        },
+        "normalize_small_yeh":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u06E6",
+        	"replacement":"\u064A"
+        },
+        "normalize_kaf": {
+          "type": "pattern_replace",
+          "pattern": "\\u0649|\\u06A9|\\u06AA|\\u06AB",
+          "replacement": "\u0643"
+        },
+        "Phonetic_a":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0621|\\u0627|\\u0639",
+        	"replacement":"a"
+        },
+        "Phonetic_b":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0628",
+        	"replacement":"b"
+        },
+        "Phonetic_d":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u062F",
+        	"replacement":"d"
+        },
+        "Phonetic_f":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0641",
+        	"replacement":"f"
+        },
+        "Phonetic_g":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u063A",
+        	"replacement":"g"
+        },
+        "Phonetic_h":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u062D|\\u0647",
+        	"replacement":"h"
+        },
+        "Phonetic_j":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u062C",
+        	"replacement":"j"
+        },
+        "Phonetic_k":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0643|\\u0642",
+        	"replacement":"k"
+        },
+        "Phonetic_kh":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u062E",
+        	"replacement":"kh"
+        },
+        "Phonetic_l":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0644",
+        	"replacement":"l"
+        },
+        "Phonetic_m":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0645",
+        	"replacement":"m"
+        },
+        "Phonetic_n":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0646",
+        	"replacement":"n"
+        },
+        "Phonetic_r":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0631",
+        	"replacement":"r"
+        },
+        "Phonetic_s":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0633|\\u0635|\\u062B",
+        	"replacement":"s"
+        },
+        "Phonetic_sh":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0634",
+        	"replacement":"sh"
+        },
+        "Phonetic_t":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u062A|\\u0637",
+        	"replacement":"t"
+        },
+        "Phonetic_w":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0648",
+        	"replacement":"w"
+        },
+        "Phonetic_y":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u064A",
+        	"replacement":"y"
+        },
+        "Phonetic_z":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0630|\\u0638|\\u0636|\\u0632",
+        	"replacement":"z"
+        },
+        "Phonetic_superscript_alef":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u0670",
+        	"replacement":"a"
+        },
+        "Phonetic_small_waw":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u06E5",
+        	"replacement":"u"
+        },
+        "Phonetic_small_yeh":{
+        	"type": "pattern_replace",
+        	"pattern": "\\u06E6",
+        	"replacement":"i"
+        },
+        "Phonetic_query_replace_c" : {
+          "type": "pattern_replace",
+          "pattern": "c",
+          "replacement":"s"
+        },
+        "Phonetic_query_replace_q" : {
+          "type": "pattern_replace",
+          "pattern": "q",
+          "replacement":"k"
+        },
+        "Phonetic_query_replace_x" : {
+          "type": "pattern_replace",
+          "pattern": "x",
+          "replacement":"sh"
+        },
+        "Phonetic_query_filter" : {
+          "type": "pattern_replace",
+          "pattern": "[^a|b|d|f|g|h|j|k|kh|l|m|n|r|s|sh|t|w|y|z|a|i|u]*"
+        },
+        "Phonetic_query_replace_v" : {
+          "type": "pattern_replace",
+          "pattern": "v",
+          "replacement":"w"
+        },
+        "Phonetic_query_reinstate_a" : {
+          "type": "pattern_replace",
+          "pattern": "^[a|e|i|o|u]",
+          "replacement":"A"
+        },
+        "Phonetic_query_filter_search" : {
+          "type": "pattern_replace",
+          "pattern": "[^A|b|d|f|g|h|j|k|kh|l|m|n|r|s|sh|t|w|y|z]*"
+        },
+        "arabic_stop": {
+          "type":       "stop",
+          "stopwords":  "_arabic_"
+        },
+        "title_ngram_filter": {
+          "type": "edgeNGram",
+          "min_gram": 3,
+          "max_gram": 17
+        },
+        "root_ngram_filter": {
+          "type": "edgeNGram",
+          "min_gram": 2,
+          "max_gram": 7
+        },
+        "normalized_ngram_filter": {
+          "type": "edgeNGram",
+          "min_gram": 1,
+          "max_gram": 11
+        },
+        "text_ngram_filter": {
+          "type": "edgeNGram",
+          "min_gram": 2,
+          "max_gram": 11
+        },
+        "arabic_compound": {
+          "type":       "dictionary_decompounder",
+          "min_subword_size": 3,
+          "only_longest_match":true,
+          "word_list_path": "compounds_ar.txt"
+        },
+        "append_root": {
+          "type": "delimited_payload_filter",
+          "encoding": "identity"
+        },
+        "my_uniq": {
+          "type" : "unique",
+          "only_on_same_position" : false
+        },
+        "stems2roots" : {
+          "type": "stemmer_override",
+          "rules_path" : "stem2root.txt"
+        },
+        "token2lem" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_lem_out.txt"
+        },
+        "token2root" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_root_out.txt"
+        },
+        "roots_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "roots_out.txt"
+        }
+        ,
+        "lemms_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "lemms_out.txt"
+        }
+
+
+      },
+      "analyzer": {
+        "ayah_normalized_ar": {
+          "tokenizer":  "standard",
+          "char_filter": ["ar_numerals"]
+        },
+        "ayah_normalized_ur": {
+          "tokenizer":  "standard",
+          "char_filter": ["ur_numerals"]
+        },
+        "ur_normalized": {
+              "tokenizer": "standard",
+              "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
+        },
+        "ur_ngram_original": {
+              "tokenizer": "standard",
+              "filter": ["normalized_ngram_filter"]
+        },
+        "ur_ngram_normalized": {
+              "tokenizer": "standard",
+              "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
+        },
+        "en_normalized": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip","en_strip_special"],
+          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer"]
+        },
+        "en_ngram_original": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","text_ngram_filter"]
+        },
+        "en_ngram_normalized": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip","en_strip_special"],
+          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer","text_ngram_filter"]
+        },
+        "de_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","german_stop","german_normalization","german_stemmer"]
+        },
+        "de_ngram_original": {
+          "tokenizer":  "standard",
+          "filter": ["lowercase","german_stop","text_ngram_filter"]
+        },
+        "de_ngram_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","german_stop","german_normalization","german_stemmer","text_ngram_filter"]
+        },
+        "es_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","spanish_stop","spanish_stemmer"]
+        },
+        "es_ngram_original": {
+          "tokenizer":  "standard",
+          "filter": ["lowercase","spanish_stop","text_ngram_filter"]
+        },
+        "es_ngram_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","spanish_stop","spanish_stemmer","text_ngram_filter"]
+        },
+        "fr_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","french_stop","french_stemmer"]
+        },
+        "fr_ngram_original": {
+          "tokenizer":  "standard",
+          "filter": ["lowercase","french_stop","text_ngram_filter"]
+        },
+        "fr_ngram_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["asciifolding","lowercase","french_stop","french_stemmer","text_ngram_filter"]
+        },
+        "trigram": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "shingle"]
+        },
+        "reverse": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "reverse"]
+        },
+       "ar_original_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
+        },
+       "ar_surah_stems": {
+          "tokenizer":  "standard",
+          "filter": ["arabic_compound","my_uniq"]
+        },
+        "ar_stems": {
+          "tokenizer":  "standard",
+          "filter": ["token2lem","my_uniq"]
+        },
+       "ar_stems_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["token2lem","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
+        },
+       "ar_surah_stems_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["arabic_compound","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","my_uniq"]
+        },
+       "ar_roots_obsolete": {
+          "tokenizer":  "standard",
+          "filter": ["arabic_compound","my_uniq","stems2roots","my_uniq"]
+        },
+       "ar_root": {
+          "tokenizer":  "standard",
+          "filter": ["token2root","roots_on_file"]
+        },
+       "ar_root_normalized": {
+          "tokenizer":  "standard",
+          "filter": ["token2root","roots_on_file","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
+        },
+        "ar_ngram_original": {
+              "tokenizer": "standard",
+              "filter": ["text_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_normalized": {
+              "tokenizer": "standard",
+              "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_stems": {
+              "tokenizer": "standard",
+              "filter": ["token2lem","title_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_stems_normalized": {
+              "tokenizer": "standard",
+              "filter": ["token2lem","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
+        },
+        "ar_surah_ngram_stems": {
+              "tokenizer": "standard",
+              "filter": ["arabic_compound","title_ngram_filter","my_uniq"]
+        },
+        "ar_surah_ngram_stems_normalized": {
+              "tokenizer": "standard",
+              "filter": ["arabic_compound","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_root": {
+              "tokenizer": "standard",
+              "filter": ["token2root","roots_on_file","root_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_root_normalized": {
+              "tokenizer": "standard",
+              "filter": ["token2root","roots_on_file","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","root_ngram_filter","my_uniq"]
+        },
+        "ar_root_normalized_phonetic": {
+          "tokenizer":  "standard",
+          "filter": ["token2root","roots_on_file","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh", "lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter"]
+        },
+        "ar_normalized_phonetic" : {
+          "tokenizer": "standard",
+          "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter"]
+        },
+       "ar_normalized_ngram_phonetic" : {
+          "tokenizer": "standard",
+          "filter": ["normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","title_ngram_filter","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","text_ngram_filter"]
+        },
+        "ar_ngram_root_normalized_phonetic": {
+          "tokenizer":  "standard",
+          "filter": ["token2root","roots_on_file","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","root_ngram_filter","my_uniq"]
+        },
+        "ar_stems_normalized_phonetic": {
+          "tokenizer":  "standard",
+          "filter": ["token2lem","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter"]
+        },
+        "ar_ngram_stems_normalized_phonetic": {
+              "tokenizer": "standard",
+              "filter": ["token2lem","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","title_ngram_filter","my_uniq","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","title_ngram_filter","my_uniq"]
+        },
+        "ar_surah_stems_normalized_phonetic": {
+          "tokenizer":  "standard",
+          "filter": ["arabic_compound","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","my_uniq"]
+        },
+        "ar_surah_ngram_stems_normalized_phonetic": {
+              "tokenizer": "standard",
+              "filter": ["arabic_compound","normalize_alef","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_alef_maksura","normalize_farsi_yeh","normalize_kaf","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","title_ngram_filter","my_uniq","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","title_ngram_filter","my_uniq"]
+        },
+        "query_phonetic": {
+              "tokenizer": "standard",
+              "filter": ["lowercase","Phonetic_query_reinstate_a","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_replace_v","Phonetic_query_filter_search","lowercase","title_ngram_filter"]
+        }
+      }
+    }
+  }
+}
