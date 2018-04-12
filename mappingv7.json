@@ -708,6 +708,11 @@
           "pattern": "v",
           "replacement":"w"
         },
+        "Phonetic_query_replace_u" : {
+          "type": "pattern_replace",
+          "pattern": "u",
+          "replacement":"w"
+        },
         "Phonetic_query_reinstate_a" : {
           "type": "pattern_replace",
           "pattern": "^[a|e|i|o|u]",
@@ -716,6 +721,21 @@
         "Phonetic_query_filter_search" : {
           "type": "pattern_replace",
           "pattern": "[^A|b|d|f|g|h|j|k|kh|l|m|n|r|s|sh|t|w|y|z]*"
+        },
+        "Phonetic_query_replace_double_o" : {
+          "type": "pattern_replace",
+          "pattern": "oo",
+          "replacement":"w"
+        },
+        "Phonetic_query_replace_double_e" : {
+          "type": "pattern_replace",
+          "pattern": "ee",
+          "replacement":"y"
+        },
+        "Phonetic_query_replace_i" : {
+          "type": "pattern_replace",
+          "pattern": "i",
+          "replacement":"y"
         },
         "arabic_stop": {
           "type":       "stop",
