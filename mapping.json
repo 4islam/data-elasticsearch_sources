@@ -979,7 +979,7 @@
         },
         "query_phonetic": {
               "tokenizer": "standard",
-              "filter": ["lowercase","Phonetic_query_reinstate_a","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_replace_v","Phonetic_query_replace_i","Phonetic_query_replace_u","Phonetic_query_replace_double_o","Phonetic_query_replace_double_e","Phonetic_query_filter_search","lowercase","text_ngram_filter"]
+              "filter": ["lowercase","Phonetic_query_reinstate_a","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_replace_v","Phonetic_query_replace_i","Phonetic_query_replace_u","Phonetic_query_replace_double_o","Phonetic_query_replace_double_e","Phonetic_query_filter_search","lowercase","title_ngram_filter"]
         }
       }
     }
