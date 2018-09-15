@@ -6345,4 +6345,4 @@ update verses set fr="Le Roi de l’humanité," where chapterNumber=114 and ayat
 update verses set fr="Le Dieu de l’humanité," where chapterNumber=114 and ayatNumber=4;
 update verses set fr="Contre le mal du chuchoteur sournois," where chapterNumber=114 and ayatNumber=5;
 update verses set fr="Qui chuchote dans le cœur des hommes," where chapterNumber=114 and ayatNumber=6;
-update verses set fr="De parmi les djinns et les hommes. »" where chapterNumber=114 and ayatNumber=7\;
+update verses set fr="De parmi les djinns et les hommes. »" where chapterNumber=114 and ayatNumber=7;
