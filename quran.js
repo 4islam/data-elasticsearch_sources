@@ -5,6 +5,26 @@ var client = new elasticsearch.Client({
   log: 'error'
 });
 
+
+var arg_src="Arabic"
+var arg_analyzer="ar_stems_normalized"
+
+var myArgs = process.argv.slice(2);
+if (myArgs.length) {
+
+  arg_src = process.argv[2]
+  arg_analyzer = process.argv[3]
+
+  console.log(arg_src, arg_analyzer);
+
+} else {
+  console.log("   Please add aurguments:  \
+                  src text (Arabic|English|Urdu|French|German|Spanish), \
+                  analyzer (ar_original_normalized|ar_stems_normalized|ar_root| \
+                    ar_normalized_phonetic|ar_stems_normalized_phonetic|ar_root_phonetic\
+                    ur_normalized|en_normalized)")
+}
+
 function source(i) {
  client.search({
    index: 'hq',
@@ -20,7 +40,7 @@ function source(i) {
      var src = hits[0]._source
 
      //analyze(src.Arabic,i,src.a,src.s)
-     analyze(src.English,i,src.a,src.s)
+     analyze(src[arg_src],i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
 
@@ -36,7 +56,7 @@ function analyze(src,i,a,s) {
    //analyzer : "ar_ngram_normalized",
    //analyzer:"query_phonetic",
    //analyzer:"ar_normalized_phonetic",
-   analyzer:"en_normalized",
+   analyzer: arg_analyzer,
    //analyzer:"en_normalized_simple",
    //analyzer:"ar_stems_normalized_phonetic",
    //analyzer:"ar_stems_normalized",
@@ -65,8 +85,8 @@ function analyze(src,i,a,s) {
      // //console.log(hits)
      // console.log(hits.length)
 
-     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
-     console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+     console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+     //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
 
      if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
      //if(i<290){source(i+1)}
