@@ -1,3 +1,4 @@
+#!/usr/local/bin/node
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
   host: 'localhost:9200',
@@ -67,7 +68,7 @@ function analyze(src,i,a,s) {
      //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
      console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
 
-     //if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
+     if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
      //if(i<290){source(i+1)}
 
      // if(i<5){source(i+33)}
@@ -80,5 +81,5 @@ console.log("[")
 //source(290);      //recurrance function call
 //source(592);      //recurrance function call
 //source(6322);      //recurrance function call
-source(2450);
+source(1);
 //source(2844);
