@@ -1,2 +1,4 @@
 [Tt]humbs.db
 *.DS_Store
+**/save-commands.json
+**/.on-save.json
