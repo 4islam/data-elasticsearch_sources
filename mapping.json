@@ -478,7 +478,7 @@
           "type": "pattern_replace",
           "pattern": "‘|’|-"
         },
-        "noor_alef_harkat_addition_Allah":{  
+        "noor_alef_harkat_addition_Allah":{
           "type": "pattern_replace",
           "pattern": "^\\u0671(\\u0644\\u0644.+)([\\u064E\\u0650\\u064F])(.*)",
           "replacement":"\u0627$2$1$2$3"
@@ -490,8 +490,13 @@
         },
         "noor_char_alef_madda":{
           "type": "pattern_replace",
-          "pattern": "\\u064E\\u0622",
+          "pattern": "\\u064E\\u0627\\u0653",
           "replacement":"\u064E\u0627\u06E4"
+        },
+        "noor_nun_meem_ya_end_sakoon":{
+          "type": "pattern_replace",
+          "pattern": "([\\u0646\\u0645\\u064A]\\u06E2?) +(.)",
+          "replacement":"$1\u06E1 $2"
         }
       },
       "filter": {
@@ -654,7 +659,7 @@
           "pattern": "\\u064E\\u0651\\u0649\\u0670",
           "replacement":"\u0651\u0670\u0649"
         },
-        "noor_hamza_fathah_alef":{
+        "noor_hamza_fathah_alef_removed":{
           "type": "pattern_replace",
           "pattern": "\\u0621\\u064E\\u0627",
           "replacement":"\u0627\u0670"
@@ -985,15 +990,16 @@
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
         },
       "ar_original_noor": {
-        "char_filter": ["noor_alef_harkat_addition_Allah","noor_alef_harkat_addition","noor_char_alef_madda"],
+        "char_filter": [  "noor_alef_harkat_addition_Allah","noor_alef_harkat_addition"
+                          ,"noor_char_alef_madda","noor_nun_meem_ya_end_sakoon"],
          "tokenizer":  "standard",
          "filter": [  "noor_Allah","normalize_alef","noor_hamza_fatha_alef"
-                      ,"noor_fatha_alefsuperscript"
-                      ,"noor_add_sukun_end","noor_add_sukun_mid","noor_replace_sukun"
+                      ,"noor_fatha_alefsuperscript","noor_add_sukun_end"
+                      ,"noor_add_sukun_mid","noor_replace_sukun"
                       ,"noor_damma_invereted","noor_kasra_alefsubscript"
                       ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
                       ,"noor_alef_maskura_shadda_superscript_alef"
-                      ,"noor_hamza_fathah_alef","noor_alef_maskura"
+                      ,"noor_alef_maskura"
                       ,"noor_heh_goal","noor_kaaf_keheh","noor_teh_marbutah_goal"
                       ,"noor_rounded_zero"
                       ,"noor_break_waw"]
