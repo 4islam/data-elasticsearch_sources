@@ -488,15 +488,35 @@
           "pattern": "^\\u0671(.\\u0652.)([\\u064E\\u0650\\u064F])(.*)",
           "replacement":"\u0627$2$1$2$3"
         },
-        "noor_char_alef_madda":{
+        "noor_alef_madda":{
           "type": "pattern_replace",
           "pattern": "\\u064E\\u0627\\u0653",
           "replacement":"\u064E\u0627\u06E4"
         },
-        "noor_nun_meem_ya_end_sakoon":{
+        "noor_nun_meem_end_sakoon":{
           "type": "pattern_replace",
-          "pattern": "([\\u0646\\u0645\\u064A]\\u06E2?) +(.)",
+          "pattern": "([\\u0646\\u0645])(\\u06E2?) +(.)",
+          "replacement":"$1\u06E1$2 $3"
+        },
+        "noor_wow_end_sakoon":{
+          "type": "pattern_replace",
+          "pattern": "([\\u064F\\u0650\\u064E]\\u0648)(\\u0653?\\u0627\\u06DF) +(.)",
+          "replacement":"$1\u06E1$2 $3"
+        },
+        "noor_wow_end_extra_sakoon_removal":{
+          "type": "pattern_replace",
+          "pattern": "(\\u0648)\\u06E1(\\u0653?\\u0627\\u06DF) +(\\u0671.)(\\u0652|\\u0651)",
+          "replacement":"$1$2 $3$4"
+        },
+        "noor_ya_end_sakoon":{
+          "type": "pattern_replace",
+          "pattern": "([\\u064F\\u0650\\u064E]\\u0649) +(.)",
           "replacement":"$1\u06E1 $2"
+        },
+        "noor_wow_ya_end_extra_sakoon_removal":{
+          "type": "pattern_replace",
+          "pattern": "(\\u0649)\\u06E1 +(\\u0671.)(\\u0652|\\u0651)",
+          "replacement":"$1 $2$3"
         }
       },
       "filter": {
@@ -991,7 +1011,9 @@
         },
       "ar_original_noor": {
         "char_filter": [  "noor_alef_harkat_addition_Allah","noor_alef_harkat_addition"
-                          ,"noor_char_alef_madda","noor_nun_meem_ya_end_sakoon"],
+                          ,"noor_alef_madda","noor_nun_meem_end_sakoon"
+                          ,"noor_wow_end_sakoon","noor_wow_end_extra_sakoon_removal"
+                          ,"noor_ya_end_sakoon","noor_wow_ya_end_extra_sakoon_removal"],
          "tokenizer":  "standard",
          "filter": [  "noor_Allah","normalize_alef","noor_hamza_fatha_alef"
                       ,"noor_fatha_alefsuperscript","noor_add_sukun_end"
