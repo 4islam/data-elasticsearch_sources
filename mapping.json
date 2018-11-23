@@ -517,6 +517,11 @@
           "type": "pattern_replace",
           "pattern": "(\\u0649)\\u06E1 +(\\u0671.)(\\u0652|\\u0651)",
           "replacement":"$1 $2$3"
+        },
+        "noor_hamza_alef_without_harkat":{
+          "type": "pattern_replace",
+          "pattern": "\\u0621\\u064E\\u0627([^\\u064F\\u0650\\u064E])",
+          "replacement":"\u0627\u0670$1"
         }
       },
       "filter": {
@@ -1013,7 +1018,8 @@
         "char_filter": [  "noor_alef_harkat_addition_Allah","noor_alef_harkat_addition"
                           ,"noor_alef_madda","noor_nun_meem_end_sakoon"
                           ,"noor_wow_end_sakoon","noor_wow_end_extra_sakoon_removal"
-                          ,"noor_ya_end_sakoon","noor_wow_ya_end_extra_sakoon_removal"],
+                          ,"noor_ya_end_sakoon","noor_wow_ya_end_extra_sakoon_removal"
+                          ,"noor_hamza_alef_without_harkat"],
          "tokenizer":  "standard",
          "filter": [  "noor_Allah","normalize_alef","noor_hamza_fatha_alef"
                       ,"noor_fatha_alefsuperscript","noor_add_sukun_end"
