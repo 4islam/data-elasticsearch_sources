@@ -510,8 +510,8 @@
         },
         "noor_ya_end_sakoon":{
           "type": "pattern_replace",
-          "pattern": "([\\u064F\\u0650\\u064E]\\u0649) +(.)",
-          "replacement":"$1\u06E1 $2"
+          "pattern": "([\\u064F\\u0650\\u064E]\\u0649)(\\u0653?) +(.)",
+          "replacement":"$1\u06E1$2 $3"
         },
         "noor_wow_ya_end_extra_sakoon_removal":{
           "type": "pattern_replace",
