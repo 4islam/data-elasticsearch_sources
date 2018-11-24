@@ -515,7 +515,7 @@
         },
         "noor_add_shadda_ya_wow":{
           "type": "pattern_replace",
-          "pattern": "([\\u06E1\\u064C])( *\\u06D6? *[\\u064A\\u0648])([\\u064F\\u0650\\u064E])",
+          "pattern": "([\\u06E1\\u064B\\u064C\\u064D]\\u0627?)( *\\u06D6? *[\\u064A\\u0648])([\\u064F\\u0650\\u064E])",
           "replacement":"$1$2\u0651$3"
         },
         "noor_hamza_alef_without_harkat":{
