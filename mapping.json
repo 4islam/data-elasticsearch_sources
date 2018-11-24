@@ -505,7 +505,7 @@
         },
         "noor_wow_end_extra_sakoon_removal":{
           "type": "pattern_replace",
-          "pattern": "(\\u0648)\\u06E1(\\u0653?\\u0627\\u06DF) +(\\u0671.)(\\u0652|\\u0651)",
+          "pattern": "(\\u0648)\\u06E1(\\u0653?\\u0627\\u06DF) +(\\u0671\\u0644?.)(\\u0652|\\u0651)",
           "replacement":"$1$2 $3$4"
         },
         "noor_ya_end_sakoon":{
