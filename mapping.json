@@ -495,8 +495,8 @@
         },
         "noor_wow_end_sakoon":{
           "type": "pattern_replace",
-          "pattern": "([\\u064F\\u0650\\u064E]\\u0648)(\\u0653?\\u0627\\u06DF) +(.)",
-          "replacement":"$1\u06E1$2 $3"
+          "pattern": "([\\u064F\\u0650\\u064E]\\u0648)(\\u0653?)(\\u0627\\u06DF)? +(.)",
+          "replacement":"$1\u06E1$2$3 $4"
         },
         "noor_wow_end_extra_sakoon_removal":{
           "type": "pattern_replace",
@@ -513,12 +513,12 @@
           "pattern": "([\\u0649\\u06CC])\\u06E1 +([\\u0671|\\u0627]\\u0644?.)(\\u0652|\\u0651)",
           "replacement":"$1 $2$3"
         },
-        "noor_add_shadda_ya_wow":{
+        "noor_add_shadda-ya_wow":{
           "type": "pattern_replace",
           "pattern": "([\\u064B\\u064C\\u064D]\\u0627?)( *\\u06D6? *[\\u064A\\u0648])([\\u064F\\u0650\\u064E])",
           "replacement":"$1$2\u0651$3"
         },
-        "noor_add_shadda_ya_wow_with_nun_sakoon":{
+        "noor_add_shadda-ya_wow_with_nun_sakoon":{
           "type": "pattern_replace",
           "pattern": "(\\u0646\\u06E1\\u0627?)( *\\u06D6? *[\\u064A\\u0648])([\\u064F\\u0650\\u064E])",
           "replacement":"$1$2\u0651$3"
@@ -1039,7 +1039,7 @@
                           ,"noor_nun_meem_end_sakoon"
                           ,"noor_wow_end_sakoon","noor_wow_end_extra_sakoon_removal"
                           ,"noor_ya_end_sakoon","noor_wow_ya_end_extra_sakoon_removal"
-                          ,"noor_add_shadda_ya_wow","noor_add_shadda_ya_wow_with_nun_sakoon"
+                          ,"noor_add_shadda-ya_wow","noor_add_shadda-ya_wow_with_nun_sakoon"
                           ,"noor_hamza_alef_without_harkat"
                           ,"noor_madda_switch-small","noor_madda_switch-large"
                           ,"noor_madda_switch_position"],
