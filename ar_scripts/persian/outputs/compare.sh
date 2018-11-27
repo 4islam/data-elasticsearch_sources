@@ -10,3 +10,4 @@ dwdiff -s -d" " -w $' <span style="color:blue">' -x $'</span> ' -y $' <span  sty
 echo "</div></body></html>" >> $output
 #open -a "safari" $output
 open -a "Google Chrome" $output
+dwdiff -s -d" " ar_scripts/persian/original/tokenized_100.txt ar_scripts/persian/outputs/verses_100.txt 2> ../$output.stats
