@@ -490,8 +490,8 @@
         },
         "noor_fatha_alef_makura_with_hamza_above":{
           "type": "pattern_replace",
-          "pattern": "\\u064E\\u0670\\u0654\\u0652",
-          "replacement":"\u064E\u0621\u06E1"
+          "pattern": "\\u0670\\u0654\\u0652",
+          "replacement":"\u0621\u06E1"
         },
         "noor_nun_meem_end_sakoon":{
           "type": "pattern_replace",
