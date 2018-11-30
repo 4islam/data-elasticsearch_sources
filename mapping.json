@@ -557,6 +557,10 @@
           "type": "pattern_replace",
           "pattern": "([\\u06CC\\u0649])\\u0670([\\u06E4\\u0653])",
           "replacement":"\u0670$2$1"
+        },
+        "noor_remove_tatweel":{
+          "type": "pattern_replace",
+          "pattern": "\\u0640"
         }
       },
       "filter": {
@@ -1058,7 +1062,8 @@
                           ,"noor_add_shadda-ya_wow","noor_add_shadda-ya_wow_with_nun_sukun"
                           ,"noor_hamza_alef_without_harkat"
                           ,"noor_madda_switch-small","noor_madda_switch-large"
-                          ,"noor_madda_switch_position"],
+                          ,"noor_madda_switch_position"
+                          ,"noor_remove_tatweel"],
          "tokenizer":  "standard",
          "filter": [  "noor_Allah","normalize_alef","noor_hamza_fatha_alef"
                       ,"noor_fatha_alefsuperscript","noor_add_sukun_end"
