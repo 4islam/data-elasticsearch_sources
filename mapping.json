@@ -498,6 +498,16 @@
           "pattern": "\\u0654\\u064E\\u0627",
           "replacement":"\u0627\u0670"
         },
+        "noor_hamza_with_kasra":{
+          "type": "pattern_replace",
+          "pattern": "\\u0654\\u0650",
+          "replacement":"\u0626\u0650"
+        },
+        "noor_hamza_with_fatha":{
+          "type": "pattern_replace",
+          "pattern": "\\u0654\\u064E\\u0627",
+          "replacement":"\u0627\u0670"
+        },
         "noor_nun_meem_end_sukun":{
           "type": "pattern_replace",
           "pattern": "([\\u0646\\u0645])(\\u06E2?) +(.)",
@@ -560,7 +570,7 @@
         },
         "noor_remove_tatweel":{
           "type": "pattern_replace",
-          "pattern": "\\u0640"
+          "pattern": "\\u0640(?=[^\\u0654])"
         }
       },
       "filter": {
@@ -1056,6 +1066,7 @@
       "ar_original_noor": {
         "char_filter": [  "noor_alef_harkat_addition_Allah","noor_alef_harkat_addition"
                           ,"noor_alef_makura_with_hamza_above","noor_hamza_above_with_fatha_alef"
+                          ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
                           ,"noor_nun_meem_end_sukun","noor_nun_small_meem_ba_sukun"
                           ,"noor_wow_end_sukun","noor_wow_end_extra_sukun_removal"
                           ,"noor_ya_end_sukun","noor_wow_ya_end_extra_sukun_removal"
