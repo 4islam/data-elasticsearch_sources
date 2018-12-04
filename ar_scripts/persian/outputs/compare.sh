@@ -10,5 +10,5 @@ echo '<html>
 dwdiff -s -d" " -w $' <span style="color:blue">' -x $'</span> ' -y $' <span  style="color:red">' -z $'</span> ' ar_scripts/persian/original/tokenized_$1.txt ar_scripts/persian/outputs/verses_$1.txt >> $output
 echo "</div></body></html>" >> $output
 #open -a "safari" $output
-open -a "Google Chrome" $output
+open -a "Google Chrome" $output; sleep 1
 dwdiff -s -d" " ar_scripts/persian/original/tokenized_$1.txt ar_scripts/persian/outputs/verses_$1.txt 2> $outputstats
