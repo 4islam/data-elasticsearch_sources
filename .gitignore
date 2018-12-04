@@ -2,4 +2,3 @@
 *.DS_Store
 **/save-commands.json
 **/.on-save.json
-ar_scripts/persian/outputs/results/*
