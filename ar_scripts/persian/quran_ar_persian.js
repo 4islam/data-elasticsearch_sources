@@ -68,8 +68,8 @@ len=100
    key=parseInt(myArgs[0])
    len=parseInt(myArgs[1])
  }
- console.log(key,len);
-// if (myArgs.length) {
+
+ // if (myArgs.length) {
 //
 //     var readline = require('readline')
 //
