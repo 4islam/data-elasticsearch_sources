@@ -1,0 +1,2 @@
+old: 1198 words  -1 0% common  1199 100% deleted  0 0% changed
+new: 0 words
