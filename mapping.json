@@ -680,7 +680,7 @@
         },
         "noor_Allah":{
           "type": "pattern_replace",
-          "pattern": "(\\u0644[\\u0650]?)\\u0644\\u0651\\u064E\\u0647",
+          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E\\u0647",
           "replacement":"$1\u0644\u0651\u0670\u0647"
         },
         "noor_hamza_fatha_alef":{
