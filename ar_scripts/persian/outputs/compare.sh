@@ -1,8 +1,8 @@
 #!/bin/sh
 export LC_ALL=en_US.UTF-8
 #output=ar_scripts/persian/outputs/results/$(date +%F"_"%H"-"%M).html
-output=ar_scripts/persian/outputs/results/$(date +%F"_"%H).html
-outputstats=ar_scripts/persian/outputs/$(date +%F"_"%H).stats.txt
+output=ar_scripts/persian/outputs/results/$(date +%F"_"%H)_$1.html
+outputstats=ar_scripts/persian/outputs/$(date +%F"_"%H)_$1.stats.txt
 echo '<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>div{white-space: pre;} *{font-family: 'noorehuda'; font-size: 38px; line-height:1.7em; text-align: justify;}</style></head>
 <body dir="rtl"><div>' > $output

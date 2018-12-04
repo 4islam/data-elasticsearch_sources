@@ -4,7 +4,8 @@ var client = new elasticsearch.Client({
   log: 'error'
 });
 
-function source(i) {
+function source(i,len) {
+  // console.log(i, len);
  client.search({
    index: 'hq',
    body: {
@@ -18,7 +19,7 @@ function source(i) {
      var hits = resp.hits.hits
      var src = hits[0]._source
 
-     analyze(src.Arabic.substring(0),i,src.a,src.s)
+     analyze(src.Arabic.substring(0),i,len)
      //analyze(src.English,i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
@@ -28,22 +29,13 @@ function source(i) {
  });
 }
 
-function analyze(src,i) {
+function analyze(src,i,len) {
+
  client.indices.analyze({
    index: 'hq',
    //analyzer : "ar_original_normalized",
    //analyzer : "ar_normalized_phonetic",
    analyzer : "ar_original_noor",
-   //analyzer : "ayah_normalized_ar",
-   //analyzer : "ar_ngram_normalized",
-   //analyzer:"query_phonetic",
-   //analyzer:"ar_normalized_phonetic",
-   //analyzer:"en_normalized",
-   //analyzer:"en_normalized_simple",
-   //analyzer:"ar_stems_normalized_phonetic",
-   //analyzer:"ar_stems_normalized",
-   //analyzer:"ar_root",
-   //analyzer:"ur_normalized",
    //text:src
    text: src
    //text: "ديارھم"
@@ -54,67 +46,49 @@ function analyze(src,i) {
      var hits = resp.tokens; var str = ""
      for (var t in hits) {
         var T = hits[t]
-        // var TStr = '{"token":"'+T.token
-        //         +'","start_offset":'+T.start_offset
-        //         +',"end_offset":'+T.end_offset+'}';
+
         var TStr = ' ' + T.token.trim()
         str += t!=0?" " + TStr : TStr
-        //str += t!=0?", " + TStr : TStr // Qamar
+
      }
-     //console.log(src);
 
-
-     // console.log("v")
-     // console.log(hits[100])
-     // console.log("^")
-     // //console.log(hits)
-     // console.log(hits.length)
-
-     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
-     //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
-
-     //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,']')  //Qamar
-
-     //console.log(src)
-     //console.log('-----');
      console.log(str)
-     //if (i+1<6348) {analyze(dataArray[i+1],i+1)}
-
      //if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
-     //if(i<290){source(i+1)}
-     if(i<100){source(i+1)}
-     // if(i<5){source(i+33)}
+     if(i<len){source(i+1,len)}
 
  }, function (err) {
      console.trace(err.message);
  });
 }
-//console.log("[")
-//source(290);      //recurrance function call
-//source(592);      //recurrance function call
-//source(6322);      //recurrance function call
 
 var myArgs = process.argv.slice(2);
-if (myArgs.length) {
-
-    var readline = require('readline')
-
-    var rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-      terminal: false
-    })
-
-    var n = 0; dataArray =[]
-    rl.on('line', function (line) {
-      dataArray.push(line)
-      if (n==0){
-        analyze(line,n)
-      }
-      n++
-    })
-
-} else {
-  source(1)
+key=1
+len=100
+ if (myArgs.length > 1) {
+   key=parseInt(myArgs[0])
+   len=parseInt(myArgs[1])
+ }
+ console.log(key,len);
+// if (myArgs.length) {
+//
+//     var readline = require('readline')
+//
+//     var rl = readline.createInterface({
+//       input: process.stdin,
+//       output: process.stdout,
+//       terminal: false
+//     })
+//
+//     var n = 0; dataArray =[]
+//     rl.on('line', function (line) {
+//       dataArray.push(line)
+//       if (n==0){
+//         analyze(line,n)
+//       }
+//       n++
+//     })
+//
+// } else {
+  source(key,key+len-1)
   //source(2844);
-}
+// }
