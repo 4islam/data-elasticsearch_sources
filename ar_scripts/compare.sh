@@ -4,10 +4,25 @@ export LC_ALL=en_US.UTF-8
 output=./persian/outputs/comparison/compare_$1.html
 outputstats=./persian/outputs/comparison/stats/compare_$1.stats.txt
 echo '<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>div{white-space: pre;} *{font-family: 'noorehuda'; font-size: 38px; line-height:1.7em; text-align: justify;}</style></head>
-<body dir="rtl"><div>' > $output
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+  div{white-space: pre;}
+  #Q{font-family: 'noorehuda'; font-size: 38px; line-height:1.7em; text-align: justify;}
+  #t{color:blue}
+  #s{color:red}
+</style>
+<script type="text/javascript">
+    function toggle_visibility(id) {
+      if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
+      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      document.head.appendChild(css)
+    }
+</script>
+</head>
+<body>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div id=Q dir="rtl">' > $output
 #locale >> $output
-dwdiff -s -d" " -w $' <span style="color:blue">' -x $'</span> ' -y $' <span  style="color:red">' -z $'</span> ' ./persian/original/tokenized_$1.txt ./persian/outputs/verses_$1.txt >> $output
+dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./persian/original/tokenized_$1.txt ./persian/outputs/verses_$1.txt >> $output
 echo "</div></body></html>" >> $output
 
 if [ $2 = "chrome" ]; then
