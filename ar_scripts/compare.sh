@@ -11,6 +11,7 @@ echo '<html>
   #s{color:red}
 </style>
 <script type="text/javascript">
+  var display="none";
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
       else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
