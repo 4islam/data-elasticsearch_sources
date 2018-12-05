@@ -9,8 +9,11 @@ echo '<html>
 #locale >> $output
 dwdiff -s -d" " -w $' <span style="color:blue">' -x $'</span> ' -y $' <span  style="color:red">' -z $'</span> ' ./persian/original/tokenized_$1.txt ./persian/outputs/verses_$1.txt >> $output
 echo "</div></body></html>" >> $output
-if [ -z "$2" ]; then
-  #open -a "safari" $output
+
+if [ $2 = "chrome" ]; then
   open -a "Google Chrome" $output
+fi
+if [ $2 = "safari" ]; then
+  open -a "safari" $output
 fi
 dwdiff -s -d" " ./persian/original/tokenized_$1.txt ./persian/outputs/verses_$1.txt 2> $outputstats
