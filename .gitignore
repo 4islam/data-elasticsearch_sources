@@ -2,4 +2,4 @@
 *.DS_Store
 **/save-commands.json
 **/.on-save.json
-.gitignore
+./ar_scripts/pipeline.sh
