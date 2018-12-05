@@ -15,5 +15,5 @@ for i in `seq 1 $b`; do
   cat ./persian/original/tokenized.txt | head -n$(($i*$l+$s-1)) | tail -n$(($l)) \
         > ./persian/original/tokenized_$(($i*$l+$s-1)).txt
 
-  ./persian/outputs/compare.sh $(($i*$l+$s-1)) true
+  ./persian/outputs/compare.sh $(($i*$l+$s-1)) $4
 done
