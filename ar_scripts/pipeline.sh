@@ -2,7 +2,7 @@
 s=1;    if [ -n "$1" ]; then s=$1; fi
 l=100;  if [ -n "$2" ]; then l=$2; fi
 b=1;    if [ -n "$3" ]; then b=$3; fi
-o=chrome; if [ -n "$4" ]; then o=$4; fi
+o=none; if [ -n "$4" ]; then o=$4; fi
 
 curl --output /dev/null -XDELETE http://localhost:9200/hq; sleep 3;
 curl -XPUT localhost:9200/hq/ --data-binary @../mapping.json;
