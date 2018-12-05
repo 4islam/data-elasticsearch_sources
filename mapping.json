@@ -733,6 +733,16 @@
           "pattern": "\\u064E\\u0651\\u0649\\u0670",
           "replacement":"\u0651\u0670\u0649"
         },
+        "noor_alef_maskura_superscript_middle":{
+          "type": "pattern_replace",
+          "pattern": "\\u0670\\u0649(.+)",
+          "replacement":"\u0670\u066E$1"
+        },
+        "noor_dotless_beh-farsi_yeh":{
+          "type": "pattern_replace",
+          "pattern": "\\u066E(?=[\\u06E1\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0670|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u0627\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB])",
+          "replacement":"\u06CC"
+        },
         "noor_hamza_fathah_alef_removed":{
           "type": "pattern_replace",
           "pattern": "\\u0621\\u064E\\u0627",
@@ -1082,6 +1092,8 @@
                       ,"noor_damma_invereted","noor_kasra_alefsubscript"
                       ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
                       ,"noor_alef_maskura_shadda_superscript_alef"
+                      ,"noor_alef_maskura_superscript_middle"
+                      ,"noor_dotless_beh-farsi_yeh"
                       ,"noor_alef_maskura"
                       ,"noor_heh_goal","noor_kaaf_keheh","noor_teh_marbutah_goal"
                       ,"noor_rounded_zero"
