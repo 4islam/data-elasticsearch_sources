@@ -533,7 +533,7 @@
           "pattern": "([\\u064F\\u0650\\u064E]\\u0649)(\\u0653?) +(.)",
           "replacement":"$1\u06E1$2 $3"
         },
-        "noor_wow_ya_end_extra_sukun_removal":{
+        "noor_ya_end_extra_sukun_removal":{
           "type": "pattern_replace",
           "pattern": "([\\u0649\\u06CC])\\u06E1 +([\\u0671|\\u0627]\\u0644?.)(\\u0652|\\u0651)",
           "replacement":"$1 $2$3"
@@ -1079,7 +1079,7 @@
                           ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
                           ,"noor_nun_meem_end_sukun","noor_nun_small_meem_ba_sukun"
                           ,"noor_wow_end_sukun","noor_wow_end_extra_sukun_removal"
-                          ,"noor_ya_end_sukun","noor_wow_ya_end_extra_sukun_removal"
+                          ,"noor_ya_end_sukun","noor_ya_end_extra_sukun_removal"
                           ,"noor_add_shadda-ya_wow","noor_add_shadda-ya_wow_with_nun_sukun"
                           ,"noor_hamza_alef_without_harkat"
                           ,"noor_madda_switch-small","noor_madda_switch-large"
