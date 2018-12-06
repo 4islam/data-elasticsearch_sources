@@ -1,7 +1,7 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
   div{white-space: pre;}
-  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify;}
+  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify; color: grey }
   #t{color:blue}
   #s{color:red}
 </style>
@@ -10,13 +10,13 @@
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
       else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
       else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
-      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: black }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Black)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  لَئِنۡۢ   <span id="t">بَسَطۡتَّ</span>  <span id="s">بَسَطتَ</span>   اِلَیَّ  یَدَکَ  لِتَقۡتُلَنِیۡ  مَاۤ   <span id="t">اَنَا</span>  <span id="s">اَنَا۠</span>   بِبَاسِطٍ  یَّدِیَ  اِلَیۡکَ  لِاَقۡتُلَکَ  اِنِّیۡۤ  اَخَافُ  اللّٰہَ  رَبَّ  الۡعٰلَمِیۡنَ
  اِنِّیۡۤ  اُرِیۡدُ  اَنۡ   <span id="t">تَبُوۡٓاَ</span>  <span id="s">تَبُوۡۤاَ</span>   بِاِثۡمِیۡ  وَ  <span id="t"> </span> اِثۡمِکَ  فَتَکُوۡنَ  مِنۡ  اَصۡحٰبِ  النَّارِ  وَ  <span id="t"> </span> ذٰلِکَ  جَزٰٓؤُا  الظّٰلِمِیۡنَ

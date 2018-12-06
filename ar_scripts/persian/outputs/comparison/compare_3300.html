@@ -1,7 +1,7 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
   div{white-space: pre;}
-  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify;}
+  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify; color: grey }
   #t{color:blue}
   #s{color:red}
 </style>
@@ -10,13 +10,13 @@
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
       else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
       else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
-      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: black }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Black)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  وَ  <span id="t"> </span> حُشِرَ  لِسُلَیۡمٰنَ  جُنُوۡدُہٗ  مِنَ  الۡجِنِّ  وَ  <span id="t"> </span> الۡاِنۡسِ  وَ  <span id="t"> </span> الطَّیۡرِ  فَہُمۡ  یُوۡزَعُوۡنَ
  حَتّٰۤی  اِذَاۤ  اَتَوۡا  عَلٰی   <span id="t">وَادِ</span>  <span id="s">وَ ادِ</span>   النَّمۡلِ  قَالَتۡ  نَمۡلَۃٌ  یّٰۤاَیُّہَا  النَّمۡلُ  ادۡخُلُوۡا  مَسٰکِنَکُمۡ  لَا  یَحۡطِمَنَّکُمۡ  سُلَیۡمٰنُ  وَ  <span id="t"> </span> جُنُوۡدُہٗ  وَ  <span id="t"> </span> ہُمۡ  لَا  یَشۡعُرُوۡنَ

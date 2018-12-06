@@ -1,7 +1,7 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
   div{white-space: pre;}
-  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify;}
+  #Q{font-family: noorehuda; font-size: 38px; line-height:1.7em; text-align: justify; color: grey }
   #t{color:blue}
   #s{color:red}
 </style>
@@ -10,13 +10,13 @@
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
       else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
       else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
-      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: black }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Black)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  ہُوَ  الَّذِیۡ  یُصَوِّرُکُمۡ  فِی  الۡاَرۡحَامِ  کَیۡفَ  یَشَآءُ  لَاۤ  اِلٰہَ  اِلَّا  ہُوَ  الۡعَزِیۡزُ  الۡحَکِیۡمُ
  ہُوَ  الَّذِیۡۤ  اَنۡزَلَ  عَلَیۡکَ  الۡکِتٰبَ  مِنۡہُ  اٰیٰتٌ  مُّحۡکَمٰتٌ  ہُنَّ  اُمُّ  الۡکِتٰبِ  وَ  <span id="t"> </span> اُخَرُ  مُتَشٰبِہٰتٌ  فَاَمَّا  الَّذِیۡنَ  فِیۡ  قُلُوۡبِہِمۡ  زَیۡغٌ  فَیَتَّبِعُوۡنَ  مَا   <span id="t">تَشَابَہَ</span>  <span id="s">تَشٰبَہَ</span>   مِنۡہُ  ابۡتِغَآءَ  الۡفِتۡنَۃِ  وَ  <span id="t"> </span> ابۡتِغَآءَ  تَاۡوِیۡلِہٖ  وَ  <span id="t"> </span> مَا  یَعۡلَمُ  تَاۡوِیۡلَہٗۤ  اِلَّا  اللّٰہُ  وَ  <span id="t"> </span> الرّٰسِخُوۡنَ  فِی  الۡعِلۡمِ  یَقُوۡلُوۡنَ  اٰمَنَّا  بِہٖ  کُلٌّ  مِّنۡ  عِنۡدِ  رَبِّنَا  وَ  <span id="t"> </span> مَا  یَذَّکَّرُ  اِلَّاۤ  اُولُوا   <span id="t">الۡاَلۡبَابِ</span>  <span id="s">الۡاَلۡبٰبِ</span> 

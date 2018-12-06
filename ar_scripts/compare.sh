@@ -6,7 +6,7 @@ outputstats=./ar_scripts/persian/outputs/comparison/stats/compare_$1.stats.txt
 echo '<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
   div{white-space: pre;}
-  #Q{font-family: 'noorehuda'; font-size: 38px; line-height:1.7em; text-align: justify;}
+  #Q{font-family: 'noorehuda'; font-size: 38px; line-height:1.7em; text-align: justify; color: grey }
   #t{color:blue}
   #s{color:red}
 </style>
@@ -15,13 +15,13 @@ echo '<html>
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
       else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
       else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
-      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: black }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Black)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">' > $output
 #locale >> $output
 dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/tokenized_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output
