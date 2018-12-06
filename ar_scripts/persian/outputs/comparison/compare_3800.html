@@ -8,13 +8,15 @@
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  اَفَمَنۡ  زُیِّنَ  لَہٗ  سُوۡٓءُ  عَمَلِہٖ  فَرَاٰہُ  حَسَنًا  فَاِنَّ  اللّٰہَ  یُضِلُّ  مَنۡ  یَّشَآءُ  وَ  <span id="t"> </span> یَہۡدِیۡ  مَنۡ  یَّشَآءُ  فَلَا  تَذۡہَبۡ  نَفۡسُکَ  عَلَیۡہِمۡ  حَسَرٰتٍ  اِنَّ  اللّٰہَ  عَلِیۡمٌۢ  بِمَا  یَصۡنَعُوۡنَ
  وَ  <span id="t"> </span> اللّٰہُ  الَّذِیۡۤ  اَرۡسَلَ  الرِّیٰحَ  فَتُثِیۡرُ  سَحَابًا  فَسُقۡنٰہُ  اِلٰی  بَلَدٍ  مَّیِّتٍ  فَاَحۡیَیۡنَا  بِہِ  الۡاَرۡضَ  بَعۡدَ  مَوۡتِہَا  کَذٰلِکَ  النُّشُوۡرُ

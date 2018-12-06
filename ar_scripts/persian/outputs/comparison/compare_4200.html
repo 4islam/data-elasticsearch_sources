@@ -8,13 +8,15 @@
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  خَلَقَکُمۡ  مِّنۡ  نَّفۡسٍ   <span id="t">وَّاحِدَۃٍ</span>  <span id="s">وّٰحِدَۃٍ</span>   ثُمَّ  جَعَلَ  مِنۡہَا  زَوۡجَہَا  وَ  <span id="t"> </span> اَنۡزَلَ  لَکُمۡ  مِّنَ   <span id="t">الۡاَنۡعَامِ</span>  <span id="s">الۡاَنۡعٰمِ</span>   ثَمٰنِیَۃَ   <span id="t">اَزۡوَاجٍ</span>  <span id="s">اَزۡوٰجٍ</span>   یَخۡلُقُکُمۡ  فِیۡ  بُطُوۡنِ  اُمَّہٰتِکُمۡ  خَلۡقًا  مِّنۡۢ  بَعۡدِ  خَلۡقٍ  فِیۡ  ظُلُمٰتٍ  ثَلٰثٍ  ذٰلِکُمُ  اللّٰہُ  رَبُّکُمۡ  لَہُ  الۡمُلۡکُ  لَاۤ  اِلٰہَ  اِلَّا  ہُوَ  فَاَنّٰی  تُصۡرَفُوۡنَ
  اِنۡ  تَکۡفُرُوۡا  فَاِنَّ  اللّٰہَ  غَنِیٌّ  عَنۡکُمۡ  وَ  <span id="t"> </span> لَا  یَرۡضٰی  لِعِبَادِہِ  الۡکُفۡرَ  وَ  <span id="t"> </span> اِنۡ  تَشۡکُرُوۡا  یَرۡضَہُ  لَکُمۡ  وَ  <span id="t"> </span> لَا  تَزِرُ   <span id="t">وَازِرَۃٌ</span>  <span id="s">وَ ازِرَۃٌ</span>   وِّزۡرَ  اُخۡرٰی  ثُمَّ  اِلٰی  رَبِّکُمۡ  مَّرۡجِعُکُمۡ  فَیُنَبِّئُکُمۡ  بِمَا  کُنۡتُمۡ  تَعۡمَلُوۡنَ  اِنَّہٗ  عَلِیۡمٌۢ  بِذَاتِ  الصُّدُوۡرِ

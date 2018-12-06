@@ -8,13 +8,15 @@
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  یٰۤاَیُّہَا  الَّذِیۡنَ  اٰمَنُوۡا  تُوۡبُوۡۤا  اِلَی  اللّٰہِ  تَوۡبَۃً  نَّصُوۡحًا  عَسٰی  رَبُّکُمۡ  اَنۡ  یُّکَفِّرَ  عَنۡکُمۡ  سَیِّاٰتِکُمۡ  وَ  <span id="t"> </span> یُدۡخِلَکُمۡ  جَنّٰتٍ  تَجۡرِیۡ  مِنۡ  تَحۡتِہَا  الۡاَنۡہٰرُ  یَوۡمَ  لَا  یُخۡزِی  اللّٰہُ  النَّبِیَّ  وَ  <span id="t"> </span> الَّذِیۡنَ  اٰمَنُوۡا  مَعَہٗ  نُوۡرُہُمۡ  یَسۡعٰی  بَیۡنَ  اَیۡدِیۡہِمۡ  وَ  <span id="t"> بِاَیۡمَانِہِمۡ</span>  <span id="s">بِاَیۡمٰنِہِمۡ</span>   یَقُوۡلُوۡنَ  رَبَّنَاۤ  اَتۡمِمۡ  لَنَا  نُوۡرَنَا  وَ  <span id="t"> </span> اغۡفِرۡ   <span id="t">لَنَا</span>  <span id="s">لَنَاۤ</span>   اِنَّکَ  عَلٰی  کُلِّ  شَیۡءٍ  قَدِیۡرٌ
  یٰۤاَیُّہَا  النَّبِیُّ   <span id="t">جَاہِدِ</span>  <span id="s">جٰہِدِ</span>   الۡکُفَّارَ  وَ  <span id="t"> </span> الۡمُنٰفِقِیۡنَ  وَ  <span id="t"> </span> اغۡلُظۡ  عَلَیۡہِمۡ  وَ  <span id="t"> </span> مَاۡوٰٮہُمۡ  جَہَنَّمُ  وَ  <span id="t"> </span> بِئۡسَ  الۡمَصِیۡرُ

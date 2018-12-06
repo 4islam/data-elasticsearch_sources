@@ -13,13 +13,15 @@ echo '<html>
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">' > $output
 #locale >> $output
 dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/tokenized_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output

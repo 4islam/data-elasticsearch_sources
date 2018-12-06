@@ -8,13 +8,15 @@
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  وَ  <span id="t"> </span> کَذَّبُوۡا  وَ  <span id="t"> </span> اتَّبَعُوۡۤا   <span id="t">اَہۡوَآءَہُمۡ</span>  <span id="s">اَہۡوَ آءَہُمۡ</span>   وَ  <span id="t"> </span> کُلُّ  اَمۡرٍ  مُّسۡتَقِرٌّ
  وَ  <span id="t"> </span> لَقَدۡ  جَآءَہُمۡ  مِّنَ  الۡاَنۡۢبَآءِ  مَا  فِیۡہِ  مُزۡدَجَرٌ

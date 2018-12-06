@@ -8,13 +8,15 @@
 <script type="text/javascript">
     function toggle_visibility(id) {
       if (id==2) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#t { display: none }"}
-      else {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==1) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#s { display: none }"}
+      else if (id==3) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: white }"}
+      else if (id==4) {var css = document.createElement("style");css.type = "text/css";css.innerHTML = "#Q { color: grey }"}
       document.head.appendChild(css)
     }
 </script>
 </head>
 <body>
-<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> </div>
+<div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Grey)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">
  وَ  <span id="t"> </span> لَوۡ  جَعَلۡنٰہُ  قُرۡاٰنًا  اَعۡجَمِیًّا  لَّقَالُوۡا   <span id="t">لَوۡ  لَا</span>  <span id="s">لَوۡلَا</span>   فُصِّلَتۡ   <span id="t">اٰیٰتُہٗ</span>  <span id="s">اٰیٰتُہٗۤ</span>    <span id="t">ءَؔاَعۡجَمِیٌّ</span>  <span id="s">اٰ۬عۡجَمِیٌّ</span>    <span id="t">وَّ  عَرَبِیٌّ</span>  <span id="s">وَّعَرَبِیٌّ</span>   قُلۡ  ہُوَ  لِلَّذِیۡنَ  اٰمَنُوۡا  ہُدًی   <span id="t">وَّ  شِفَآءٌ  </span> وَ  <span id="s">شِفَآءٌ</span>   <span id="t">الَّذِیۡنَ</span>  <span id="s"> وَّالَّذِیۡنَ</span>   لَا  یُؤۡمِنُوۡنَ  فِیۡۤ  اٰذَانِہِمۡ   <span id="t">وَقۡرٌ</span>  <span id="s">وَ</span>   <span id="s">قۡرٌ</span>   <span id="t">وَّ</span>   <span id="t"> ہُوَ</span>  <span id="s">وَّہُوَ</span>   عَلَیۡہِمۡ  عَمًی  اُولٰٓئِکَ  یُنَادَوۡنَ  مِنۡ  مَّکَانٍۭ  بَعِیۡدٍ
  وَ  <span id="t"> </span> لَقَدۡ  اٰتَیۡنَا  مُوۡسَی  الۡکِتٰبَ  فَاخۡتُلِفَ  فِیۡہِ  وَ  <span id="t"> لَوۡ  لَا</span>  <span id="s">لَوۡلَا</span>   کَلِمَۃٌ  سَبَقَتۡ  مِنۡ  رَّبِّکَ  لَقُضِیَ  بَیۡنَہُمۡ  وَ  <span id="t"> </span> اِنَّہُمۡ  لَفِیۡ  شَکٍّ  مِّنۡہُ  مُرِیۡبٍ
