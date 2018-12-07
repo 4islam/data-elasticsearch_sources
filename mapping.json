@@ -728,6 +728,11 @@
           "pattern": "\\u064E\\u0649\\u0670",
           "replacement":"\u0670\u0649"
         },
+        "noor_wow_superscript_alef_with_ta_marbuta":{
+          "type": "pattern_replace",
+          "pattern": "\\u064E\\u0648\\u0670\\u0629",
+          "replacement":"\u0670\u0648\u0629"
+        },
         "noor_alef_maskura_shadda_superscript_alef":{
           "type": "pattern_replace",
           "pattern": "\\u064E\\u0651\\u0649\\u0670",
@@ -1095,6 +1100,7 @@
                       ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
                       ,"noor_alef_maskura_shadda_superscript_alef"
                       ,"noor_alef_maskura_superscript_middle"
+                      ,"noor_wow_superscript_alef_with_ta_marbuta"
                       ,"noor_dotless_beh-farsi_yeh"
                       ,"noor_alef_maskura"
                       ,"noor_heh_goal","noor_kaaf_keheh","noor_teh_marbutah_goal"
