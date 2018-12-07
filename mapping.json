@@ -773,6 +773,11 @@
           "pattern": "\\u0629",
           "replacement":"\u06C3"
         },
+        "noor_rounded_zero_with_ya":{
+          "type": "pattern_replace",
+          "pattern": "\\u06CC\\u06DF",
+          "replacement":"\u06CC\u06E0"
+        },
         "noor_rounded_zero":{
           "type": "pattern_replace",
           "pattern": "\\u06DF"
@@ -1103,8 +1108,9 @@
                       ,"noor_wow_superscript_alef_with_ta_marbuta"
                       ,"noor_dotless_beh-farsi_yeh"
                       ,"noor_alef_maskura"
-                      ,"noor_heh_goal","noor_kaaf_keheh","noor_teh_marbutah_goal"
-                      ,"noor_rounded_zero"
+                      ,"noor_heh_goal","noor_kaaf_keheh"
+                      ,"noor_teh_marbutah_goal"
+                      ,"noor_rounded_zero_with_ya","noor_rounded_zero"
                       ,"noor_break_waw"
                       ]
       },
