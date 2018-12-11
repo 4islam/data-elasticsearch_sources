@@ -18,3 +18,9 @@ for i in `seq 1 $b`; do
 
   ./ar_scripts/compare.sh $(($i*$l+$s-1)) $o
 done
+
+curl -XDELETE http://localhost:9200/hq
+curl -XPUT localhost:9200/hq/ --data-binary @mapping.json
+curl -s -XPOST localhost:9200/hq/verse/_bulk --data-binary @hQ.json
+clear; sleep 5
+curl -s -XGET localhost:9200/hq/_stats/docs
