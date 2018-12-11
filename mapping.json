@@ -573,6 +573,11 @@
           "pattern": "\\u064D(\\u0627?\\u0649?)( *\\u06D9? *[\\u0671\\u0627]\\u0644?[^\\u064A\\u0648][\\u06E1\\u0652\\u0651])",
           "replacement":"\u0650$1$2"
         },
+        "noor_replace_small_low_seen":{
+          "type": "pattern_replace",
+          "pattern": "\\u06E3",
+          "replacement":"\u06DC"
+        },
         "noor_replace_sukun":{
           "type": "pattern_replace",
           "pattern": "\\u0652",
@@ -1129,7 +1134,7 @@
                           ,"noor_add_shadda-ya_wow","noor_add_shadda-ya_wow_with_nun_sukun"
                           ,"noor_add_shadda-ya_wow_with_nun_sukun"
                           ,"noor_add_small_high_nun_fatha","noor_add_small_high_nun_dhamma","noor_add_small_high_nun_kasra"
-                          ,"noor_replace_sukun"
+                          ,"noor_replace_small_low_seen","noor_replace_sukun"
                           ,"noor_hamza_alef_without_harkat","noor_hamza_alef_without_harkat_exception"
                           ,"noor_madda_switch-small","noor_madda_switch-large"
                           ,"noor_madda_switch_position"
