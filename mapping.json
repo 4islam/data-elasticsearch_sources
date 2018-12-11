@@ -792,6 +792,11 @@
           "pattern": "(\\u0648\\u064E[\\u0651]?)",
           "replacement":"$1 "
         },
+        "noor_add_sukun_small_high_nun":{
+          "type": "pattern_replace",
+          "pattern": "\\u06E8(?=[^\\u06E1\\u0652\\u0651])",
+          "replacement":"\u0640\u0640\u06E8\u06E1"
+        },
         "Phonetic_a":{
         	"type": "pattern_replace",
         	"pattern": "\\u0621|\\u0627|\\u0639",
@@ -1117,6 +1122,7 @@
                       ,"noor_teh_marbutah_goal"
                       ,"noor_rounded_zero_with_ya","noor_rounded_zero"
                       ,"noor_break_waw"
+                      ,"noor_add_sukun_small_high_nun"
                       ]
       },
        "ar_surah_stems": {
