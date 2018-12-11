@@ -558,6 +558,21 @@
           "pattern": "(\\u0646\\u06E1\\u0627?\\u0649?)( *\\u06D6? *[\\u064A\\u0648])([\\u064F\\u0650\\u064E])",
           "replacement":"$1$2\u0651$3"
         },
+        "noor_add_small_high_nun_fatha":{
+          "type": "pattern_replace",
+          "pattern": "\\u064B(\\u0627?\\u0649?)( *\\u06D9? *[\\u0671\\u0627]\\u0644?[^\\u064A\\u0648][\\u06E1\\u0652\\u0651])",
+          "replacement":"\u064E\u06E8$1$2"
+        },
+        "noor_add_small_high_nun_dhamma":{
+          "type": "pattern_replace",
+          "pattern": "\\u064C(\\u0627?\\u0649?)( *\\u06D9? *[\\u0671\\u0627]\\u0644?[^\\u064A\\u0648][\\u06E1\\u0652\\u0651])",
+          "replacement":"\u064F\u06E8$1$2"
+        },
+        "noor_add_small_high_nun_kasra":{
+          "type": "pattern_replace",
+          "pattern": "\\u064D(\\u0627?\\u0649?)( *\\u06D9? *[\\u0671\\u0627]\\u0644?[^\\u064A\\u0648][\\u06E1\\u0652\\u0651])",
+          "replacement":"\u0650$1$2"
+        },
         "noor_replace_sukun":{
           "type": "pattern_replace",
           "pattern": "\\u0652",
@@ -792,10 +807,20 @@
           "pattern": "(\\u0648\\u064E[\\u0651]?)",
           "replacement":"$1 "
         },
-        "noor_add_sukun_small_high_nun":{
+        "noor_restruct_high_nun_nunji":{
           "type": "pattern_replace",
-          "pattern": "\\u06E8(?=[^\\u06E1\\u0652\\u0651])",
-          "replacement":"\u0640\u0640\u06E8\u06E1"
+          "pattern": "\\u0646\\u064F\\u06E8(?=\\u062C\\u0650)",
+          "replacement":"\u0646\u064F\u0640\u0640\u06E8\u06E1"
+        },
+        "noor_restruct_high_nun_lam_alef":{
+          "type": "pattern_replace",
+          "pattern": "\\u0644\\u064E\\u06E8\\u0627",
+          "replacement":"\u0644\u064E\u0627\u06E8"
+        },
+        "noor_restruct_high_nun_wow_alef":{
+          "type": "pattern_replace",
+          "pattern": "\\u0648\\u064E \\u06E8\\u0627",
+          "replacement":"\u0648\u064E\u06E8\u0627"
         },
         "Phonetic_a":{
         	"type": "pattern_replace",
@@ -1102,6 +1127,8 @@
                           ,"noor_wow_end_sukun","noor_wow_end_extra_sukun_removal"
                           ,"noor_ya_end_sukun","noor_ya_end_extra_sukun_removal"
                           ,"noor_add_shadda-ya_wow","noor_add_shadda-ya_wow_with_nun_sukun"
+                          ,"noor_add_shadda-ya_wow_with_nun_sukun"
+                          ,"noor_add_small_high_nun_fatha","noor_add_small_high_nun_dhamma","noor_add_small_high_nun_kasra"
                           ,"noor_replace_sukun"
                           ,"noor_hamza_alef_without_harkat","noor_hamza_alef_without_harkat_exception"
                           ,"noor_madda_switch-small","noor_madda_switch-large"
@@ -1122,7 +1149,7 @@
                       ,"noor_teh_marbutah_goal"
                       ,"noor_rounded_zero_with_ya","noor_rounded_zero"
                       ,"noor_break_waw"
-                      ,"noor_add_sukun_small_high_nun"
+                      ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
                       ]
       },
        "ar_surah_stems": {
