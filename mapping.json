@@ -720,7 +720,7 @@
         },
         "noor_Allah":{
           "type": "pattern_replace",
-          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E\\u0647",
+          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E\\u0647(?=[^\\u06E1]+)",
           "replacement":"$1\u0644\u0651\u0670\u0647"
         },
         "noor_hamza_fatha_alef":{
@@ -1129,7 +1129,9 @@
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
         },
       "ar_original_noor": {
-        "char_filter": [  "noor_alef_harkat_addition_Allah","noor_alef_harkat_addition"
+        "char_filter": [
+                          "noor_alef_harkat_addition_Allah",
+                          "noor_alef_harkat_addition"
                           ,"noor_alef_maskura_with_hamza_above","noor_hamza_above_with_fatha_alef"
                           ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
                           ,"noor_add_sukun_end","noor_add_sukun_mid"
