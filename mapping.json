@@ -657,11 +657,6 @@
           "pattern": "\\u064E\\u0649\\u0670",
           "replacement":"\u0670\u0649"
         },
-        "noor_wow_superscript_alef_with_ta_marbuta":{
-          "type": "pattern_replace",
-          "pattern": "\\u064E\\u0648\\u0670\\u0629",
-          "replacement":"\u0670\u0648\u0629"
-        },
         "noor_alef_maskura_shadda_superscript_alef":{
           "type": "pattern_replace",
           "pattern": "\\u064E\\u0651\\u0649\\u0670",
@@ -671,6 +666,11 @@
           "type": "pattern_replace",
           "pattern": "\\u0670\\u0649([^ ]+)",
           "replacement":"\u0670\u066E$1"
+        },
+        "noor_wow_superscript_alef_with_ta_marbuta":{
+          "type": "pattern_replace",
+          "pattern": "\\u064E\\u0648\\u0670\\u0629",
+          "replacement":"\u0670\u0648\u0629"
         },
         "noor_dotless_beh-farsi_yeh":{
           "type": "pattern_replace",
@@ -730,6 +730,11 @@
           "type": "pattern_replace",
           "pattern": "\\u0648\\u064E \\u06E8\\u0627",
           "replacement":"\u0648\u064E\u06E8\u0627"
+        },
+        "remove_extra_space":{
+          "type": "pattern_replace",
+          "pattern": " +",
+          "replacement":" "
         }
       },
       "filter": {
@@ -837,119 +842,10 @@
           "pattern": "\\u0649|\\u06A9|\\u06AA|\\u06AB",
           "replacement": "\u0643"
         },
-        "noor_Allah":{
-          "type": "pattern_replace",
-          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E\\u0647(?=[^\\u06E1]+)",
-          "replacement":"$1\u0644\u0651\u0670\u0647"
-        },
-        "noor_hamza_fatha_alef":{
-          "type": "pattern_replace",
-          "pattern": "\\u0644\\u0652\\u0621\\u064E\\u0627",
-          "replacement":"\u0644\u0652\u0627\u0670"
-        },
-        "noor_fatha_alefsuperscript":{
-          "type": "pattern_replace",
-          "pattern": "\\u064E\\u0670",
-          "replacement":"\u0670"
-        },
-        "noor_damma_invereted":{
-          "type": "pattern_replace",
-          "pattern": "\\u064F\\u06E5",
-          "replacement":"\u0657"
-        },
-        "noor_restruct_small_yeh":{
-          "type": "pattern_replace",
-          "pattern": "\\u06E6(\\u0651?)\\u0650[\\u06CC\\u0649]\\u064E",
-          "replacement":"\u06CC\u0650$1 \u06E6\u064E"
-        },
-        "noor_kasra_alefsubscript":{
-          "type": "pattern_replace",
-          "pattern": "\\u0650\\u06E6",
-          "replacement":"\u0656"
-        },
-        "noor_farsi_yeh":{
-          "type": "pattern_replace",
-          "pattern": "\\u064A",
-          "replacement":"\u06CC"
-        },
-        "noor_alef_maskura_superscript_alef":{
-          "type": "pattern_replace",
-          "pattern": "\\u064E\\u0649\\u0670",
-          "replacement":"\u0670\u0649"
-        },
-        "noor_wow_superscript_alef_with_ta_marbuta":{
-          "type": "pattern_replace",
-          "pattern": "\\u064E\\u0648\\u0670\\u0629",
-          "replacement":"\u0670\u0648\u0629"
-        },
-        "noor_alef_maskura_shadda_superscript_alef":{
-          "type": "pattern_replace",
-          "pattern": "\\u064E\\u0651\\u0649\\u0670",
-          "replacement":"\u0651\u0670\u0649"
-        },
-        "noor_alef_maskura_superscript_middle":{
-          "type": "pattern_replace",
-          "pattern": "\\u0670\\u0649(.+)",
-          "replacement":"\u0670\u066E$1"
-        },
-        "noor_dotless_beh-farsi_yeh":{
-          "type": "pattern_replace",
-          "pattern": "\\u066E(?=[\\u06E1\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0670|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u0627\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB])",
-          "replacement":"\u06CC"
-        },
-        "noor_hamza_fathah_alef_removed":{
-          "type": "pattern_replace",
-          "pattern": "\\u0621\\u064E\\u0627",
-          "replacement":"\u0627\u0670"
-        },
-        "noor_alef_maskura":{
-          "type": "pattern_replace",
-          "pattern": "\\u0649",
-          "replacement":"\u06CC"
-        },
-        "noor_heh_goal":{
-          "type": "pattern_replace",
-          "pattern": "\\u0647",
-          "replacement":"\u06C1"
-        },
-        "noor_kaaf_keheh":{
-          "type": "pattern_replace",
-          "pattern": "\\u0643",
-          "replacement":"\u06A9"
-        },
-        "noor_teh_marbutah_goal":{
-          "type": "pattern_replace",
-          "pattern": "\\u0629",
-          "replacement":"\u06C3"
-        },
-        "noor_rounded_zero_with_ya":{
-          "type": "pattern_replace",
-          "pattern": "\\u06CC\\u06DF",
-          "replacement":"\u06CC\u06E0"
-        },
-        "noor_rounded_zero":{
-          "type": "pattern_replace",
-          "pattern": "\\u06DF"
-        },
         "noor_break_waw":{
           "type": "pattern_replace",
           "pattern": "(\\u0648\\u064E[\\u0651]?)",
           "replacement":"$1 "
-        },
-        "noor_restruct_high_nun_nunji":{
-          "type": "pattern_replace",
-          "pattern": "\\u0646\\u064F\\u06E8(?=\\u062C\\u0650)",
-          "replacement":"\u0646\u064F\u0640\u0640\u06E8\u06E1"
-        },
-        "noor_restruct_high_nun_lam_alef":{
-          "type": "pattern_replace",
-          "pattern": "\\u0644\\u064E\\u06E8\\u0627",
-          "replacement":"\u0644\u064E\u0627\u06E8"
-        },
-        "noor_restruct_high_nun_wow_alef":{
-          "type": "pattern_replace",
-          "pattern": "\\u0648\\u064E \\u06E8\\u0627",
-          "replacement":"\u0648\u064E\u06E8\u0627"
         },
         "Phonetic_a":{
         	"type": "pattern_replace",
@@ -1269,21 +1165,22 @@
                           ,"noor_fatha_alefsuperscript","noor_damma_invereted"
                           ,"noor_restruct_small_yeh", "noor_kasra_alefsubscript"
                           ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
-                          ,"noor_alef_maskura_shadda_superscript_alef",
-                          "noor_alef_maskura_superscript_middle"
+                          ,"noor_alef_maskura_shadda_superscript_alef"
+                          ,"noor_alef_maskura_superscript_middle"
+                          ,"noor_wow_superscript_alef_with_ta_marbuta"
+                          ,"noor_dotless_beh-farsi_yeh"
+                          ,"noor_alef_maskura"
+                          ,"noor_heh_goal","noor_kaaf_keheh"
+                          ,"noor_teh_marbutah_goal"
+
+                          ,"noor_rounded_zero_with_ya","noor_rounded_zero"
+
+                          ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
 
                           ],
          "tokenizer":  "standard",
          "filter": [
-
-                      "noor_wow_superscript_alef_with_ta_marbuta",
-                      "noor_dotless_beh-farsi_yeh"
-                      ,"noor_alef_maskura"
-                      ,"noor_heh_goal","noor_kaaf_keheh"
-                      ,"noor_teh_marbutah_goal"
-                      ,"noor_rounded_zero_with_ya","noor_rounded_zero"
-                      ,"noor_break_waw"
-                      ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
+                      "noor_break_waw"
                       ]
       },
        "ar_surah_stems": {
