@@ -717,6 +717,11 @@
           "pattern": "(\\u064F\\u0648\\u064E) *(\\u0627)\\u06DF(?= +[^\\u0627\\u0644[\\u06E1\\u0651]])",
           "replacement":"$1$2\u06E0"
         },
+        "noor_rounded_zero_exceptions_3":{
+          "type": "pattern_replace",
+          "pattern": "(\\u0628\\u06E1\\u0644\\u064F\\u0648\\u064E) *(\\u0627)\\u06DF",
+          "replacement":"$1$2\u06E0"
+        },
         "noor_rounded_zero":{
           "type": "pattern_replace",
           "pattern": "\\u06DF"
@@ -1179,7 +1184,8 @@
                           ,"noor_teh_marbutah_goal"
 
                           ,"noor_rounded_zero_with_ya","noor_rounded_zero_exceptions_1"
-                          ,"noor_rounded_zero_exceptions_2","noor_rounded_zero"
+                          ,"noor_rounded_zero_exceptions_2","noor_rounded_zero_exceptions_3"
+                          ,"noor_rounded_zero"
 
                           ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
 
