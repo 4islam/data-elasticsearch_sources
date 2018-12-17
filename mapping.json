@@ -490,7 +490,7 @@
         },
         "noor_alef_harkat_addition_exceptions_kasra":{
           "type": "pattern_replace",
-          "pattern": "^ *([\\u0671\\u0627]).?([\\u0630\\u0635\\u0642\\u0633]\\u0652[\\u0647\\u0644\\u0631\\u062A]\\u064E[\\u0628\\u0623\\u0648\\u062D\\u062C\\u0631][\\u0652\\u0650\\u064E])",
+          "pattern": "^ *([\\u0671\\u0627]).?([\\u0630\\u0635\\u0642\\u0633\\u0639]\\u0652[\\u0647\\u0644\\u0631\\u062A]\\u064E[\\u0628\\u0623\\u0648\\u062D\\u062C\\u0631\\u0645][\\u0652\\u0650\\u064E\\u064F])",
           "replacement":"$1\u0650$2"
         },
         "noor_alef_harkat_addition_exceptions_fatha":{
