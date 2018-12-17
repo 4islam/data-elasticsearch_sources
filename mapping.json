@@ -495,8 +495,13 @@
         },
         "noor_alef_harkat_addition_exceptions_fatha":{
           "type": "pattern_replace",
-          "pattern": "^ *([\\u0671\\u0627]).?(\\u0644\\u0652\\u0645\\u064F)",
+          "pattern": "^ *([\\u0671\\u0627]).?(\\u0644\\u0652\\u0645\\u064F|\\u062C\\u064E\\u0648\\u064E)",
           "replacement":"$1\u064E$2"
+        },
+        "noor_alef_harkat_addition_exceptions_silent":{
+          "type": "pattern_replace",
+          "pattern": "^ *([\\u0671\\u0627]).?(\\u0644\\u0652\\u062C\\u064E\\u0648\\u064E)",
+          "replacement":"$1$2"
         },
         "noor_alef_maskura_with_hamza_above":{
           "type": "pattern_replace",
@@ -1168,6 +1173,7 @@
                           "noor_alef_harkat_addition_Allah",
                           "noor_alef_harkat_addition"
                           ,"noor_alef_harkat_addition_exceptions_kasra","noor_alef_harkat_addition_exceptions_fatha"
+                          ,"noor_alef_harkat_addition_exceptions_silent"
                           ,"noor_alef_maskura_with_hamza_above","noor_hamza_above_with_fatha_alef"
                           ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
                           ,"noor_add_sukun_end","noor_add_sukun_mid"
