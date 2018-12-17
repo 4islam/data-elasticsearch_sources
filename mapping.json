@@ -682,6 +682,11 @@
           "pattern": "\\u0670\\u0649([^ ]+)",
           "replacement":"\u0670\u066E$1"
         },
+        "noor_alef_maskura_superscript_verseEnd":{
+          "type": "pattern_replace",
+          "pattern": "([\\u0641\\u0631])\\u064E[\\u06CC\\u0649] *$",
+          "replacement":"$1\u0670\u06CC"
+        },
         "noor_wow_superscript_alef_with_ta_marbuta":{
           "type": "pattern_replace",
           "pattern": "\\u064E\\u0648\\u0670\\u0629",
@@ -1193,7 +1198,7 @@
                           ,"noor_restruct_small_yeh","noor_kasra_alefsubscript"
                           ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
                           ,"noor_alef_maskura_shadda_superscript_alef"
-                          ,"noor_alef_maskura_superscript_middle"
+                          ,"noor_alef_maskura_superscript_middle","noor_alef_maskura_superscript_verseEnd"
                           ,"noor_wow_superscript_alef_with_ta_marbuta"
                           ,"noor_dotless_beh-farsi_yeh"
                           ,"noor_alef_maskura"
