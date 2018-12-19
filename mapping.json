@@ -629,8 +629,8 @@
         },
         "noor_Allah":{
           "type": "pattern_replace",
-          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E\\u0647(?=[^\\u06E1]+)",
-          "replacement":"$1\u0644\u0651\u0670\u0647"
+          "pattern": "(\\u0644[\\u0651]?[\\u0650]?)\\u0644\\u0651\\u064E(\\u0647[^\\u06E1])(?=\\u0645| |$)",
+          "replacement":"$1\u0644\u0651\u0670$2"
         },
         "normalize_alef": {
           "type": "pattern_replace",
