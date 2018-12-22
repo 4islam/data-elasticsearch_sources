@@ -565,7 +565,7 @@
         },
         "noor_add_sukun_mid":{
           "type": "pattern_replace",
-          "pattern": "([\\u064A\\u0646\\u0648\\u06CC]|\\u0650\\u0649)(?=[^\\u06E1\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0670|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u0627\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB])",
+          "pattern": "([\\u064A\\u0646\\u0648\\u06CC]|\\u0650\\u0627?\\u06DF?\\u0649)(?=[^\\u06E1\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0670|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u0627\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB])",
           "replacement":"$1\u06E1"
         },
         "noor_nun_meem_end_sukun":{
