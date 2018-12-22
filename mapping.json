@@ -516,12 +516,27 @@
         "noor_muqataat_AlefLaamMeem":{
           "type": "pattern_replace",
           "pattern": "(\\u0653)(\\u0645)(\\u0653)",
-          "replacement":"$1\u0640\u0640$2\u0651$3"
+          "replacement":"$1\u0640$2\u0651$3"
         },
         "noor_muqataat_AlefLaamRa":{
           "type": "pattern_replace",
-          "pattern": "(\\u0653\\u0631)(?= |\\u06DA|$)",
+          "pattern": "(\\u0653[\\u0631\\u0647])(?= |\\u06DA|\\u064A|$)",
           "replacement":"$1\u0670"
+        },
+        "noor_muqataat_HaMeem":{
+          "type": "pattern_replace",
+          "pattern": "(^ *|\\u0653)([^\\u064E\\u064F\\u0650\\u0651\\u0652\\u0671\\u0627])(.\\u0653)(?=.+\\u0653| +|$)",
+          "replacement":"$1$2\u0670$3"
+        },
+        "noor_muqataat_TaHa":{
+          "type": "pattern_replace",
+          "pattern": "(^ *)(\\u0637)(\\u0647)(?= *$)",
+          "replacement":"$1$2\u0670$3\u0670"
+        },
+        "noor_muqataat_HaEin":{
+          "type": "pattern_replace",
+          "pattern": "(\\u064A)(\\u0639\\u0653)",
+          "replacement":"$1\u0670$2"
         },
         "noor_alef_maskura_with_hamza_above":{
           "type": "pattern_replace",
@@ -1200,7 +1215,8 @@
                           ,"noor_alef_harkat_addition_exceptions_kasra","noor_alef_harkat_addition_exceptions_kasra_shadda"
                           ,"noor_alef_harkat_addition_exceptions_fatha","noor_alef_harkat_addition_exceptions_fatha_shadda"
                           ,"noor_alef_harkat_addition_exceptions_silent"
-                          ,"noor_muqataat_AlefLaamMeem","noor_muqataat_AlefLaamRa"
+                          ,"noor_muqataat_AlefLaamMeem","noor_muqataat_AlefLaamRa","noor_muqataat_HaMeem"
+                          ,"noor_muqataat_TaHa","noor_muqataat_HaEin"
                           ,"noor_alef_maskura_with_hamza_above","noor_hamza_above_with_fatha_alef"
                           ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
                           ,"noor_add_sukun_end","noor_add_sukun_mid"
