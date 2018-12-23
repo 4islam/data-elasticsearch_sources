@@ -560,7 +560,7 @@
         },
         "noor_add_sukun_end":{
           "type": "pattern_replace",
-          "pattern": "([\\u064A\\u0646\\u0648\\u06CC]|\\u0650\\u0649)(?=[\\u0627])?( +.|$)",
+          "pattern": "([\\u064A\\u0646\\u0648\\u06CC\\u0628]|\\u0650\\u0649)(?=[\\u0627])?( +.|$)",
           "replacement":"$1\u06E1$2"
         },
         "noor_add_sukun_mid":{
