@@ -19,7 +19,7 @@ function source(i,len) {
      var hits = resp.hits.hits
      var src = hits[0]._source
 
-     analyze(src.Arabic.substring(0),i,len)
+     analyze(src.Arabic.substring(0),i,len,src.a,src.s)
      //analyze(src.English,i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
      //analyze(src.Urdu,i,src.a,src.s)
@@ -29,7 +29,7 @@ function source(i,len) {
  });
 }
 
-function analyze(src,i,len) {
+function analyze(src,i,len,a,s) {
 
  client.indices.analyze({
    index: 'hq',
@@ -52,6 +52,7 @@ function analyze(src,i,len) {
 
      }
 
+     //console.log(s+":"+a,str)
      console.log(str)
      //if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
      if(i<len){source(i+1,len)}
