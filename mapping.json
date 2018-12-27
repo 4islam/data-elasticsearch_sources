@@ -811,6 +811,11 @@
           "type": "pattern_replace",
           "pattern": "\\u06DF"
         },
+        "noor_majreha_exception":{
+          "type": "pattern_replace",
+          "pattern": "(.)\\u06EA\\u06CC\\u0670",
+          "replacement":"\u0614$1\u0656\u066E"
+        },
         "noor_restruct_high_nun_nunji":{
           "type": "pattern_replace",
           "pattern": "\\u0646\\u064F\\u06E8(?=\\u062C\\u0650)",
@@ -1277,7 +1282,7 @@
 
                           ,"noor_rounded_zero_with_ya_end","noor_rounded_zero_with_ya","noor_rounded_zero_with_ya-hamza"
                           ,"noor_rounded_zero_exceptions_1","noor_rounded_zero_exceptions_2","noor_rounded_zero_exceptions_3"
-                          ,"noor_rounded_zero"
+                          ,"noor_rounded_zero","noor_majreha_exception"
 
                           ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
 
