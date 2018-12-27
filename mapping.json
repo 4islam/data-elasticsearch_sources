@@ -722,6 +722,11 @@
           "pattern": "\\u064E\\u0649\\u0670",
           "replacement":"\u0670\u0649"
         },
+        "noor_alef_maskura_superscript_alef_kasra":{
+          "type": "pattern_replace",
+          "pattern": "(\\u0650.)\\u064E(\\u0648)\\u0670(\\u06E4)?\\u0627",
+          "replacement":"$1\u0670$3$2\u0627"
+        },
         "noor_alef_maskura_shadda_superscript_alef":{
           "type": "pattern_replace",
           "pattern": "\\u064E\\u0651\\u0649\\u0670",
@@ -1260,6 +1265,7 @@
                           ,"noor_Allah","noor_normalize_alef","noor_hamza_fatha_alef"
                           ,"noor_fatha_alefsuperscript","noor_damma_invereted"
                           ,"noor_restruct_small_yeh","noor_kasra_alefsubscript"
+                          ,"noor_alef_maskura_superscript_alef_kasra"
                           ,"noor_farsi_yeh","noor_alef_maskura_superscript_alef"
                           ,"noor_alef_maskura_shadda_superscript_alef"
                           ,"noor_alef_maskura_superscript_middle","noor_alef_maskura_superscript_verseEnd"
