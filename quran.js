@@ -5,26 +5,6 @@ var client = new elasticsearch.Client({
   log: 'error'
 });
 
-
-var arg_src="Arabic"
-var arg_analyzer="ar_stems_normalized"
-
-var myArgs = process.argv.slice(2);
-if (myArgs.length) {
-
-  arg_src = process.argv[2]
-  arg_analyzer = process.argv[3]
-
-  console.log(arg_src, arg_analyzer);
-
-} else {
-  console.log("   Please add aurguments:  \
-                  src text (Arabic|English|Urdu|French|German|Spanish), \
-                  analyzer (ar_original_normalized|ar_stems_normalized|ar_root| \
-                    ar_normalized_phonetic|ar_stems_normalized_phonetic|ar_root_phonetic\
-                    ur_normalized|en_normalized)")
-}
-
 function source(i) {
  client.search({
    index: 'hq',
@@ -73,8 +53,9 @@ function analyze(src,i,a,s) {
         var TStr = '{"token":"'+T.token
                 +'","start_offset":'+T.start_offset
                 +',"end_offset":'+T.end_offset+'}';
-
-        str += t!=0?", " + TStr : TStr
+        var TStr = T.token;
+        //str += t!=0?", " + TStr : TStr
+        str += t!=0?" " + TStr : TStr
      }
      //console.log(src);
 
@@ -85,21 +66,50 @@ function analyze(src,i,a,s) {
      // //console.log(hits)
      // console.log(hits.length)
 
-     console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
      //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+     if (myArgs.length) {
+       //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+       console.log(str);
 
-     if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
+     } else {
+        if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
+     }
      //if(i<290){source(i+1)}
-
      // if(i<5){source(i+33)}
 
  }, function (err) {
      console.trace(err.message);
  });
 }
-console.log("[")
-//source(290);      //recurrance function call
-//source(592);      //recurrance function call
-//source(6322);      //recurrance function call
-source(1);
-//source(2844);
+
+
+var arg_src="Arabic"
+var arg_analyzer="ar_stems_normalized"
+
+var myArgs = process.argv.slice(2);
+if (myArgs.length) {
+
+  arg_src = process.argv[2]
+  arg_analyzer = process.argv[3]
+
+  //console.log(arg_src, arg_analyzer);
+
+  analyze(arg_src,0)
+
+} else {
+  console.log("   Please add aurguments:  \
+                  src text (Arabic|English|Urdu|French|German|Spanish), \
+                  analyzer (ar_original_normalized|ar_stems_normalized|ar_root| \
+                    ar_normalized_phonetic|ar_stems_normalized_phonetic|ar_root_phonetic\
+                    ur_normalized|en_normalized)")
+
+
+  console.log("[")
+  //source(290);      //recurrance function call
+  //source(592);      //recurrance function call
+  //source(6322);      //recurrance function call
+  source(1);
+  //source(2844);
+}
