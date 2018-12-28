@@ -24,6 +24,7 @@ echo '<html>
 <div>Toggle Visiblity: <a style="cursor: pointer" onclick="toggle_visibility(1)">Source</a> | <a style="cursor: pointer" onclick="toggle_visibility(2)">Target</a> | <a style="cursor: pointer" onclick="toggle_visibility(4)">(Black)</a> | <a style="cursor: pointer" onclick="toggle_visibility(3)">(White)</a> </div>
 <div id=Q dir="rtl">' > $output
 #locale >> $output
+# dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/original_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output
 dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/tokenized_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output
 echo "</div></body></html>" >> $output
 

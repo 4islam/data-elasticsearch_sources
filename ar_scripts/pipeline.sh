@@ -15,6 +15,8 @@ for i in `seq 1 $b`; do
 
   cat ./ar_scripts/persian/original/tokenized.txt | head -n$(($i*$l+$s-1)) | tail -n$(($l)) \
         > ./ar_scripts/persian/original/tokenized_$(($i*$l+$s-1)).txt
+  # cat ./ar_scripts/persian/original/original.txt | head -n$(($i*$l+$s-1)) | tail -n$(($l)) \
+  #       > ./ar_scripts/persian/original/original_$(($i*$l+$s-1)).txt
 
   ./ar_scripts/compare.sh $(($i*$l+$s-1)) $o
 done
