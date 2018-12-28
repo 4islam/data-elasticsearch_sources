@@ -1293,11 +1293,14 @@
                           ,"noor_restruct_high_nun_nunji","noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
 
                           ],
-         "tokenizer":  "standard",
+         "tokenizer":  "whitespace",
          "filter": [
                       "noor_break_waw"
                       ]
       },
+      "whitespace_tokenizer":{
+        "tokenizer":  "whitespace"
+      },      
        "ar_surah_stems": {
           "tokenizer":  "standard",
           "filter": ["arabic_compound","my_uniq"]
