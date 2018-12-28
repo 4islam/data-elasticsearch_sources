@@ -1,0 +1,2 @@
+old: 4408 words  4111 93% common  152 3% deleted  145 3% changed
+new: 4411 words  4111 93% common  156 3% inserted  144 3% changed
