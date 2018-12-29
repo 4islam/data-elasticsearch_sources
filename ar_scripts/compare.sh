@@ -3,6 +3,9 @@ export LC_ALL=en_US.UTF-8
 #output=ar_scripts/persian/outputs/results/$(date +%F"_"%H"-"%M).html
 output=./ar_scripts/persian/outputs/comparison/compare_$1.html
 outputstats=./ar_scripts/persian/outputs/comparison/stats/compare_$1.stats.txt
+src=./ar_scripts/persian/original/tokenized_$1.txt; if [ -n "$3" ]; then src=$3; fi
+dst=./ar_scripts/persian/outputs/verses_$1.txt; if [ -n "$4" ]; then dst=$4; fi
+
 echo '<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
   div{white-space: pre;}
@@ -25,7 +28,7 @@ echo '<html>
 <div id=Q dir="rtl">' > $output
 #locale >> $output
 # dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/original_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output
-dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' ./ar_scripts/persian/original/tokenized_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt >> $output
+dwdiff -s -d" " -w $' <span id="t">' -x $'</span> ' -y $' <span id="s">' -z $'</span> ' $src $dst >> $output
 echo "</div></body></html>" >> $output
 
 if [ $2 = "chrome" ]; then
@@ -34,4 +37,4 @@ fi
 if [ $2 = "safari" ]; then
   open -a "safari" $output
 fi
-dwdiff -s -d" " ./ar_scripts/persian/original/tokenized_$1.txt ./ar_scripts/persian/outputs/verses_$1.txt 2> $outputstats
+dwdiff -s -d" " $src $dst 2> $outputstats
