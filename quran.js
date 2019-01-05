@@ -51,6 +51,8 @@ function analyze(src,i,a,s) {
                 +'","start_offset":'+T.start_offset
                 +',"end_offset":'+T.end_offset+'}';
         var TStr = T.token;
+
+        //console.log(i, t, TStr);
         //str += t!=0?", " + TStr : TStr
         str += t!=0?" " + TStr : TStr
      }
@@ -84,7 +86,7 @@ function analyze(src,i,a,s) {
 
 
 var arg_src="Arabic"
-var arg_analyzer="ar_root"
+var arg_analyzer="standard"
 
 var myArgs = process.argv.slice(2);
 if (myArgs.length) {
