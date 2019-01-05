@@ -19,10 +19,7 @@ function source(i) {
      var hits = resp.hits.hits
      var src = hits[0]._source
 
-     //analyze(src.Arabic,i,src.a,src.s)
      analyze(src[arg_src],i,src.a,src.s)
-     //analyze(src.Urdu,i,src.a,src.s)
-     //analyze(src.Urdu,i,src.a,src.s)
 
  }, function (err) {
      console.trace(err.message);
@@ -70,10 +67,11 @@ function analyze(src,i,a,s) {
      //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
      //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
      if (myArgs.length) {
-       //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
        console.log(str);
 
      } else {
+        console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+
         if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
      }
      //if(i<290){source(i+1)}
@@ -86,7 +84,7 @@ function analyze(src,i,a,s) {
 
 
 var arg_src="Arabic"
-var arg_analyzer="ar_stems_normalized"
+var arg_analyzer="ar_root"
 
 var myArgs = process.argv.slice(2);
 if (myArgs.length) {
