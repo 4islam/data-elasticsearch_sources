@@ -375,8 +375,84 @@
                   "type": "integer"
                },
 
-               "Surah_EN_transliteration": {"type": "text"},
-               "Surah_EN_translation":{"type": "text"},
+               "Surah_EN_transliteration_Ahmadiyya": {"type": "text",
+               "fields": {
+                   "en_original": {
+                     "type": "text",
+                     "index": false
+                   },
+                   "en_ngram_original": {
+                     "type": "text",
+                     "analyzer": "en_ngram_original",
+                     "search_analyzer": "standard",
+                     "fielddata": true,
+                     "norms": false
+                   },
+                   "en_normalized": {
+                     "type": "text",
+                     "analyzer": "en_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   },
+                   "en_normalized_ngram": {
+                     "type": "text",
+                     "analyzer": "en_ngram_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   }
+               }},
+               "Surah_EN_transliteration": {"type": "text",
+               "fields": {
+                   "en_original": {
+                     "type": "text",
+                     "index": false
+                   },
+                   "en_ngram_original": {
+                     "type": "text",
+                     "analyzer": "en_ngram_original",
+                     "search_analyzer": "standard",
+                     "fielddata": true,
+                     "norms": false
+                   },
+                   "en_normalized": {
+                     "type": "text",
+                     "analyzer": "en_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   },
+                   "en_normalized_ngram": {
+                     "type": "text",
+                     "analyzer": "en_ngram_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   }
+               }},
+               "Surah_EN_translation":{"type": "text",
+               "fields": {
+                   "en_original": {
+                     "type": "text",
+                     "index": false
+                   },
+                   "en_ngram_original": {
+                     "type": "text",
+                     "analyzer": "en_ngram_original",
+                     "search_analyzer": "standard",
+                     "fielddata": true,
+                     "norms": false
+                   },
+                   "en_normalized": {
+                     "type": "text",
+                     "analyzer": "en_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   },
+                   "en_normalized_ngram": {
+                     "type": "text",
+                     "analyzer": "en_ngram_normalized",
+                     "search_analyzer": "standard",
+                     "fielddata": true
+                   }
+               }},
                "Surah_Revelation":{"type": "text"},
                "Juz":{"type": "integer"},
                "Manzil":{"type": "integer"},
