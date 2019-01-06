@@ -1358,23 +1358,24 @@
         },
         "token2lem_noor" : {
             "type" : "synonym",
-            "synonyms_path" : "noor_syn-lem_out.txt"
+            "synonyms_path" : "noor_syn-lem.txt"
         },
         "token2root_noor" : {
             "type" : "synonym",
-            "synonyms_path" : "noor_syn-root_out.txt"
+            "synonyms_path" : "noor_syn-root.txt"
         },
-
         "roots_on_file" : {
                     "type" : "keep",
                     "keep_words_path" : "roots_out.txt"
-        }
-        ,
+        },
+        "roots_on_file_noor" : {
+                    "type" : "keep",
+                    "keep_words_path" : "noor_roots.txt"
+        },
         "lemms_on_file" : {
                     "type" : "keep",
                     "keep_words_path" : "lemms_out.txt"
         }
-
 
       },
       "analyzer": {
@@ -1562,11 +1563,11 @@
         },
         "ar_root_noor": {
            "tokenizer":  "standard",
-           "filter": ["token2root_noor","roots_on_file"]
+           "filter": ["token2root_noor","roots_on_file_noor"]
          },
         "ar_root_normalized_noor": {
            "tokenizer":  "standard",
-           "filter": ["token2root_noor","roots_on_file","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
+           "filter": ["token2root_noor","roots_on_file_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
          },
         "ar_ngram_original": {
               "tokenizer": "standard",
@@ -1610,11 +1611,11 @@
         },
         "ar_ngram_root_noor": {
               "tokenizer": "standard",
-              "filter": ["token2root_noor","roots_on_file","root_ngram_filter","my_uniq"]
+              "filter": ["token2root_noor","roots_on_file_noor","root_ngram_filter","my_uniq"]
         },
         "ar_ngram_root_normalized_noor": {
               "tokenizer": "standard",
-              "filter": ["token2root_noor","roots_on_file","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","root_ngram_filter","my_uniq"]
+              "filter": ["token2root_noor","roots_on_file_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","root_ngram_filter","my_uniq"]
         },
         "ar_root_normalized_phonetic": {
           "tokenizer":  "standard",
@@ -1622,7 +1623,7 @@
         },
         "ar_root_normalized_phonetic_noor": {
           "tokenizer":  "standard",
-          "filter": ["token2root_noor","roots_on_file","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh", "lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter"]
+          "filter": ["token2root_noor","roots_on_file_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh", "lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter"]
         },
         "ar_normalized_phonetic" : {
           "tokenizer": "standard",
@@ -1638,7 +1639,7 @@
         },
         "ar_ngram_root_normalized_phonetic_noor": {
           "tokenizer":  "standard",
-          "filter": ["token2root_noor","roots_on_file","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","root_ngram_filter","my_uniq"]
+          "filter": ["token2root_noor","roots_on_file_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","root_ngram_filter","my_uniq"]
         },
         "ar_stems_normalized_phonetic": {
           "tokenizer":  "standard",
