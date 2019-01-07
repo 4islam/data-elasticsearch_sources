@@ -50,11 +50,10 @@ function analyze(src,i,a,s) {
         var TStr = '{"token":"'+T.token
                 +'","start_offset":'+T.start_offset
                 +',"end_offset":'+T.end_offset+'}';
-        var TStr = T.token;
+        //TStr = T.token;
 
         //console.log(i, t, TStr);
-        //str += t!=0?", " + TStr : TStr
-        str += t!=0?" " + TStr : TStr
+        str += t!=0?"," + TStr : TStr
      }
      //console.log(src);
 
@@ -65,13 +64,14 @@ function analyze(src,i,a,s) {
      // //console.log(hits)
      // console.log(hits.length)
 
-     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
-     //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
-     //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
      if (myArgs.length) {
        console.log(str);
 
      } else {
+       //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+       //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+       //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
+
         console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
 
         if(i<6348){console.log(",");source(i+1)}else{console.log("]")}
@@ -85,8 +85,15 @@ function analyze(src,i,a,s) {
 }
 
 
-var arg_src="Arabic"
-var arg_analyzer="standard"
+
+//var arg_src="Arabic_noor"
+//var arg_analyzer="ar_root_normalized_phonetic_noor"
+//var arg_analyzer="ar_stems_normalized_noor"
+//var arg_analyzer="ar_original_normalized"
+//var arg_analyzer="ar_normalized_phonetic"
+
+var arg_src="English"
+var arg_analyzer="en_normalized"
 
 var myArgs = process.argv.slice(2);
 if (myArgs.length) {
