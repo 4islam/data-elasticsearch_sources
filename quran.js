@@ -64,9 +64,8 @@ function analyze(src,i,a,s) {
      // //console.log(hits)
      // console.log(hits.length)
 
-     if (myArgs.length) {
-       console.log(str);
-
+     if (myArgs.length == 2 && arg_src != "-") {
+         console.log(str);
      } else {
        //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
        //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
@@ -86,17 +85,19 @@ function analyze(src,i,a,s) {
 
 
 
-//var arg_src="Arabic_noor"
+var arg_src="Arabic_noor"
 //var arg_analyzer="ar_root_normalized_phonetic_noor"
-//var arg_analyzer="ar_stems_normalized_noor"
+var arg_analyzer="ar_stems_normalized_noor"
 //var arg_analyzer="ar_original_normalized"
 //var arg_analyzer="ar_normalized_phonetic"
 
-var arg_src="English"
-var arg_analyzer="en_normalized"
+//var arg_src="English"
+//var arg_analyzer="en_normalized"
+//var arg_analyzer="ar_original_normalized"
+
 
 var myArgs = process.argv.slice(2);
-if (myArgs.length) {
+if (myArgs.length == 2) {
 
   arg_src = process.argv[2]
   arg_analyzer = process.argv[3]
@@ -104,6 +105,12 @@ if (myArgs.length) {
   //console.log(arg_src, arg_analyzer);
 
   analyze(arg_src,0)
+} else if (myArgs.length == 1) {
+
+  arg_src = process.argv[2]
+  arg_analyzer = process.argv[3]
+
+  source(1);
 
 } else {
   console.log("   Please add aurguments:  \
