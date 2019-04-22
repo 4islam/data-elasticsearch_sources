@@ -98,33 +98,36 @@
                       "ar_ngram_root_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_ngram_root_normalized_phonetic",
-                        "search_analyzer": "ar_root_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_stems_normalized_phonetic": {
                         "type": "text",
-                        "analyzer": "ar_stems_normalized_phonetic"
+                        "analyzer": "ar_stems_normalized_phonetic",
+                        "search_analyzer": "standard"
                       },
                       "ar_root_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_root_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_normalized_ngram_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
-                        "search_analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_ngram_stems_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_ngram_stems_normalized_phonetic",
-                        "search_analyzer": "ar_stems_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_query_suggest_ngram_normalized_phonetic": {
@@ -195,6 +198,7 @@
                       "ar_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_ngram_normalized": {
@@ -206,17 +210,18 @@
                       "ar_normalized_ngram_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
-                        "search_analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_stems_normalized_phonetic": {
                         "type": "text",
-                        "analyzer": "ar_surah_stems_normalized_phonetic"
+                        "analyzer": "ar_surah_stems_normalized_phonetic",
+                        "search_analyzer": "standard"
                       },
                       "ar_ngram_stems_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_surah_ngram_stems_normalized_phonetic",
-                        "search_analyzer": "ar_surah_stems_normalized_phonetic"
+                        "search_analyzer": "standard"
                       },
                       "suggest" : {
                             "type" : "completion"
@@ -309,33 +314,36 @@
                       "ar_ngram_root_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_ngram_root_normalized_phonetic_noor",
-                        "search_analyzer": "ar_root_normalized_phonetic_noor",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_stems_normalized_phonetic": {
                         "type": "text",
-                        "analyzer": "ar_stems_normalized_phonetic_noor"
+                        "analyzer": "ar_stems_normalized_phonetic_noor",
+                        "search_analyzer": "standard"
                       },
                       "ar_root_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_root_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_normalized_ngram_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
-                        "search_analyzer": "ar_normalized_phonetic",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_ngram_stems_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_ngram_stems_normalized_phonetic_noor",
-                        "search_analyzer": "ar_stems_normalized_phonetic_noor",
+                        "search_analyzer": "standard",
                         "norms": false
                       },
                       "ar_query_suggest_ngram_normalized_phonetic": {
