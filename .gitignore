@@ -1,7 +1,3 @@
 [Tt]humbs.db
 .gitignore
 *.DS_Store
-**/save-commands.json
-**/.on-save.json
-./ar_scripts/pipeline.sh
-./ar_scripts/persian/outputs/compare.sh
