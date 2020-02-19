@@ -1184,7 +1184,7 @@
         "noor_add_space_for_small_high_nun_kasra":{
           "type": "pattern_replace",
           "pattern": "(\\u064F|\\u064E|\\u0650)(\\u06E3|\\u06E8)",
-          "replacement":"$1 \u06E3"
+          "replacement":"$1\u2007$2"
         },
         "Phonetic_a":{
         	"type": "pattern_replace",
