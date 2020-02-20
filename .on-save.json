@@ -1,7 +1,7 @@
 [
   {
     "files": "**/mapping.json",
-    "command":"./ar_scripts/pipeline.sh 801 100 1 chrome",
+    "command":"./ar_scripts/pipeline.sh 3001 100 1 chrome",
     "showOutput":false,
     "showError":false
   }

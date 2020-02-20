@@ -1189,7 +1189,7 @@
         "noor_add_space_for_small_high_nun_kasra":{
           "type": "pattern_replace",
           "pattern": "(\\u064F|\\u064E|\\u0650)(\\u06E3|\\u06E8)",
-          "replacement":"$1\u2007$2"
+          "replacement":"$1\u202F\u202F\u202F$2"
         },
         "Phonetic_a":{
         	"type": "pattern_replace",
@@ -1559,8 +1559,8 @@
                           ]
          ,"tokenizer":  "standard"
           ,"filter": [
-                      "noor_add_space_for_small_high_nun_kasra",
-                      "noor_break_waw"
+                      "noor_add_space_for_small_high_nun_kasra"
+                      /*,"noor_break_waw"*/
                       ]
         /* ,"tokenizer":  "whitespace" */
       },
