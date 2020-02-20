@@ -64,9 +64,9 @@ function analyze(src,i,a,s) {
      // //console.log(hits)
      // console.log(hits.length)
 
-     if (myArgs.length == 2 && arg_src != "-") {
-         console.log(str);
-     } else {
+     if (myArgs.length == 2) {
+     //     console.log(str);
+     // } else {
        //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
        //console.log('{"id":'+i+', "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
        //console.log('{"id":'+i+', "src":"' + src + '", "tokens":[',str,'],"a":'+a+',"s":'+s+'}')
@@ -99,12 +99,20 @@ var arg_analyzer="ar_stems_normalized_noor"
 var myArgs = process.argv.slice(2);
 if (myArgs.length == 2) {
 
-  arg_src = process.argv[2]
+  if (process.argv[2] != "-") {
+    arg_src = process.argv[2]
+  } else {
+    arg_src = "Arabic"
+  }
+
   arg_analyzer = process.argv[3]
 
   //console.log(arg_src, arg_analyzer);
 
-  analyze(arg_src,0)
+  // analyze(arg_src,1)
+  console.log("[")
+  source(1);
+
 } else if (myArgs.length == 1) {
 
   arg_src = process.argv[2]
