@@ -1,3 +1,4 @@
 [Tt]humbs.db
 .gitignore
 *.DS_Store
+.on-save.json
