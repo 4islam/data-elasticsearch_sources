@@ -1,2 +1,2 @@
-old: 6805 words  5570 81% common  0 0% deleted  1235 18% changed
-new: 5927 words  5570 93% common  0 0% inserted  357 6% changed
+old: 6805 words  5571 81% common  0 0% deleted  1234 18% changed
+new: 5926 words  5571 94% common  0 0% inserted  355 5% changed

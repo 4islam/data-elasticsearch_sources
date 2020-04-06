@@ -1,2 +1,2 @@
-old: 2377 words  1992 83% common  0 0% deleted  385 16% changed
-new: 2114 words  1992 94% common  1 0% inserted  121 5% changed
+old: 2377 words  1991 83% common  0 0% deleted  386 16% changed
+new: 2113 words  1991 94% common  0 0% inserted  122 5% changed
