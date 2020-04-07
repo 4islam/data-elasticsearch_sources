@@ -1513,12 +1513,12 @@
         },
       "ar_original_noor": {
         "char_filter": [
-                          "noor_alef_harkat_addition_Allah",
+                          /* "noor_alef_harkat_addition_Allah",
                           "noor_alef_harkat_addition"
                           ,"noor_alef_harkat_addition_exceptions_kasra","noor_alef_harkat_addition_exceptions_kasra_shadda"
                           ,"noor_alef_harkat_addition_exceptions_fatha","noor_alef_harkat_addition_exceptions_fatha_shadda"
-                          ,"noor_alef_harkat_addition_exceptions_silent"
-                          ,"noor_muqataat_AlefLaamMeem","noor_muqataat_AlefLaamRa","noor_muqataat_HaMeem"
+                          ,"noor_alef_harkat_addition_exceptions_silent" */
+                          "noor_muqataat_AlefLaamMeem","noor_muqataat_AlefLaamRa","noor_muqataat_HaMeem"
                           ,"noor_muqataat_TaHa","noor_muqataat_HaEin"
                           ,"noor_alef_maskura_with_hamza_above","noor_hamza_above_with_fatha_alef"
                           ,"noor_hamza_with_kasra","noor_hamza_with_fatha"
@@ -1535,6 +1535,7 @@
                           ,"noor_madda_switch-large_muqataat"
                           ,"noor_madda_switch_position"
                           ,"noor_remove_tatweel"
+
                           ,"noor_Allah","noor_normalize_alef","noor_hamza_fatha_alef"
                           ,"noor_fatha_alefsuperscript","noor_damma_invereted"
                           ,"noor_restruct_small_yeh","noor_kasra_alefsubscript"
