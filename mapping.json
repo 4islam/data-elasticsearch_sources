@@ -329,7 +329,7 @@
                       },
                       "ar_root_normalized_phonetic": {
                         "type": "text",
-                        "analyzer": "ar_root_normalized_phonetic",
+                        "analyzer": "ar_root_normalized_phonetic_noor",
                         "search_analyzer": "standard",
                         "norms": false
                       },
