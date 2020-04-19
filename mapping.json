@@ -83,6 +83,13 @@
                         "search_analyzer": "ar_stems_normalized",
                         "norms": false
                       },
+                      "ar_ngram_stems_normalized_reverse": {
+                        "type": "text",
+                        "fielddata": true,
+                        "analyzer": "ar_ngram_stems_normalized_reverse",
+                        "search_analyzer": "ar_stems_normalized_reverse",
+                        "norms": false
+                      },
                       "ar_ngram_root": {
                         "type": "text",
                         "analyzer": "ar_ngram_root",
@@ -302,6 +309,13 @@
                         "fielddata": true,
                         "analyzer": "ar_ngram_stems_normalized_noor",
                         "search_analyzer": "ar_stems_normalized_noor",
+                        "norms": false
+                      },
+                      "ar_ngram_stems_normalized_reverse": {
+                        "type": "text",
+                        "fielddata": true,
+                        "analyzer": "ar_ngram_stems_normalized_noor_reverse",
+                        "search_analyzer": "ar_stems_normalized_noor_reverse",
                         "norms": false
                       },
                       "ar_ngram_root": {
@@ -1579,6 +1593,10 @@
           "tokenizer":  "standard",
           "filter": ["token2lem","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
         },
+        "ar_stems_normalized_reverse": {
+           "tokenizer":  "standard",
+           "filter": ["token2lem","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","reverse"]
+         },
         "ar_stems_noor": {
           "tokenizer":  "standard",
           "filter": ["token2lem_noor","my_uniq"]
@@ -1587,7 +1605,10 @@
           "tokenizer":  "standard",
           "filter": ["token2lem_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh"]
         },
-
+      "ar_stems_normalized_noor_reverse": {
+         "tokenizer":  "standard",
+         "filter": ["token2lem_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","reverse"]
+       },
        "ar_surah_stems_normalized": {
           "tokenizer":  "standard",
           "filter": ["arabic_compound","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","my_uniq"]
@@ -1628,6 +1649,10 @@
               "tokenizer": "standard",
               "filter": ["token2lem","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
         },
+        "ar_ngram_stems_normalized_reverse": {
+              "tokenizer": "standard",
+              "filter": ["token2lem","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","reverse","normalized_ngram_filter","my_uniq"]
+        },
         "ar_ngram_stems_noor": {
               "tokenizer": "standard",
               "filter": ["token2lem_noor","title_ngram_filter","my_uniq"]
@@ -1635,6 +1660,10 @@
         "ar_ngram_stems_normalized_noor": {
               "tokenizer": "standard",
               "filter": ["token2lem_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","normalized_ngram_filter","my_uniq"]
+        },
+        "ar_ngram_stems_normalized_noor_reverse": {
+              "tokenizer": "standard",
+              "filter": ["token2lem_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","reverse","normalized_ngram_filter","my_uniq"]
         },
         "ar_surah_ngram_stems": {
               "tokenizer": "standard",
