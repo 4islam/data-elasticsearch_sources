@@ -121,11 +121,15 @@ if (myArgs.length == 2) {
   source(1);
 
 } else {
-  console.log("   Please add aurguments:  \
-                  src text (Arabic|English|Urdu|French|German|Spanish), \
-                  analyzer (ar_original_normalized|ar_stems_normalized|ar_root| \
-                    ar_normalized_phonetic|ar_stems_normalized_phonetic|ar_root_phonetic\
-                    ur_normalized|en_normalized)")
+  console.log("   Please add aurguments:  \n\n\
+                  src text (Arabic|English|Urdu|French|German|Spanish), \n\
+                  analyzer (ar_original_normalized|ar_stems_normalized|ar_root| \n\
+                    ar_normalized_phonetic|ar_stems_normalized_phonetic|ar_root_phonetic\n\
+                    ur_normalized|en_normalized)\n\n\n\
+                  Working examples:  \n\
+                      ./quran.js Arabic ar_original_normalized \n\
+                      ./quran.js - ar_original_normalized   //hyphen defaults to Arabic \n\
+                  ")
 
 
   console.log("[")
