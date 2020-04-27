@@ -1571,12 +1571,12 @@
                           ,"noor_restruct_high_nun_lam_alef","noor_restruct_high_nun_wow_alef"
 
                           ]
-         ,"tokenizer":  "standard"
+         /*,"tokenizer":  "standard"*/
           ,"filter": [ /*  Enable these for human comparison HTML documents. Otherwise, not required */
                       /*"noor_add_space_for_small_high_nun_kasra"*/
                       /*,"noor_break_waw"*/
                       ]
-        /* ,"tokenizer":  "whitespace" */
+        ,"tokenizer":  "whitespace"
       },
       "whitespace_tokenizer":{
         "tokenizer":  "whitespace"
