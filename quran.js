@@ -85,7 +85,7 @@ function analyze(src,i,a,s) {
 
 
 
-var arg_src="Arabic_noor"
+var arg_src="ArabicNoor"
 //var arg_analyzer="ar_root_normalized_phonetic_noor"
 var arg_analyzer="ar_stems_normalized_noor"
 //var arg_analyzer="ar_original_normalized"

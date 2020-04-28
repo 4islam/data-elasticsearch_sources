@@ -235,7 +235,7 @@
                       }
                   }
                },
-               "Arabic_noor": {
+               "ArabicNoor": {
                   "type": "text",
                   "norms": false,
                   "fielddata": true,
