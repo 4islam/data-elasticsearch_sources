@@ -163,7 +163,8 @@
                   "fields": {
                       "ar_normalized": {
                         "type": "text",
-                        "analyzer": "ar_original_normalized"
+                        "analyzer": "ar_original_normalized",
+                        "fielddata": true
                       },
                       "ar_ngram_original": {
                         "type": "text",
@@ -184,7 +185,8 @@
                       },
                       "ar_stems": {
                         "type": "text",
-                        "analyzer": "ar_surah_stems"
+                        "analyzer": "ar_surah_stems",
+                        "fielddata": true
                       },
                       "ar_stems_normalized": {
                         "type": "text",
@@ -232,6 +234,11 @@
                       },
                       "suggest" : {
                             "type" : "completion"
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
                       }
                   }
                },
@@ -431,6 +438,11 @@
                      "analyzer": "en_ngram_normalized",
                      "search_analyzer": "standard",
                      "fielddata": true
+                   },
+                   "trigram": {
+                     "type": "text",
+                     "analyzer": "trigram_general",
+                     "fielddata": true
                    }
                }},
                "Surah_EN_transliteration": {"type": "text",
@@ -457,6 +469,11 @@
                      "analyzer": "en_ngram_normalized",
                      "search_analyzer": "standard",
                      "fielddata": true
+                   },
+                   "trigram": {
+                     "type": "text",
+                     "analyzer": "trigram_general",
+                     "fielddata": true
                    }
                }},
                "Surah_EN_translation":{"type": "text",
@@ -482,6 +499,11 @@
                      "type": "text",
                      "analyzer": "en_ngram_normalized",
                      "search_analyzer": "standard",
+                     "fielddata": true
+                   },
+                   "trigram": {
+                     "type": "text",
+                     "analyzer": "trigram_general",
                      "fielddata": true
                    }
                }},
@@ -519,6 +541,11 @@
                         "analyzer": "ur_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
                       }
                   }
                },
@@ -547,6 +574,11 @@
                         "type": "text",
                         "analyzer": "ur_ngram_normalized",
                         "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
                         "fielddata": true
                       }
                   }
@@ -577,6 +609,11 @@
                         "analyzer": "en_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
                       }
                   }
                },
@@ -605,6 +642,11 @@
                         "type": "text",
                         "analyzer": "de_ngram_normalized",
                         "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
                         "fielddata": true
                       }
                   }
@@ -635,6 +677,11 @@
                         "analyzer": "es_ngram_normalized",
                         "search_analyzer": "standard",
                         "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
                       }
                   }
                }
@@ -664,6 +711,11 @@
                         "type": "text",
                         "analyzer": "fr_ngram_normalized",
                         "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
                         "fielddata": true
                       }
                   }
@@ -1131,6 +1183,12 @@
             "min_shingle_size": 2,
             "max_shingle_size": 3
         },
+        "custom_shingle" : {
+          "type": "shingle",
+          "min_shingle_size": 2,
+          "max_shingle_size": 5,
+          "output_unigrams": false
+        },
         "punctuation_filter": {
           "type": "pattern_replace",
           "pattern": "\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0653|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB|\\u06E1"
@@ -1501,6 +1559,11 @@
           "type": "custom",
           "tokenizer": "standard",
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "shingle"]
+        },
+        "trigram_general": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["custom_shingle"]
         },
         "reverse": {
           "type": "custom",
