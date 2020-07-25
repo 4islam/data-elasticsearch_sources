@@ -1563,7 +1563,10 @@
         "trigram_general": {
           "type": "custom",
           "tokenizer": "standard",
-          "filter": ["custom_shingle"]
+          "filter": ["custom_shingle"],
+          "char_filter": [
+            "html_strip"
+          ]
         },
         "reverse": {
           "type": "custom",
