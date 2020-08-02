@@ -1444,10 +1444,10 @@
           "type" : "unique",
           "only_on_same_position" : false
         },
-        "stems2roots" : {
+        /*"stems2roots" : {
           "type": "stemmer_override",
           "rules_path" : "stem2root.txt"
-        },
+        },*/
         "token2lem" : {
             "type" : "synonym",
             "synonyms_path" : "syn_lem_out.txt"
@@ -1679,10 +1679,10 @@
           "tokenizer":  "standard",
           "filter": ["arabic_compound","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh","my_uniq"]
         },
-       "ar_roots_obsolete": {
+        /*"ar_roots_obsolete": {
           "tokenizer":  "standard",
           "filter": ["arabic_compound","my_uniq","stems2roots","my_uniq"]
-        },
+        }, */
        "ar_root": {
           "tokenizer":  "standard",
           "filter": ["token2root","roots_on_file"]
