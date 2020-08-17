@@ -720,7 +720,7 @@
                       }
                   }
                },
-               "English_Corpus": {
+               "EnglishCorpus": {
                   "type": "text",
                   "fielddata": true,
                   "fields": {
