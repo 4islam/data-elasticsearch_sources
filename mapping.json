@@ -137,6 +137,31 @@
                         "search_analyzer": "standard",
                         "norms": false
                       },
+                      "ar_nouns": {
+                        "type": "text",
+                        "analyzer": "ar_nouns",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ar_adjectives": {
+                        "type": "text",
+                        "analyzer": "ar_adjectives",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ar_propernouns": {
+                        "type": "text",
+                        "analyzer": "ar_propernouns",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "ar_verbs": {
+                        "type": "text",
+                        "analyzer": "ar_verbs",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -1498,6 +1523,23 @@
             "type" : "synonym",
             "synonyms_path" : "noor_syn-root.txt"
         },
+        "tokens-ar_nouns" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_noun.solr"
+        },
+        "tokens-ar_verbs" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_verb.solr"
+        },
+        "tokens-ar_adjectives" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_adj.solr"
+        },
+        "tokens-ar_propernouns" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_pnoun.solr"
+        },
+
         "roots_on_file" : {
                     "type" : "keep",
                     "keep_words_path" : "roots_out.txt"
@@ -1509,8 +1551,23 @@
         "lemms_on_file" : {
                     "type" : "keep",
                     "keep_words_path" : "lemms_out.txt"
+        },
+        "ar_nouns_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_noun.txt"
+        },
+        "ar_verbs_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_verb.txt"
+        },
+        "ar_adjectives_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_adj.txt"
+        },
+        "ar_propernouns_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_pnoun.txt"
         }
-
       },
       "analyzer": {
         "ayah_normalized_ar": {
@@ -1828,6 +1885,22 @@
         "ar_ngram_stems_normalized_phonetic_noor": {
               "tokenizer": "standard",
               "filter": ["token2lem_noor","normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","Phonetic_a","Phonetic_b","Phonetic_d","Phonetic_f","Phonetic_g","Phonetic_h","Phonetic_j","Phonetic_k","Phonetic_kh","Phonetic_l","Phonetic_m","Phonetic_n","Phonetic_r","Phonetic_s","Phonetic_sh","Phonetic_t","Phonetic_w","Phonetic_y","Phonetic_z","Phonetic_superscript_alef","Phonetic_small_waw","Phonetic_small_yeh","title_ngram_filter","my_uniq","lowercase","Phonetic_query_replace_c","Phonetic_query_replace_q","Phonetic_query_replace_x","Phonetic_query_filter","title_ngram_filter","my_uniq"]
+        },
+        "ar_nouns": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_nouns","ar_nouns_on_file","my_uniq"]
+        },
+        "ar_adjectives": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_adjectives","ar_adjectives_on_file","my_uniq"]
+        },
+        "ar_verbs": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_verbs","ar_verbs_on_file","my_uniq"]
+        },
+        "ar_propernouns": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_propernouns","ar_propernouns_on_file","my_uniq"]
         },
         "ar_surah_stems_normalized_phonetic": {
           "tokenizer":  "standard",
