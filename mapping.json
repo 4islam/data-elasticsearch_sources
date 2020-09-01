@@ -643,6 +643,11 @@
                         "type": "text",
                         "analyzer": "trigram_general",
                         "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "en_significant",
+                        "fielddata": true
                       }
                   }
                },
@@ -678,6 +683,11 @@
                         "type": "text",
                         "analyzer": "trigram_general",
                         "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "de_significant",
+                        "fielddata": true
                       }
                   }
                },
@@ -712,6 +722,11 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "es_significant",
                         "fielddata": true
                       }
                   }
@@ -749,6 +764,11 @@
                         "type": "text",
                         "analyzer": "trigram_general",
                         "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "fr_significant",
+                        "fielddata": true
                       }
                   }
                },
@@ -783,6 +803,11 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "en_significant",
                         "fielddata": true
                       }
                   }
@@ -1618,8 +1643,14 @@
           "char_filter": ["html_strip","en_strip_special"],
           "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer","text_ngram_filter"]
         },
+        "en_significant": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip","en_strip_special"],
+          "filter": ["lowercase","english_stop"]
+        },
         "de_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","german_stop","german_normalization","german_stemmer"]
         },
         "de_ngram_original": {
@@ -1628,10 +1659,17 @@
         },
         "de_ngram_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","german_stop","german_normalization","german_stemmer","text_ngram_filter"]
+        },
+        "de_significant": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","german_stop"]
         },
         "es_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","spanish_stop","spanish_stemmer"]
         },
         "es_ngram_original": {
@@ -1640,10 +1678,17 @@
         },
         "es_ngram_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","spanish_stop","spanish_stemmer","text_ngram_filter"]
+        },
+        "es_significant": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","spanish_stop"]
         },
         "fr_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","french_stop","french_stemmer"]
         },
         "fr_ngram_original": {
@@ -1652,7 +1697,13 @@
         },
         "fr_ngram_normalized": {
           "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
           "filter": ["asciifolding","lowercase","french_stop","french_stemmer","text_ngram_filter"]
+        },
+        "fr_significant": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","french_stop"]
         },
         "search_quote_analyzer":{
                "type":"custom",
