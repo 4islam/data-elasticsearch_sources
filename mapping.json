@@ -456,6 +456,7 @@
                      "type": "text",
                      "analyzer": "en_normalized",
                      "search_analyzer": "standard",
+                     "search_quote_analyzer": "search_quote_analyzer",
                      "fielddata": true
                    },
                    "en_normalized_ngram": {
@@ -552,6 +553,7 @@
                         "type": "text",
                         "analyzer": "ur_ngram_original",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true,
                         "norms": false
                       },
@@ -586,6 +588,7 @@
                         "type": "text",
                         "analyzer": "ur_ngram_original",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true,
                         "norms": false
                       },
@@ -627,6 +630,7 @@
                         "type": "text",
                         "analyzer": "en_normalized",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true
                       },
                       "en_normalized_ngram": {
@@ -661,6 +665,7 @@
                         "type": "text",
                         "analyzer": "de_normalized",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true
                       },
                       "de_normalized_ngram": {
@@ -695,6 +700,7 @@
                         "type": "text",
                         "analyzer": "es_normalized",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true
                       },
                       "es_normalized_ngram": {
@@ -730,6 +736,7 @@
                         "type": "text",
                         "analyzer": "fr_normalized",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true
                       },
                       "fr_normalized_ngram": {
@@ -764,6 +771,7 @@
                         "type": "text",
                         "analyzer": "en_normalized",
                         "search_analyzer": "standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
                         "fielddata": true
                       },
                       "en_normalized_ngram": {
@@ -1645,6 +1653,12 @@
         "fr_ngram_normalized": {
           "tokenizer":  "standard",
           "filter": ["asciifolding","lowercase","french_stop","french_stemmer","text_ngram_filter"]
+        },
+        "search_quote_analyzer":{
+               "type":"custom",
+               "tokenizer":"standard",
+               "char_filter": ["html_strip"],
+               "filter":["asciifolding","lowercase"]
         },
         "trigram": {
           "type": "custom",
