@@ -161,7 +161,12 @@
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
-
+                      "ar_to_en_corpus": {
+                        "type": "text",
+                        "analyzer": "ar_to_en_corpus",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -824,6 +829,12 @@
                       "significant": {
                         "type": "text",
                         "analyzer": "en_significant",
+                        "fielddata": true
+                      },
+                      "en_corpus_to_ar": {
+                        "type": "text",
+                        "analyzer": "en_corpus_to_ar",
+                        /*"search_analyzer": "standard",*/
                         "fielddata": true
                       }
                   }
@@ -1588,7 +1599,14 @@
             "type" : "synonym",
             "synonyms_path" : "syn_pnoun.solr"
         },
-
+        "tokens-ar_to_en_corpus" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_ar-en_corpus.solr"
+        },
+        "tokens-en_corpus_to_ar" : {
+            "type" : "synonym",
+            "synonyms_path" : "syn_en_corpus-ar.solr"
+        },
         "roots_on_file" : {
                     "type" : "keep",
                     "keep_words_path" : "roots_out.txt"
@@ -1982,6 +2000,14 @@
         "ar_propernouns": {
           "tokenizer":  "standard",
           "filter": ["tokens-ar_propernouns","ar_propernouns_on_file","my_uniq"]
+        },
+        "ar_to_en_corpus": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_to_en_corpus","lowercase","english_word_delimiter","english_stop","my_uniq"]
+        },
+        "en_corpus_to_ar": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-en_corpus_to_ar","token2lem","my_uniq"]
         },
         "ar_surah_stems_normalized_phonetic": {
           "tokenizer":  "standard",
