@@ -876,6 +876,48 @@
 
                   }
                },
+               "English_Topics": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "en_original": {
+                        "type": "text",
+                        "analyzer":"standard",
+                        "search_analyzer":"standard",
+                        "search_quote_analyzer": "search_quote_analyzer",
+                        "index": false
+                      },
+                      "en_ngram_original": {
+                        "type": "text",
+                        "analyzer": "en_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "en_normalized": {
+                        "type": "text",
+                        "analyzer": "en_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "en_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "en_ngram_normalized",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "en_significant",
+                        "fielddata": true
+                      }
+                  }
+               },
                "suggest" : {
                     "type" : "completion"
                 },
