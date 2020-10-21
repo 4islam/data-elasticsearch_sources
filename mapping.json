@@ -885,7 +885,7 @@
                         "analyzer":"standard",
                         "search_analyzer":"standard",
                         "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "index": true
                       },
                       "en_ngram_original": {
                         "type": "text",
