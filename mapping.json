@@ -876,7 +876,7 @@
 
                   }
                },
-               "English_Topics": {
+               "TopicsEn": {
                   "type": "text",
                   "fielddata": true,
                   "fields": {
