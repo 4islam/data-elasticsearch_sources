@@ -1696,7 +1696,8 @@
         },
         "tokens-ar_to_en_corpus" : {
             "type" : "synonym",
-            "synonyms_path" : "syn_ar-en_corpus.solr"
+            "synonyms_path" : "syn_ar-en_corpus.solr",
+            "tokenizer" : "comma_tokenizer"
         },
         "tokens-ar_to_en_corpus_noor" : {
             "type" : "synonym",
@@ -2123,7 +2124,7 @@
         },
         "ar_to_en_corpus": {
           "tokenizer":  "standard",
-          "filter": ["tokens-ar_to_en_corpus","lowercase","english_word_delimiter","english_stop","my_uniq"]
+          "filter": ["tokens-ar_to_en_corpus"]
         },
         "ar_to_en_corpus_noor": {
           "tokenizer":  "standard",
@@ -2144,10 +2145,6 @@
         "ar_propernouns_noor": {
           "tokenizer":  "standard",
           "filter": ["tokens-ar_propernouns_noor","ar_propernouns_on_file_noor","my_uniq"]
-        },
-        "ar_to_en_corpus": {
-          "tokenizer":  "standard",
-          "filter": ["tokens-ar_to_en_corpus","lowercase","english_word_delimiter","english_stop","my_uniq"]
         },
         "en_corpus_to_ar": {
           "tokenizer":  "standard",
