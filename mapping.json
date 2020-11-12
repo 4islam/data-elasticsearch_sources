@@ -2124,11 +2124,11 @@
         },
         "ar_to_en_corpus": {
           "tokenizer":  "standard",
-          "filter": ["tokens-ar_to_en_corpus"]
+          "filter": ["tokens-ar_to_en_corpus","my_uniq"]
         },
         "ar_to_en_corpus_noor": {
           "tokenizer":  "standard",
-          "filter": ["tokens-ar_to_en_corpus_noor"]
+          "filter": ["tokens-ar_to_en_corpus_noor","my_uniq"]
         },
         "ar_nouns_noor": {
           "tokenizer":  "standard",
