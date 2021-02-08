@@ -1,6 +1,6 @@
 {
   "mappings": {
-         "verse": {
+
             "properties": {
                "Arabic": {
                   "type": "text",
@@ -924,11 +924,8 @@
                 "title" : {
                     "type": "keyword"
                 }
-            },
-            "_all": {
-              "store": true
             }
-         }
+         
       },
 
    "settings": {
@@ -1634,10 +1631,10 @@
           "only_longest_match":true,
           "word_list_path": "compounds_ar.txt"
         },
-        "append_root": {
+        /*"append_root": {
           "type": "delimited_payload_filter",
           "encoding": "identity"
-        },
+        },*/
         "my_uniq": {
           "type" : "unique",
           "only_on_same_position" : false
@@ -1656,11 +1653,11 @@
         },
         "token2lem_noor" : {
             "type" : "synonym",
-            "synonyms_path" : "noor_syn-lem.txt"
+            "synonyms_path" : "syn_lem_noor.solr"
         },
         "token2root_noor" : {
             "type" : "synonym",
-            "synonyms_path" : "noor_syn-root.txt"
+            "synonyms_path" : "syn_root_noor.solr"
         },
         "tokens-ar_nouns" : {
             "type" : "synonym",
@@ -1714,15 +1711,15 @@
         },
         "roots_on_file" : {
                     "type" : "keep",
-                    "keep_words_path" : "roots_out.txt"
+                    "keep_words_path" : "uniq_root.txt"
         },
         "roots_on_file_noor" : {
                     "type" : "keep",
-                    "keep_words_path" : "noor_roots.txt"
+                    "keep_words_path" : "uniq_root_noor.txt"
         },
         "lemms_on_file" : {
                     "type" : "keep",
-                    "keep_words_path" : "lemms_out.txt"
+                    "keep_words_path" : "uniq_lem.txt"
         },
         "ar_nouns_on_file" : {
                     "type" : "keep",
