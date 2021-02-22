@@ -7,6 +7,8 @@ curl -s -XDELETE http://localhost:9200/hq -H 'Content-Type: application/json'
 echo "\n"
 curl -s -XPUT http://localhost:9200/hq -d @mapping.json -H 'Content-Type: application/json'
 echo "\n"
+curl -XPUT "localhost:9200/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.requests.cache.enable": true }'
+echo "\n"
 curl -s -XPOST localhost:9200/hq/_bulk --data-binary @hQ.json -H 'Content-Type: application/json'; clear
 echo "\n"
 #curl -XGET localhost:9200/hq/_stats
