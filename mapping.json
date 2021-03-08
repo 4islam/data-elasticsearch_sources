@@ -461,7 +461,7 @@
                       },
                       "ar_query_suggest_ngram_root_normalized_phonetic": {
                         "type": "text",
-                        "analyzer": "ar_ngram_root_normalized_phonetic",
+                        "analyzer": "ar_ngram_root_normalized_phonetic_noor",
                         "search_analyzer": "query_phonetic",
                         "norms": false
                       }
