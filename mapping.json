@@ -327,11 +327,6 @@
                       },
                       "ar_stems_normalized": {
                         "type": "text",
-                        "analyzer": "ar_stems_normalized",
-                        "search_analyzer": "standard"
-                      },
-                      "ar_stems_normalized_noor": {
-                        "type": "text",
                         "analyzer": "ar_stems_normalized_noor",
                         "search_analyzer": "standard"
                       },
@@ -1421,7 +1416,8 @@
         "shingle": {
             "type": "shingle",
             "min_shingle_size": 2,
-            "max_shingle_size": 3
+            "max_shingle_size": 3,            
+            "output_unigrams": false
         },
         "custom_shingle" : {
           "type": "shingle",
