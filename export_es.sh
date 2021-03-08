@@ -3,6 +3,8 @@ p=9200;    if [ -n "$1" ]; then p=$1; fi
 
 curl -XPUT -H "Content-Type: application/json" http://localhost:$p/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
 echo ""
+#curl -XPUT -H "Content-Type: application/json" http://localhost:$p/_cluster/settings -d '{ "transient": { "logger.org.elasticsearch.discovery": "DEBUG" } }'
+#echo ""
 curl -XPUT -H "Content-Type: application/json" http://localhost:$p/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
 echo ""
 curl -s -XDELETE "http://localhost:$p/hq" -H 'Content-Type: application/json'
