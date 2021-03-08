@@ -10,6 +10,13 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram",
+                        "search_analyzer": "keyword",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram",
+                        "search_analyzer": "ar_original_normalized",
                         "fielddata": true
                       },
                       "reverse": {
@@ -268,6 +275,7 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_general",
+                        "search_analyzer": "standard",
                         "fielddata": true
                       }
                   }
@@ -280,6 +288,13 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_noor",
+                        "search_analyzer": "keyword",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_normalized_noor",
+                        "search_analyzer": "ar_original_normalized_noor",
                         "fielddata": true
                       },
                       "reverse": {
@@ -687,6 +702,11 @@
                         "analyzer": "trigram_general",
                         "fielddata": true
                       },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "fielddata": true
+                      },
                       "significant": {
                         "type": "text",
                         "analyzer": "en_significant",
@@ -729,6 +749,11 @@
                         "analyzer": "trigram_general",
                         "fielddata": true
                       },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "fielddata": true
+                      },
                       "significant": {
                         "type": "text",
                         "analyzer": "de_significant",
@@ -769,6 +794,11 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
                         "fielddata": true
                       },
                       "significant": {
@@ -814,6 +844,11 @@
                         "analyzer": "trigram_general",
                         "fielddata": true
                       },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "fielddata": true
+                      },
                       "significant": {
                         "type": "text",
                         "analyzer": "fr_significant",
@@ -854,6 +889,11 @@
                       "trigram": {
                         "type": "text",
                         "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
                         "fielddata": true
                       },
                       "significant": {
@@ -911,6 +951,11 @@
                         "analyzer": "trigram_general",
                         "fielddata": true
                       },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "fielddata": true
+                      },
                       "significant": {
                         "type": "text",
                         "analyzer": "en_significant",
@@ -925,7 +970,7 @@
                     "type": "keyword"
                 }
             }
-         
+
       },
 
    "settings": {
@@ -1866,6 +1911,11 @@
         "trigram": {
           "type": "custom",
           "tokenizer": "standard",
+          "filter": ["shingle"]
+        },
+        "trigram_normalized": {
+          "type": "custom",
+          "tokenizer": "standard",
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "shingle"]
         },
         "trigram_general": {
@@ -1876,12 +1926,25 @@
             "html_strip"
           ]
         },
+        "trigram_general_lowercase": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["custom_shingle","lowercase"],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
         "reverse": {
           "type": "custom",
           "tokenizer": "standard",
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_farsi_yeh","normalize_kaf","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "reverse"]
         },
         "trigram_noor": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["shingle"]
+        },
+        "trigram_normalized_noor": {
           "type": "custom",
           "tokenizer": "standard",
           "filter": ["normalize_alef","normalize_alef_maksura-alef","normalize_alef_maksura-yeh","punctuation_filter","normalize_yeh_with_hamza","normalize_waw_with_hamza","normalize_teh_marbuta","normalize_kaf_noor","normalize_superscript_alef","normalize_small_waw","normalize_small_yeh", "shingle"]
