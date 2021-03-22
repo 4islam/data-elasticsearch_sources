@@ -1,3 +1,17 @@
+## 9.4:
+  * The following translations added with all related layers:
+    - EnglishPickthall
+    - EnglishSahih
+    - EnglishMaududi
+    - EnglishAhmedAli
+    - EnglishArberry
+    - EnglishYusufAli
+    - UrduMaududi
+    - UrduAhmedAli
+
+## 9.3:
+  * Urdu Tafseer Wow Script Fixed
+
 ## 8.7:
   * Legacy support for Arabic_Noor removed
 
