@@ -2042,7 +2042,7 @@
             "synonyms_path" : "syn_pnoun_noor.solr"
         },
         "tokens-ar_to_en_corpus" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_ar-en_corpus.solr",
             "tokenizer" : "comma_tokenizer"
         },
@@ -2063,16 +2063,15 @@
             "synonyms_path" : "syn_en-ar_noor.solr"
         },
         "tokens-ar_to_en_corpus_noor" : {
-            "type" : "synonym",
-            "synonyms_path" : "syn_ar-en_corpus_noor.solr",
-            "tokenizer" : "comma_tokenizer"
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_ar-en_corpus_noor.solr"
         },
         "tokens-en_corpus_to_ar" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_en_corpus-ar.solr"
         },
         "tokens-en_corpus_to_ar_noor" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_en_corpus-ar_noor.solr"
         },
         "roots_on_file" : {
