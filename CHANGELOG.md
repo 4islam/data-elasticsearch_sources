@@ -2,6 +2,7 @@
   * English Mapping for English Translation by Hadhrat Moulavi Sher Ali ra sahib added, with following stages:
     - English to Arabic
     - Arabic to English
+    - Pipeline for Noor added
 
 ## 9.4:
   * The following translations added with all related layers:
