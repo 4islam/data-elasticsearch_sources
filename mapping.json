@@ -174,6 +174,12 @@
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
+                      "ar_to_en": {
+                        "type": "text",
+                        "analyzer": "ar_to_en",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -442,6 +448,12 @@
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
+                      "ar_to_en": {
+                        "type": "text",
+                        "analyzer": "ar_to_en_noor",
+                        "search_analyzer": "standard",
+                        "fielddata": true
+                      },
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -705,6 +717,18 @@
                       "significant": {
                         "type": "text",
                         "analyzer": "en_significant",
+                        "fielddata": true
+                      },
+                      "en_to_ar": {
+                        "type": "text",
+                        "analyzer": "en_to_ar",
+                        /*"search_analyzer": "standard",*/
+                        "fielddata": true
+                      },
+                      "en_to_ar_noor": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_noor",
+                        /*"search_analyzer": "standard",*/
                         "fielddata": true
                       }
                   }
@@ -1705,6 +1729,11 @@
           "max_shingle_size": 5,
           "output_unigrams": false
         },
+        "translation_shingle" : {
+          "type": "shingle",
+          "min_shingle_size": 2,
+          "max_shingle_size": 4
+        },
         "punctuation_filter": {
           "type": "pattern_replace",
           "pattern": "\\u064E|\\u064F|\\u0650|\\u0652|\\u0651|\\u064B|\\u064D|\\u064C|\\u0653|\\u06E2|\\u0654|\\u0640|\\u06DF|\\u06ED|\\u06E0|\\u06DC|\\u06EA|\\u06E3|\\u06E8|\\u06EC|\\u06EB|\\u06E1"
@@ -2013,21 +2042,36 @@
             "synonyms_path" : "syn_pnoun_noor.solr"
         },
         "tokens-ar_to_en_corpus" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_ar-en_corpus.solr",
             "tokenizer" : "comma_tokenizer"
         },
+        "tokens-ar_to_en" : {
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_ar-en.solr"
+        },
+        "tokens-ar_to_en_noor" : {
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_ar-en_noor.solr"
+        },
+        "tokens-en_to_ar" : {
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_en-ar.solr"
+        },
+        "tokens-en_to_ar_noor" : {
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_en-ar_noor.solr"
+        },
         "tokens-ar_to_en_corpus_noor" : {
-            "type" : "synonym",
-            "synonyms_path" : "syn_ar-en_corpus_noor.solr",
-            "tokenizer" : "comma_tokenizer"
+            "type" : "synonym_graph",
+            "synonyms_path" : "syn_ar-en_corpus_noor.solr"
         },
         "tokens-en_corpus_to_ar" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_en_corpus-ar.solr"
         },
         "tokens-en_corpus_to_ar_noor" : {
-            "type" : "synonym",
+            "type" : "synonym_graph",
             "synonyms_path" : "syn_en_corpus-ar_noor.solr"
         },
         "roots_on_file" : {
@@ -2073,6 +2117,18 @@
         "ar_propernouns_on_file_noor" : {
                     "type" : "keep",
                     "keep_words_path" : "uniq_pnoun_noor.txt"
+        },
+        "ar-en_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_ar-en.txt"
+        },
+        "en-ar_on_file" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_en-ar.txt"
+        },
+        "en-ar_on_file_noor" : {
+                    "type" : "keep",
+                    "keep_words_path" : "uniq_en-ar_noor.txt"
         }
       },
       "analyzer": {
@@ -2462,6 +2518,14 @@
           "tokenizer":  "standard",
           "filter": ["tokens-ar_to_en_corpus","my_uniq"]
         },
+        "ar_to_en": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_to_en","ar-en_on_file","lowercase","english_stop"]
+        },
+        "ar_to_en_noor": {
+          "tokenizer":  "standard",
+          "filter": ["tokens-ar_to_en_noor","ar-en_on_file","lowercase","english_stop"]
+        },
         "ar_to_en_corpus_noor": {
           "tokenizer":  "standard",
           "filter": ["tokens-ar_to_en_corpus_noor","my_uniq"]
@@ -2481,6 +2545,16 @@
         "ar_propernouns_noor": {
           "tokenizer":  "standard",
           "filter": ["tokens-ar_propernouns_noor","ar_propernouns_on_file_noor","my_uniq"]
+        },
+        "en_to_ar": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip","en_strip_special"],
+          "filter": ["lowercase","tokens-en_to_ar","en-ar_on_file","english_stop","my_uniq"]
+        },
+        "en_to_ar_noor": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip","en_strip_special"],
+          "filter": ["lowercase","tokens-en_to_ar_noor","en-ar_on_file_noor","english_stop","my_uniq"]
         },
         "en_corpus_to_ar": {
           "tokenizer":  "standard",
