@@ -1,3 +1,10 @@
+## 9.7:
+  * Performance related enhancements:
+  - Shards and Replicas added
+
+  * Index cleanup
+  - All index=false removed from fields. These were added in the past to suppress some errors
+
 ## 9.6:
   * English Mapping for English Translation by Hadhrat Moulavi Sher Ali ra sahib added, with following stages:
   - English to Arabic Noor

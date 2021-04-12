@@ -24,13 +24,11 @@
                         "analyzer": "reverse"
                       },
                       "ar_original": {
-                        "type": "text",
-                        "index": false
+                        "type": "text"
                       },
                       "ar_original_noor": {
                         "type": "text",
-                        "analyzer": "ar_original_noor",
-                        "index": false
+                        "analyzer": "ar_original_noor"
                       },
                       "ar_normalized": {
                         "type": "text",
@@ -308,8 +306,7 @@
                         "analyzer": "reverse_noor"
                       },
                       "ar_original": {
-                        "type": "text",
-                        "index": false
+                        "type": "text"
                       },
                       "ar_normalized": {
                         "type": "text",
@@ -502,8 +499,7 @@
                      "type": "text",
                      "analyzer":"standard",
                      "search_analyzer":"standard",
-                     "search_quote_analyzer": "search_quote_analyzer",
-                     "index": false
+                     "search_quote_analyzer": "search_quote_analyzer"
                    },
                    "en_ngram_original": {
                      "type": "text",
@@ -533,8 +529,7 @@
                "Surah_EN_transliteration": {"type": "text",
                "fields": {
                    "en_original": {
-                     "type": "text",
-                     "index": false
+                     "type": "text"
                    },
                    "en_ngram_original": {
                      "type": "text",
@@ -564,8 +559,7 @@
                "Surah_EN_translation":{"type": "text",
                "fields": {
                    "en_original": {
-                     "type": "text",
-                     "index": false
+                     "type": "text"
                    },
                    "en_ngram_original": {
                      "type": "text",
@@ -608,8 +602,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "ur_ngram_original": {
                         "type": "text",
@@ -645,8 +638,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "ur_ngram_original": {
                         "type": "text",
@@ -682,8 +674,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": true
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "en_ngram_original": {
                         "type": "text",
@@ -741,8 +732,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "de_ngram_original": {
                         "type": "text",
@@ -788,8 +778,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "es_ngram_original": {
                         "type": "text",
@@ -836,8 +825,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "fr_ngram_original": {
                         "type": "text",
@@ -883,8 +871,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": false
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "en_ngram_original": {
                         "type": "text",
@@ -943,8 +930,7 @@
                         "type": "text",
                         "analyzer":"standard",
                         "search_analyzer":"standard",
-                        "search_quote_analyzer": "search_quote_analyzer",
-                        "index": true
+                        "search_quote_analyzer": "search_quote_analyzer"
                       },
                       "en_ngram_original": {
                         "type": "text",
@@ -989,8 +975,7 @@
                       "type": "text",
                       "analyzer":"standard",
                       "search_analyzer":"standard",
-                      "search_quote_analyzer": "search_quote_analyzer",
-                      "index": true
+                      "search_quote_analyzer": "search_quote_analyzer"
                     },
                     "en_ngram_original": {
                       "type": "text",
@@ -1039,8 +1024,7 @@
                       "type": "text",
                       "analyzer":"standard",
                       "search_analyzer":"standard",
-                      "search_quote_analyzer": "search_quote_analyzer",
-                      "index": true
+                      "search_quote_analyzer": "search_quote_analyzer"
                     },
                     "en_ngram_original": {
                       "type": "text",
@@ -1089,8 +1073,7 @@
                       "type": "text",
                       "analyzer":"standard",
                       "search_analyzer":"standard",
-                      "search_quote_analyzer": "search_quote_analyzer",
-                      "index": true
+                      "search_quote_analyzer": "search_quote_analyzer"
                     },
                     "en_ngram_original": {
                       "type": "text",
@@ -1139,8 +1122,7 @@
                       "type": "text",
                       "analyzer":"standard",
                       "search_analyzer":"standard",
-                      "search_quote_analyzer": "search_quote_analyzer",
-                      "index": true
+                      "search_quote_analyzer": "search_quote_analyzer"
                     },
                     "en_ngram_original": {
                       "type": "text",
@@ -1211,7 +1193,6 @@
                     },
                     "ur_original" : {
                       "type" : "text",
-                      "index" : false,
                       "analyzer" : "standard",
                       "search_analyzer" : "standard",
                       "search_quote_analyzer" : "search_quote_analyzer"
@@ -1251,7 +1232,6 @@
                     },
                     "ur_original" : {
                       "type" : "text",
-                      "index" : false,
                       "analyzer" : "standard",
                       "search_analyzer" : "standard",
                       "search_quote_analyzer" : "search_quote_analyzer"
@@ -1273,6 +1253,8 @@
       },
 
    "settings": {
+     "number_of_shards":3,
+     "number_of_replicas":3,
     "analysis": {
       "char_filter": {
         "html_strip": {
