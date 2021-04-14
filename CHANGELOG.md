@@ -1,6 +1,9 @@
 ## 9.7:
   * Performance related enhancements:
   - Shards and Replicas added
+  - Numbers of shards reduced and replicas increases
+  * export script updated to copy files to dockers
+  * location of dictionary files moved to align with server
 
   * Index cleanup
   - All index=false removed from fields. These were added in the past to suppress some errors
