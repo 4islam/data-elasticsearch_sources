@@ -1254,7 +1254,7 @@
 
    "settings": {
      "number_of_shards":1,
-     "number_of_replicas":6,
+     "number_of_replicas":5,
     "analysis": {
       "char_filter": {
         "html_strip": {
