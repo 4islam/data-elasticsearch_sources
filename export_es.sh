@@ -16,6 +16,8 @@ curl -s -XPUT "http://localhost:$p/hq" -d @mapping.json -H 'Content-Type: applic
 echo ""
 curl -XPUT "localhost:$p/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.requests.cache.enable": true }'
 echo ""
+curl -XPUT "localhost:$p/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.number_of_replicas": 3 }'
+echo ""
 curl -s -XPOST "localhost:$p/hq/_bulk" --data-binary @hQ.json -H 'Content-Type: application/json'; clear
 echo ""
 #curl -XGET localhost:9200/hq/_stats
