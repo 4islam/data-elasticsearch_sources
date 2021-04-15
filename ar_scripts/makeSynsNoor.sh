@@ -21,7 +21,7 @@ while read line; do
   #   --data-urlencode 'fields=[{"name":"Arabic","layers":[]}]' \
   #   --data-urlencode "input=$word" | jq '.hits.total.value'`
 
-  echo "$ar => $other"
+  #echo "$ar => $other"
   out=`curl -sG "localhost:9200/hq/_search/?size=1" -H 'Content-Type: application/json' --data-urlencode "q=Arabic:$ar"| jq '.hits.hits[]._source'`
   ArabicOut=`echo $out | jq '.Arabic'`
   ArabicNoorOut=`echo $out | jq '.ArabicNoor'`
