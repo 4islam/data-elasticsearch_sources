@@ -21,18 +21,29 @@ while read line; do
   #   --data-urlencode 'fields=[{"name":"Arabic","layers":[]}]' \
   #   --data-urlencode "input=$word" | jq '.hits.total.value'`
 
-  #echo "$ar => $other"
-  out=`curl -sG "localhost:9200/hq/_search/?size=1" -H 'Content-Type: application/json' --data-urlencode "q=Arabic:$ar"| jq '.hits.hits[]._source'`
-  ArabicOut=`echo $out | jq '.Arabic'`
-  ArabicNoorOut=`echo $out | jq '.ArabicNoor'`
+  out=`curl -sG "localhost:9200/hq/_search/?size=1" -H 'Content-Type: application/json' --data-urlencode "q=Arabic:\"$ar\""|
+            jq '.hits.hits[]._source'`
+  ArabicOut=`echo $out | jq '.Arabic' | xargs`
+  ArabicNoorOut=`echo $out | jq '.ArabicNoor' | xargs`
 
-  tokenIdArabic=`echo $ArabicOut |tr -d '"'| awk -v ar="$ar" -F" " '{for(i=1; i<=NF; i++) {if($i==ar || i==NF) {print i;exit}}}'`
-  #echo $tokenIdArabic
+  firstToken=`echo $ar | cut -d " " -f1`
   tokenCount=`echo $ar | awk '{print NF}'`
-  tokenArabicNoor=`echo $ArabicNoorOut |tr -d '"'|
-        awk -v tokenIdArabic="$((tokenIdArabic))" -v c=$tokenCount -F" " 'BEGIN { ORS=" "; l=0 };{for(i=1; i<=NF; i++) {if(i=='tokenIdArabic') {for(l=c;l>0;l--){print $(i-l+1) } }}}'`
 
-  #echo "$ar \t\t $tokenArabicNoor \t\t id:$tokenIdArabic"
+  ar=`echo $ar | xargs`
+  echo "($ar)"
+  tokenIdArabic=`echo $ArabicOut |tr -d '"'|
+    awk -v c=$tokenCount -v ar="$ar" -F" " '{for(i=1; i<=NF; i++) {t=$i; for(j=i+1; j<=c+i-1; j++){t=t" "$j;} if(t==ar || i==NF) {print i; exit}}}'`
+
+
+
+  #echo $ArabicOut
+  #echo $ArabicNoorOut
+  #echo $tokenCount
+
+  tokenArabicNoor=`echo $ArabicNoorOut |tr -d '"'|
+            awk -v tokenIdArabic="$((tokenIdArabic))" -v c=$tokenCount -F" " 'BEGIN { ORS=" "; l=0 };{for(i=1; i<=NF; i++) {if(i=='tokenIdArabic') {for(l=c;l>0;l--){print $(i-l+c) } }}}'`
+
+  echo "$ar \t\t $tokenArabicNoor \t\t id:$tokenIdArabic"
 
   if [ "$column" == "1" ];then #if empty
       out="$tokenArabicNoor => $other"
@@ -46,9 +57,11 @@ while read line; do
 
   #echo $out2; echo ""
 
+  echo "$ar => $other"
   echo $out | tee -a $output
   if [ -z "$tokenArabicNoor" ];then #if empty
         echo $line >> $output.error
         echo ""
   fi
+  echo "---"
 done
