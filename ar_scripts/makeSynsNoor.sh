@@ -29,8 +29,6 @@ while read line; do
   firstToken=`echo $ar | cut -d " " -f1`
   tokenCount=`echo $ar | awk '{print NF}'`
 
-  ar=`echo $ar | xargs`
-  echo "($ar)"
   tokenIdArabic=`echo $ArabicOut |tr -d '"'|
     awk -v c=$tokenCount -v ar="$ar" -F" " '{for(i=1; i<=NF; i++) {t=$i; for(j=i+1; j<=c+i-1; j++){t=t" "$j;} if(t==ar || i==NF) {print i; exit}}}'`
 
@@ -43,7 +41,7 @@ while read line; do
   tokenArabicNoor=`echo $ArabicNoorOut |tr -d '"'|
             awk -v tokenIdArabic="$((tokenIdArabic))" -v c=$tokenCount -F" " 'BEGIN { ORS=" "; l=0 };{for(i=1; i<=NF; i++) {if(i=='tokenIdArabic') {for(l=c;l>0;l--){print $(i-l+c) } }}}'`
 
-  echo "$ar \t\t $tokenArabicNoor \t\t id:$tokenIdArabic"
+  #echo "$ar \t\t $tokenArabicNoor \t\t id:$tokenIdArabic"
 
   if [ "$column" == "1" ];then #if empty
       out="$tokenArabicNoor => $other"
@@ -57,11 +55,11 @@ while read line; do
 
   #echo $out2; echo ""
 
-  echo "$ar => $other"
+  #echo "$ar => $other"
   echo $out | tee -a $output
   if [ -z "$tokenArabicNoor" ];then #if empty
         echo $line >> $output.error
         echo ""
   fi
-  echo "---"
+  #echo "---"
 done
