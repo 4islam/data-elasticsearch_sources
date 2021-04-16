@@ -1,3 +1,6 @@
+## 9.8:
+  * Arabic Noor to English mapping bugs fixed:
+
 ## 9.7:
   * Performance related enhancements:
   - Shards and Replicas added
