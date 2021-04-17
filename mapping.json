@@ -178,6 +178,12 @@
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
+                      "ar_to_en_trigram": {
+                        "type": "text",
+                        "analyzer": "ar_to_en_keyword",
+                        "search_analyzer": "trigram_translation",
+                        "fielddata": true
+                      },
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -451,6 +457,12 @@
                         "search_analyzer": "standard",
                         "fielddata": true
                       },
+                      "ar_to_en_trigram": {
+                        "type": "text",
+                        "analyzer": "ar_to_en_noor_keyword",
+                        "search_analyzer": "trigram_translation",
+                        "fielddata": true
+                      },
                       "ar_query_suggest_ngram_normalized_phonetic": {
                         "type": "text",
                         "analyzer": "ar_normalized_ngram_phonetic",
@@ -720,6 +732,18 @@
                         "type": "text",
                         "analyzer": "en_to_ar_noor",
                         /*"search_analyzer": "standard",*/
+                        "fielddata": true
+                      },
+                      "en_to_ar_trigram": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_keyword",
+                        "search_analyzer": "trigram_translation",
+                        "fielddata": true
+                      },
+                      "en_to_ar_noor_trigram": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_noor_keyword",
+                        "search_analyzer": "trigram_translation",
                         "fielddata": true
                       }
                   }
@@ -1253,8 +1277,8 @@
       },
 
    "settings": {
-     "number_of_shards":1,
-     "number_of_replicas":5,
+   "number_of_shards":1,
+   "max_shingle_diff":9,
     "analysis": {
       "char_filter": {
         "html_strip": {
@@ -1714,7 +1738,7 @@
         "translation_shingle" : {
           "type": "shingle",
           "min_shingle_size": 2,
-          "max_shingle_size": 4
+          "max_shingle_size": 9
         },
         "punctuation_filter": {
           "type": "pattern_replace",
@@ -2227,6 +2251,11 @@
           "tokenizer": "standard",
           "filter": ["shingle"]
         },
+        "trigram_translation": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["translation_shingle"]
+        },
         "trigram_normalized": {
           "type": "custom",
           "tokenizer": "standard",
@@ -2508,6 +2537,14 @@
           "tokenizer":  "standard",
           "filter": ["tokens-ar_to_en_noor","ar-en_on_file","lowercase","english_stop"]
         },
+        "ar_to_en_keyword": {
+          "tokenizer":  "keyword",
+          "filter": ["tokens-ar_to_en","ar-en_on_file"]
+        },
+        "ar_to_en_noor_keyword": {
+          "tokenizer":  "keyword",
+          "filter": ["tokens-ar_to_en_noor","ar-en_on_file"]
+        },
         "ar_to_en_corpus_noor": {
           "tokenizer":  "standard",
           "filter": ["tokens-ar_to_en_corpus_noor","my_uniq"]
@@ -2537,6 +2574,14 @@
           "tokenizer":  "standard",
           "char_filter": ["html_strip","en_strip_special"],
           "filter": ["lowercase","tokens-en_to_ar_noor","en-ar_on_file_noor","english_stop","my_uniq"]
+        },
+        "en_to_ar_keyword": {
+          "tokenizer":  "keyword",
+          "filter": ["tokens-en_to_ar","en-ar_on_file"]
+        },
+        "en_to_ar_noor_keyword": {
+          "tokenizer":  "keyword",
+          "filter": ["tokens-en_to_ar_noor","en-ar_on_file_noor"]
         },
         "en_corpus_to_ar": {
           "tokenizer":  "standard",
