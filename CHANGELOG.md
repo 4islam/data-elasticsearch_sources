@@ -1,5 +1,9 @@
+## 9.9:
+  * Normalized matching fixed and updated
+  * English Trigram layers for searching updated to leverage keyword tokenizer
+
 ## 9.8:
-  * Arabic Noor to English mapping bugs fixed:
+  * Arabic Noor to English mapping bugs fixed۔
 
 ## 9.7:
   * Performance related enhancements:
