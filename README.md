@@ -8,6 +8,10 @@ ArabicNoor |  This is generated field from regex patterns, source is Arabic fiel
 
 ## Details to add in this ReadMe (or other ReadMEs linked to this project)
 
+The purpose of all this work is to ensure
+- Clarity on the state of the project.
+- Future onboarding of resources.
+
 ### Associated projects
 This section should mention the associated projects, their names and git urls. In future we can even work on making this a mono repo with each project as a git sub-module
 
@@ -39,13 +43,24 @@ These projects should contain use case digrams for most common cases. The diagra
 - Phonetic search
 
 ### Code Linting / Structuring Guidelines
-Projects either should contain automatic linters of linting guidelines should be added. The design patterns that a project must follow should be mentioned
+- Projects either should contain automatic linters of linting guidelines should be added. 
+- The design patterns that a project must follow should be mentioned
 
 ### Unit Testing / Integration Testing / Testing Coverage
-Each project should contain a suite for adding unit and integration testing. A mechanism to find out how much code is covered in testing should be implemented
+- Each project should contain a suite for adding unit and integration testing. 
+- A mechanism to find out how much code is covered in testing should be implemented
 
 ### Deployment Instructions
-There should be clear instructions/scripts that define the process on how to deploy the project(s) to production and dev environments. Deployment windows have to be defined as well and process on how to notify associated parties should be mentioned.
+- There should be clear instructions/scripts that define the process on how to deploy the project(s) to production and dev environments. 
+- Deployment windows have to be defined as well and process on how to notify associated parties should be mentioned.
 
+### Data Injestion into ES
+Procedures have to be defined on how data is added to Elastic Search
+
+### Layers for Mobile application
+Steps on how to generate layers for the consumption of mobile (or any future offline) application should be mentioned
+
+### Search Algorithm
+A description of how the search algorithm works should be mentioned.
 
 
