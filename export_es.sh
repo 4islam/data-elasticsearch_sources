@@ -1,8 +1,8 @@
 #!/bin/sh
 p=9200;    if [ -n "$1" ]; then p=$1; fi
 
-echo "/var/lib/docker/volumes/elasticsearch_data01c/_data /var/lib/docker/volumes/elasticsearch_data02c/_data /var/lib/docker/volumes/elasticsearch_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.solr
-echo "/var/lib/docker/volumes/elasticsearch_data01c/_data /var/lib/docker/volumes/elasticsearch_data02c/_data /var/lib/docker/volumes/elasticsearch_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.txt
+echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.solr
+echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.txt
 
 curl -XPUT -H "Content-Type: application/json" http://localhost:$p/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
 echo ""
@@ -16,7 +16,7 @@ curl -s -XPUT "http://localhost:$p/hq" -d @mapping.json -H 'Content-Type: applic
 echo ""
 curl -XPUT "localhost:$p/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.requests.cache.enable": true }'
 echo ""
-curl -XPUT "localhost:$p/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.number_of_replicas": 3 }'
+curl -XPUT "localhost:$p/hq/_settings?pretty" -H 'Content-Type: application/json' -d'{ "index.number_of_replicas": 5 }'
 echo ""
 curl -s -XPOST "localhost:$p/hq/_bulk" --data-binary @hQ.json -H 'Content-Type: application/json'; clear
 echo ""
