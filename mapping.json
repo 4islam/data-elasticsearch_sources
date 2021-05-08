@@ -981,6 +981,54 @@
                       }
                   }
                },
+               "EnglishMuhammadAli" : {
+                 "type" : "text",
+                 "fields" : {
+                   "en_original": {
+                     "type": "text",
+                     "analyzer":"standard",
+                     "search_analyzer":"standard",
+                     "search_quote_analyzer": "search_quote_analyzer"
+                   },
+                   "en_ngram_original": {
+                     "type": "text",
+                     "analyzer": "en_ngram_original",
+                     "search_analyzer": "standard",
+                     "fielddata": true,
+                     "norms": false
+                   },
+                   "en_normalized": {
+                     "type": "text",
+                     "analyzer": "en_normalized",
+                     "fielddata": true
+                   },
+                   "en_normalized_ngram": {
+                     "type": "text",
+                     "analyzer": "en_ngram_normalized",
+                     "search_analyzer": "en_normalized",
+                     "fielddata": true
+                   },
+                   "trigram": {
+                     "type": "text",
+                     "analyzer": "trigram_general",
+                     "fielddata": true
+                   },
+                   "trigram_normalized": {
+                     "type": "text",
+                     "analyzer": "trigram_general_lowercase",
+                     "fielddata": true
+                   },
+                   "significant": {
+                     "type": "text",
+                     "analyzer": "en_significant",
+                     "fielddata": true
+                   },
+                   "keyword" : {
+                     "type" : "keyword",
+                     "ignore_above" : 256
+                   }
+                 }
+               },
                "EnglishMaududi" : {
                   "type" : "text",
                   "fields" : {
