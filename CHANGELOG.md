@@ -1,6 +1,6 @@
 ## 10.1:
   * Following Translation Added:
-  - English Sir Muhammad Zaffarullah Khan sb ra
+     - English Sir Muhammad Zaffarullah Khan sb ra
 
 ## 10.0:
   * Following Translation Added:
