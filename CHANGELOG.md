@@ -4,7 +4,7 @@
 
 ## 10.0:
   * Following Translation Added:
-  - English Maulana Muhammad Ali ra
+     - English Maulana Muhammad Ali ra
 
 ## 9.9:
   * Normalized matching fixed and updated
