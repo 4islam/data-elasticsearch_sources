@@ -1470,7 +1470,7 @@
       },
 
    "settings": {
-   "number_of_shards":1,
+   "number_of_shards":16,
    "max_shingle_diff":9,
     "analysis": {
       "char_filter": {
