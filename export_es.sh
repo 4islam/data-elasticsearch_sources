@@ -1,8 +1,11 @@
 #!/bin/sh
 p=9200;    if [ -n "$1" ]; then p=$1; fi
 
-echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.solr
-echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.txt
+#echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.solr
+#echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.txt
+
+sudo cp -v esConfig/*.solr /etc/elasticsearch
+sudo cp -v esConfig/*.txt /etc/elasticsearch
 
 curl -XPUT -H "Content-Type: application/json" http://localhost:$p/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
 echo ""
