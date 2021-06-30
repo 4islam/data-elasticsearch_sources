@@ -1,3 +1,9 @@
+## 10.2:
+  * Following Performance enhancements added to cluster (10x improvement for aggregation):
+    - Numbers of shards increased to two per core
+    - Pre-loading filesystem cache for readiness from cold start with:
+      - Norms, doc values, terms dictionaries, postings lists and points ["nvd", "dvd", "tim", "doc", "dim"]
+
 ## 10.1:
   * Following Translation Added:
     - English Sir Muhammad Zaffarullah Khan sb ra

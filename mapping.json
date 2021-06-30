@@ -1472,6 +1472,7 @@
    "settings": {
    "number_of_shards":16,
    "max_shingle_diff":9,
+   "index.store.preload": ["nvd", "dvd", "tim", "doc", "dim"],
     "analysis": {
       "char_filter": {
         "html_strip": {
