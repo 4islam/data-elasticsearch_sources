@@ -985,7 +985,13 @@
                         "type": "text",
                         "analyzer": "en_significant",
                         "fielddata": true
+                      },
+                      "Topics": {
+                        "type": "text",
+                        "analyzer": "en_Topics",
+                        "fielddata": true
                       }
+
                   }
                },
                "EnglishZafrullahKhan" : {
@@ -2381,6 +2387,9 @@
           "char_filter": ["html_strip","en_strip_special"],
           "filter": ["lowercase","english_stop"]
         },
+        "en_Topics": {
+          "tokenizer":  "semicolon_tokenizer"
+        },
         "de_normalized": {
           "tokenizer":  "standard",
           "char_filter": ["html_strip"],
@@ -2814,6 +2823,10 @@
         "comma_tokenizer": {
           "type": "pattern",
           "pattern": ","
+        },
+        "semicolon_tokenizer": {
+          "type": "simple_pattern_split",
+          "pattern": ";"
         }
       }
     }

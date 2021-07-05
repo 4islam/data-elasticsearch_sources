@@ -1,3 +1,6 @@
+## 10.3:
+  * Layer to split Topics added to calculate the most significant one
+
 ## 10.2:
   * Following Performance enhancements added to cluster (10x improvement for aggregation):
     - Numbers of shards increased to two per core
