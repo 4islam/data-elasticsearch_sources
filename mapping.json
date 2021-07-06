@@ -2825,8 +2825,8 @@
           "pattern": ","
         },
         "semicolon_tokenizer": {
-          "type": "simple_pattern_split",
-          "pattern": ";"
+          "type": "pattern",
+          "pattern": " *; *"
         }
       }
     }
