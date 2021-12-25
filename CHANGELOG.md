@@ -1,3 +1,6 @@
+## 10.4
+  * ES Config updated for pipeline optimization
+
 ## 10.3:
   * Layer to split Topics added to calculate the most significant one
 
