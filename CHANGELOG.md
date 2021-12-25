@@ -1,3 +1,6 @@
+## 10.5
+  * Italian language added
+
 ## 10.4
   * ES Config updated for pipeline optimization
 

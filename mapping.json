@@ -838,8 +838,52 @@
                         "fielddata": true
                       }
                   }
-               }
-               ,
+             },
+             "Italian": {
+                "type": "text",
+                "fielddata": true,
+                "fields": {
+                    "it_original": {
+                      "type": "text",
+                      "analyzer":"standard",
+                      "search_analyzer":"standard",
+                      "search_quote_analyzer": "search_quote_analyzer"
+                    },
+                    "it_ngram_original": {
+                      "type": "text",
+                      "analyzer": "it_ngram_original",
+                      "search_analyzer": "standard",
+                      "fielddata": true,
+                      "norms": false
+                    },
+                    "it_normalized": {
+                      "type": "text",
+                      "analyzer": "it_normalized",
+                      "fielddata": true
+                    },
+                    "it_normalized_ngram": {
+                      "type": "text",
+                      "analyzer": "it_ngram_normalized",
+                      "search_analyzer": "it_normalized",
+                      "fielddata": true
+                    },
+                    "trigram": {
+                      "type": "text",
+                      "analyzer": "trigram_general",
+                      "fielddata": true
+                    },
+                    "trigram_normalized": {
+                      "type": "text",
+                      "analyzer": "trigram_general_lowercase",
+                      "fielddata": true
+                    },
+                    "significant": {
+                      "type": "text",
+                      "analyzer": "it_significant",
+                      "fielddata": true
+                    }
+                }
+             },
                "French": {
                   "type": "text",
                   "fielddata": true,
@@ -1919,6 +1963,14 @@
           "type":       "stemmer",
           "language":   "light_spanish"
         },
+        "italian_stop": {
+          "type":       "stop",
+          "stopwords":  "_italian_"
+        },
+        "italian_stemmer": {
+          "type":       "stemmer",
+          "language":   "light_italian"
+        },
         "french_stop": {
           "type":       "stop",
           "stopwords":  "_french_"
@@ -2427,6 +2479,25 @@
           "tokenizer":  "standard",
           "char_filter": ["html_strip"],
           "filter": ["lowercase","spanish_stop"]
+        },
+        "it_normalized": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["asciifolding","lowercase","italian_stop","italian_stemmer"]
+        },
+        "it_ngram_original": {
+          "tokenizer":  "standard",
+          "filter": ["lowercase","italian_stop","text_ngram_filter"]
+        },
+        "it_ngram_normalized": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["asciifolding","lowercase","italian_stop","italian_stemmer","text_ngram_filter"]
+        },
+        "it_significant": {
+          "tokenizer":  "standard",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","italian_stop"]
         },
         "fr_normalized": {
           "tokenizer":  "standard",
