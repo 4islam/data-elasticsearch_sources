@@ -1939,6 +1939,10 @@
           "type":       "stemmer",
           "language":   "english"
         },
+        "english_stemmer_snow": {
+          "type": "snowball",
+          "language": "English"
+        },
         "english_word_delimiter": {
           "type":       "word_delimiter",
           "language":   "english"
@@ -2417,7 +2421,7 @@
         "en_normalized": {
           "tokenizer":  "standard",
           "char_filter": ["html_strip","en_strip_special"],
-          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer"]
+          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer_snow"]
         },
         "en_normalized_simple": {
           "tokenizer":  "standard",
@@ -2432,7 +2436,7 @@
         "en_ngram_normalized": {
           "tokenizer":  "standard",
           "char_filter": ["html_strip","en_strip_special"],
-          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer","text_ngram_filter"]
+          "filter": ["asciifolding","lowercase","english_word_delimiter","english_possessive_stemmer","english_stop","english_stemmer_snow","text_ngram_filter"]
         },
         "en_significant": {
           "tokenizer":  "standard",
@@ -2550,7 +2554,7 @@
         "trigram_general_lowercase": {
           "type": "custom",
           "tokenizer": "standard",
-          "filter": ["custom_shingle","lowercase","english_stemmer"],
+          "filter": ["custom_shingle","lowercase","english_stemmer_snow"],
           "char_filter": [
             "html_strip"
           ]
@@ -2558,7 +2562,7 @@
         "keyword_general_lowercase": {
           "type": "custom",
           "tokenizer": "keyword",
-          "filter": ["lowercase","english_stemmer"],
+          "filter": ["lowercase","english_stemmer_snow"],
           "char_filter": [
             "html_strip","char_filter_comma"
           ]

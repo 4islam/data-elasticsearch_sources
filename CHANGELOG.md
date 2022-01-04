@@ -1,3 +1,6 @@
+## 10.6
+  * English Stemmer changed to Snowball one. Default one had issues (e.g. apes -> ap, not ape etc.)
+
 ## 10.5
   * Italian language added
 
