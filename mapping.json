@@ -607,6 +607,9 @@
                "Hisb":{"type": "integer"},
                "Sajda_id":{"type": "integer"},
                "Sajda_Obligation":{"type": "boolean"},
+               "CR":{"type":"text","analyzer":"whitespace_tokenizer"},
+               "CR_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
+               "CR_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
 
                "Urdu": {
                   "type": "text",

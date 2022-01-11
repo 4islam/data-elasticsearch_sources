@@ -1,3 +1,6 @@
+## 10.7
+  * English 5 Volume based verse cross-references added. Corresponding Excel source file number 10.0
+
 ## 10.6
   * English Stemmer changed to Snowball one. Default one had issues (e.g. apes -> ap, not ape etc.)
 
