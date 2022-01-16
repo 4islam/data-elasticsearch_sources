@@ -607,9 +607,23 @@
                "Hisb":{"type": "integer"},
                "Sajda_id":{"type": "integer"},
                "Sajda_Obligation":{"type": "boolean"},
-               "CR":{"type":"text","analyzer":"whitespace_tokenizer"},
-               "CR_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
-               "CR_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
+
+               "CR_English5V" : {"properties" : {
+                 "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
+                 "e" : {"type" : "text"},"f" : {"type" : "text"},"g" : {"type" : "text"},"h" : {"type" : "text"},
+                 "i" : {"type" : "text"},"j" : {"type" : "text"},"k" : {"type" : "text"},"l" : {"type" : "text"}
+               }},
+               "CR_English5V_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
+               "CR_English5V_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
+
+               "CR_Chinese" : {"properties" : {
+                 "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
+                 "e" : {"type" : "text"},"f" : {"type" : "text"},"g" : {"type" : "text"},"h" : {"type" : "text"},
+                 "i" : {"type" : "text"},"j" : {"type" : "text"},"k" : {"type" : "text"},"l" : {"type" : "text"}
+               }},
+               "CR_Chinese_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
+               "CR_Chinese_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
+
 
                "Urdu": {
                   "type": "text",
@@ -682,6 +696,77 @@
                   }
                },
                "English": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "en_original": {
+                        "type": "text",
+                        "analyzer":"standard",
+                        "search_analyzer":"standard",
+                        "search_quote_analyzer": "search_quote_analyzer"
+                      },
+                      "en_ngram_original": {
+                        "type": "text",
+                        "analyzer": "en_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "en_normalized": {
+                        "type": "text",
+                        "analyzer": "en_normalized",
+                        "fielddata": true
+                      },
+                      "en_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "en_ngram_normalized",
+                        "search_analyzer": "en_normalized",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "search_analyzer": "keyword",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "search_analyzer": "keyword_general_lowercase",
+                        "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "en_significant",
+                        "fielddata": true
+                      },
+                      "en_to_ar": {
+                        "type": "text",
+                        "analyzer": "en_to_ar",
+                        /*"search_analyzer": "standard",*/
+                        "fielddata": true
+                      },
+                      "en_to_ar_noor": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_noor",
+                        /*"search_analyzer": "standard",*/
+                        "fielddata": true
+                      },
+                      "en_to_ar_trigram": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_keyword",
+                        "search_analyzer": "trigram_translation",
+                        "fielddata": true
+                      },
+                      "en_to_ar_noor_trigram": {
+                        "type": "text",
+                        "analyzer": "en_to_ar_noor_keyword",
+                        "search_analyzer": "trigram_translation",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "English5VC": {
                   "type": "text",
                   "fielddata": true,
                   "fields": {
@@ -928,6 +1013,51 @@
                       "significant": {
                         "type": "text",
                         "analyzer": "fr_significant",
+                        "fielddata": true
+                      }
+                  }
+               },
+               "Chinese": {
+                  "type": "text",
+                  "fielddata": true,
+                  "fields": {
+                      "cn_original": {
+                        "type": "text",
+                        "analyzer":"smartcn",
+                        "search_analyzer":"standard",
+                        "search_quote_analyzer": "search_quote_analyzer"
+                      },
+                      "cn_ngram_original": {
+                        "type": "text",
+                        "analyzer": "cn_ngram_original",
+                        "search_analyzer": "standard",
+                        "fielddata": true,
+                        "norms": false
+                      },
+                      "cn_normalized": {
+                        "type": "text",
+                        "analyzer": "cn_normalized",
+                        "fielddata": true
+                      },
+                      "cn_normalized_ngram": {
+                        "type": "text",
+                        "analyzer": "cn_ngram_normalized",
+                        "search_analyzer": "cn_normalized",
+                        "fielddata": true
+                      },
+                      "trigram": {
+                        "type": "text",
+                        "analyzer": "trigram_general",
+                        "fielddata": true
+                      },
+                      "trigram_normalized": {
+                        "type": "text",
+                        "analyzer": "trigram_general_lowercase",
+                        "fielddata": true
+                      },
+                      "significant": {
+                        "type": "text",
+                        "analyzer": "cn_significant",
                         "fielddata": true
                       }
                   }
@@ -2524,6 +2654,25 @@
           "tokenizer":  "standard",
           "char_filter": ["html_strip"],
           "filter": ["lowercase","french_stop"]
+        },
+        "cn_normalized": {
+          "tokenizer":  "smartcn_tokenizer",
+          "char_filter": ["html_strip"],
+          "filter": ["asciifolding","lowercase","smartcn_stop"]
+        },
+        "cn_ngram_original": {
+          "tokenizer":  "smartcn_tokenizer",
+          "filter": ["lowercase","smartcn_stop","text_ngram_filter"]
+        },
+        "cn_ngram_normalized": {
+          "tokenizer":  "smartcn_tokenizer",
+          "char_filter": ["html_strip"],
+          "filter": ["asciifolding","lowercase","smartcn_stop","text_ngram_filter"]
+        },
+        "cn_significant": {
+          "tokenizer":  "smartcn_tokenizer",
+          "char_filter": ["html_strip"],
+          "filter": ["lowercase","smartcn_stop"]
         },
         "search_quote_analyzer":{
                "type":"custom",
