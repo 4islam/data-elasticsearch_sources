@@ -43,15 +43,15 @@ These projects should contain use case digrams for most common cases. The diagra
 - Phonetic search
 
 ### Code Linting / Structuring Guidelines
-- Projects either should contain automatic linters of linting guidelines should be added. 
+- Projects either should contain automatic linters of linting guidelines should be added.
 - The design patterns that a project must follow should be mentioned
 
 ### Unit Testing / Integration Testing / Testing Coverage
-- Each project should contain a suite for adding unit and integration testing. 
+- Each project should contain a suite for adding unit and integration testing.
 - A mechanism to find out how much code is covered in testing should be implemented
 
 ### Deployment Instructions
-- There should be clear instructions/scripts that define the process on how to deploy the project(s) to production and dev environments. 
+- There should be clear instructions/scripts that define the process on how to deploy the project(s) to production and dev environments.
 - Deployment windows have to be defined as well and process on how to notify associated parties should be mentioned.
 
 ### Data Injestion into ES
@@ -63,4 +63,8 @@ Steps on how to generate layers for the consumption of mobile (or any future off
 ### Search Algorithm
 A description of how the search algorithm works should be mentioned.
 
-
+### Exporting from Excel Sources
+Once copied from "Prod" sheet (v12), the following search/replace operations are needed:
+1. \\n => \n
+1. \\\\ => \
+1. \t => [blank] 

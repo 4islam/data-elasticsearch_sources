@@ -1,6 +1,44 @@
 {
   "mappings": {
 
+/*      "dynamic_templates": [
+            {
+              "CR_English5V": {
+                "path_match":   "CR_English5V.*",
+                "mapping": {
+                  "type" : "text"
+                }
+              }
+            },
+            {
+              "CR_Chinese": {
+                "path_match":   "CR_Chinese.*",
+                "mapping": {
+                  "type" : "text"
+                }
+              }
+            },
+          {
+            "Notes_Chinese": {
+              "path_match":   "Notes_Chinese.*",
+              "mapping": {
+                "type":       "text",
+                "analyze" : "smartcn"
+              }
+            }
+          },
+          {
+            "Notes_English5V": {
+              "path_match":   "Notes_English5V.*",
+              "mapping": {
+                "type":       "text",
+                "analyze" : "en_normalized"
+              }
+            }
+          }
+        ], */
+
+
             "properties": {
                "Arabic": {
                   "type": "text",
@@ -609,21 +647,22 @@
                "Sajda_Obligation":{"type": "boolean"},
 
                "CR_English5V" : {"properties" : {
-                 "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
-                 "e" : {"type" : "text"},"f" : {"type" : "text"},"g" : {"type" : "text"},"h" : {"type" : "text"},
-                 "i" : {"type" : "text"},"j" : {"type" : "text"},"k" : {"type" : "text"},"l" : {"type" : "text"}
-               }},
+                  "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
+                  "e" : {"type" : "text"},"f" : {"type" : "text"},"g" : {"type" : "text"},"h" : {"type" : "text"},
+                  "i" : {"type" : "text"},"j" : {"type" : "text"},"k" : {"type" : "text"},"l" : {"type" : "text"}
+                }},
                "CR_English5V_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
                "CR_English5V_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
+               "Notes_English5V":{"properties" : {"crs":{"type" : "text"},"notes":{"type" : "text","analyzer":"en_normalized"}}},
 
-               "CR_Chinese" : {"properties" : {
+              "CR_Chinese" : {"properties" : {
                  "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
                  "e" : {"type" : "text"},"f" : {"type" : "text"},"g" : {"type" : "text"},"h" : {"type" : "text"},
                  "i" : {"type" : "text"},"j" : {"type" : "text"},"k" : {"type" : "text"},"l" : {"type" : "text"}
                }},
                "CR_Chinese_Reverse":{"type":"text","analyzer":  "whitespace_tokenizer"},
                "CR_Chinese_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
-
+               "Notes_Chinese":{"properties" : {"crs":{"type" : "text"},"notes":{"type": "text","analyzer":"smartcn"}}},
 
                "Urdu": {
                   "type": "text",
