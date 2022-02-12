@@ -1,3 +1,6 @@
+## 10.12.1
+  * English Muhammad Ali translation fixed
+
 ## 10.12
   * Chinese and English Five Volume, commentaries are added 10.12
 
