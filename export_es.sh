@@ -31,8 +31,14 @@ curl -XPUT "localhost:$p/hq/_settings" -H 'Content-Type: application/json' -d'{ 
 echo "\n\nSetting index.number_of_replicas: 5 "
 curl -XPUT "localhost:$p/hq/_settings" -H 'Content-Type: application/json' -d'{ "index.number_of_replicas": 5 }'
 
-echo "\n\nLoading data (hQ.json)"
-curl -s -XPOST "localhost:$p/hq/_bulk?timeout=5m" --data-binary @hQ.json -H 'Content-Type: application/json'; clear
+rm x*
+split hQ.json
+  echo "\n\nLoading data (hQ.json)"
+  for f in xaa xab xac xad xae xaf xag xah xai xaj xak xal xam; do
+    echo "\n\nLoading part $f"
+    curl -s -XPOST "localhost:$p/hq/_bulk?timeout=5m" --data-binary @$f -H 'Content-Type: application/json'
+  done; clear;
+rm x*
 
 echo "\n"
 #curl -XGET localhost:9200/hq/_stats

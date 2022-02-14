@@ -1,3 +1,6 @@
+## 10.13.1
+  * Loading script updated to handle larger (>40MB) imports now. 
+
 ## 10.13.0
   * English Short Commentary translation with explanatory notes added
   * Urdu Tafseer Sagheer translation with note references and explanatory notes
