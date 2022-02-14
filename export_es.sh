@@ -33,7 +33,7 @@ curl -XPUT "localhost:$p/hq/_settings" -H 'Content-Type: application/json' -d'{ 
 
 rm x*
 split hQ.json
-  echo "\n\nLoading data (hQ.json)"
+  echo "\n\n  - Loading data (hQ.json)"
   for f in xaa xab xac xad xae xaf xag xah xai xaj xak xal xam; do
     echo "\n\nLoading part $f"
     curl -s -XPOST "localhost:$p/hq/_bulk?timeout=5m" --data-binary @$f -H 'Content-Type: application/json'
