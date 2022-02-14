@@ -655,7 +655,7 @@
                "CR_English5V_all":{"type":"text","analyzer":  "whitespace_tokenizer"},
                "Notes_English5V":{"properties" : {"crs":{"type" : "text"},"notes":{"type" : "text","analyzer":"en_normalized"}}},
 
-               "Notes_EnglishSCN":{"properties" : {"crs":{"type" : "text"},"notes":{"type" : "text","analyzer":"en_normalized"}}},
+               "Notes_EnglishSC":{"properties" : {"crs":{"type" : "text"},"notes":{"type" : "text","analyzer":"en_normalized"}}},
 
               "CR_Chinese" : {"properties" : {
                  "a" : {"type" : "text"},"b" : {"type" : "text"},"c" : {"type" : "text"},"d" : {"type" : "text"},
@@ -915,7 +915,7 @@
                       }
                   }
                },
-               "EnglishSCN": {
+               "EnglishSC": {
                   "type": "text",
                   "fielddata": true,
                   "fields": {
