@@ -36,9 +36,9 @@ split hQ.json
   echo "\n\n  - Loading data (hQ.json)"
   for f in xaa xab xac xad xae xaf xag xah xai xaj xak xal xam; do
     echo "\n\nLoading part $f"
-    curl -s -XPOST "localhost:$p/hq/_bulk?timeout=5m" --data-binary @$f -H 'Content-Type: application/json' | head -c250
+    curl -s -XPOST "localhost:$p/hq/_bulk?timeout=5m" --data-binary @$f -H 'Content-Type: application/json' | head -c1500
+    rm $f
   done; clear;
-rm x*
 
 echo "\n"
 #curl -XGET localhost:9200/hq/_stats

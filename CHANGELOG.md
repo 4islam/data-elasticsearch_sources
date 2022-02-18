@@ -1,5 +1,6 @@
 ## 10.13.1
-  * Loading script updated to handle larger (>40MB) imports now. 
+  * Loading script updated to handle larger (>40MB) imports now.
+  * Commentaries data sysc complete, (missing data added)
 
 ## 10.13.0
   * English Short Commentary translation with explanatory notes added
