@@ -68,3 +68,47 @@ Once copied from "Prod" sheet (v12), the following search/replace operations are
 1. \\n => \n
 1. \\\\ => \
 1. \t => [blank] 
+
+## Local Setup & Usage
+
+### Prerequisites
+
+- Docker (Elasticsearch container)
+- `curl`, `jq`
+
+### 1. Environment Configuration
+
+Create a `.env` file in the project root (or parent directory) with your Elasticsearch API key:
+
+```bash
+ES_API_KEY="your_api_key_here"
+```
+
+### 2. Index Setup (`export_es.sh`)
+
+The `export_es.sh` script automates the setup of the Elasticsearch environment.
+It will:
+
+- Check for the required `analysis-smartcn` plugin in the running `es-local-dev` container.
+- **Install the plugin and restart the container** if it is missing.
+- Copy necessary configuration files (`.solr`, `.txt`) from `esConfig/` to the container.
+- Wait for Elasticsearch to be healthy.
+- Recreate the index and populate it with data from `hQ.json`.
+
+**Usage:**
+
+```bash
+cd HQ_Artifacts_Prod
+./export_es.sh
+```
+
+### 3. Text Analysis (`quran.sh`)
+
+Use the `quran.sh` script to test the Elasticsearch Analyze API against the index.
+
+**Usage:**
+
+```bash
+# Analyze a list of words using a specific field (e.g., ar_original_noor)
+cat input_list.txt | ./quran.sh ar_original_noor output_file.txt
+```

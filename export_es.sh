@@ -14,11 +14,42 @@ if [ -z "$key" ]; then
     exit 1
 fi
 
-#echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.solr
-#echo "/var/lib/docker/volumes/docker_data01c/_data /var/lib/docker/volumes/docker_data02c/_data /var/lib/docker/volumes/docker_data03c/_data" | sudo xargs -n 1 cp -v esConfig/*.txt
+container_name="es-local-dev"
 
-#sudo cp -v esConfig/*.solr /etc/elasticsearch
-#sudo cp -v esConfig/*.txt /etc/elasticsearch
+verify_es_health() {
+    echo "Waiting for Elasticsearch to be healthy..."
+    until curl -s "localhost:$p/_cluster/health" >/dev/null; do
+        echo "Elasticsearch is not ready yet..."
+        sleep 5
+    done
+    echo "Elasticsearch is ready."
+}
+
+check_and_install_plugin() {
+    plugin_name="analysis-smartcn"
+    if docker exec "$container_name" bin/elasticsearch-plugin list | grep -q "$plugin_name"; then
+        echo "Plugin $plugin_name is already installed."
+    else
+        echo "Plugin $plugin_name not found. Installing..."
+        docker exec "$container_name" bin/elasticsearch-plugin install -b "$plugin_name"
+        echo "Restarting container $container_name to apply changes..."
+        docker restart "$container_name"
+        verify_es_health
+    fi
+}
+
+copy_config_files() {
+    echo "Copying config files to container..."
+    docker cp esConfig/. "$container_name":/usr/share/elasticsearch/config/
+}
+
+# Run setup steps
+check_and_install_plugin
+copy_config_files
+
+# Wait for ES to be up if we didn't restart (or just to be safe)
+verify_es_health
+
 
 echo "\n\nSetting cluster.routing.allocation.disk.threshold_enabled: false"
 curl -XPUT -H "Content-Type: application/json" -H "Authorization: ApiKey $key" http://localhost:$p/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
